@@ -1,0 +1,205 @@
+/* =============================================
+   GLOBALS.CSS — Lumina E-Commerce
+   Base styles, design tokens, utilities
+   ============================================= */
+
+/* ─── Design Tokens ─────────────────────────── */
+:root {
+  /* Color Palette */
+  --cream-bg:    #FFF0D1;
+  --cream-light: #FFF8E7;
+  --cream-dark:  #E8D9B8;
+  --warm-brown:  #795757;
+  --deep-brown:  #664343;
+  --dark-brown:  #3B3030;
+  --white:       #FFFFFF;
+
+  /* Typography */
+  --font-primary:   'Lora', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 10px rgba(59, 48, 48, 0.06);
+  --shadow-md: 0 4px 20px rgba(59, 48, 48, 0.10);
+  --shadow-lg: 0 8px 40px rgba(59, 48, 48, 0.16);
+
+  /* Transitions */
+  --t-fast: 0.2s ease-out;
+  --t-base: 0.3s ease-out;
+  --t-slow: 0.6s ease-out;
+}
+
+/* ─── Reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream-bg);
+  color: var(--dark-brown);
+  font-family: var(--font-secondary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--t-base);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-secondary);
+}
+
+/* ─── Custom Scrollbar ───────────────────────── */
+::-webkit-scrollbar          { width: 8px; }
+::-webkit-scrollbar-track    { background: var(--cream-bg); }
+::-webkit-scrollbar-thumb    { background: var(--warm-brown); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--deep-brown); }
+
+/* ─── Layout ─────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─── Scroll Reveal ──────────────────────────── */
+.reveal,
+.reveal-left,
+.reveal-right {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal       { opacity: 0; transform: translateY(40px); }
+.reveal-left  { opacity: 0; transform: translateX(-50px); }
+.reveal-right { opacity: 0; transform: translateX(50px); }
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ─── Hover Underline ────────────────────────── */
+.hover-link {
+  position: relative;
+  display: inline-block;
+}
+.hover-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--warm-brown);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+.hover-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ─── Section Typography ─────────────────────── */
+.section-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--warm-brown);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--warm-brown);
+  margin: 0 auto 1.5rem;
+  border: none;
+}
+
+/* ─── Buttons ────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--warm-brown);
+  padding: 14px 40px;
+  border: 2px solid var(--warm-brown);
+  border-radius: 0;
+  cursor: pointer;
+  transition: background var(--t-base), border-color var(--t-base),
+              color var(--t-base), transform 0.2s ease, box-shadow var(--t-base);
+}
+.btn-primary:hover {
+  background: var(--deep-brown);
+  border-color: var(--deep-brown);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(121, 87, 87, 0.35);
+}
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  background: transparent;
+  padding: 14px 40px;
+  border: 2px solid var(--dark-brown);
+  border-radius: 0;
+  cursor: pointer;
+  transition: background var(--t-base), color var(--t-base), transform 0.2s ease;
+}
+.btn-secondary:hover {
+  background: var(--dark-brown);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.btn-secondary:active { transform: scale(0.98); }

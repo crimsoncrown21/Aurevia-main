@@ -1,0 +1,160 @@
+/* =============================================
+   FRAGRANCES.CSS — Lumina E-Commerce
+   ============================================= */
+
+/* ─── Scent Categories ─── */
+.scent-categories { padding: 4rem 0; background: var(--cream-bg); }
+.scent-categories .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+
+.scent-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+
+.scent-card {
+  position: relative; height: 250px; border-radius: 8px; border: 2px solid var(--cream-dark);
+  overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.scent-card:hover { transform: scale(1.02); box-shadow: 0 8px 25px rgba(59,48,48,0.15); }
+
+.scent-bg { position: absolute; inset: 0; transition: transform 0.5s ease; }
+.scent-card:hover .scent-bg { transform: scale(1.08); }
+
+.scent-content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+}
+.scent-icon { font-size: 50px; opacity: 0.8; }
+.scent-name { font-family: var(--font-primary); font-size: 1.5rem; color: var(--dark-brown); }
+.scent-count { font-family: var(--font-secondary); font-size: 0.8rem; color: var(--warm-brown); }
+
+.scent-overlay {
+  position: absolute; inset: 0; z-index: 3; background: rgba(59,48,48,0.6);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.scent-card:hover .scent-overlay { opacity: 1; }
+
+.explore-btn {
+  font-family: var(--font-secondary); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--cream-bg);
+  border: 2px solid var(--cream-bg); padding: 10px 28px;
+  transition: background var(--t-base), color var(--t-base);
+}
+.explore-btn:hover { background: var(--cream-bg); color: var(--dark-brown); }
+
+/* ─── Customizer Section (dark bg) ─── */
+.customizer-section { padding: 5rem 0; background: var(--deep-brown); }
+
+.customizer-title {
+  font-family: var(--font-primary); font-size: 2.5rem; color: var(--cream-bg);
+  text-align: center; letter-spacing: 3px; margin-bottom: 0.5rem;
+}
+.customizer-subtitle {
+  font-family: var(--font-primary); font-size: 1.1rem; font-style: italic;
+  color: var(--cream-dark); text-align: center; margin-bottom: 3rem;
+}
+
+.customizer-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+
+/* Steps */
+.step { margin-bottom: 2.5rem; }
+.step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 2px solid var(--cream-dark); color: var(--cream-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-secondary); font-size: 0.85rem; font-weight: 700;
+  transition: all var(--t-base);
+}
+.step-num.active { background: var(--cream-bg); color: var(--dark-brown); border-color: var(--cream-bg); }
+.step-header h3 { font-family: var(--font-primary); font-size: 1.2rem; color: var(--cream-bg); }
+
+.step-options { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.option-btn {
+  font-family: var(--font-secondary); font-size: 0.85rem;
+  padding: 10px 20px; border-radius: 30px;
+  background: var(--cream-bg); color: var(--dark-brown);
+  border: 2px solid transparent;
+  transition: all var(--t-base);
+}
+.option-btn:hover { border-color: var(--warm-brown); }
+.option-btn.active { border-color: var(--warm-brown); background: var(--warm-brown); color: var(--white); }
+
+/* Intensity Slider */
+.intensity-slider { max-width: 300px; }
+.intensity-slider input[type="range"] {
+  -webkit-appearance: none; width: 100%; height: 6px;
+  background: var(--cream-dark); border-radius: 3px; outline: none;
+}
+.intensity-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px;
+  background: var(--warm-brown); border-radius: 50%; cursor: pointer;
+}
+.intensity-labels {
+  display: flex; justify-content: space-between; margin-top: 8px;
+  font-family: var(--font-secondary); font-size: 0.75rem; color: var(--cream-dark);
+}
+
+/* Preview Card */
+.preview-card {
+  background: var(--cream-bg); border-radius: 12px; padding: 2.5rem;
+  text-align: center;
+}
+
+.preview-bottle {
+  width: 120px; height: 180px; margin: 0 auto 1.5rem;
+  background: linear-gradient(180deg, var(--cream-dark) 0%, var(--warm-brown) 100%);
+  border-radius: 8px 8px 0 0; position: relative;
+}
+.preview-bottle::before {
+  content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+  width: 30px; height: 20px; background: var(--dark-brown); border-radius: 4px 4px 0 0;
+}
+
+.preview-name { font-family: var(--font-primary); font-size: 1.4rem; color: var(--dark-brown); margin-bottom: 6px; }
+.preview-desc { font-family: var(--font-secondary); font-size: 0.9rem; color: var(--warm-brown); margin-bottom: 1.5rem; }
+.preview-price { margin-bottom: 1.5rem; }
+.preview-price span:first-child { font-family: var(--font-secondary); font-size: 1.2rem; font-weight: 700; color: var(--warm-brown); }
+.preview-size { font-family: var(--font-secondary); font-size: 0.85rem; color: var(--deep-brown); }
+
+.preview-actions { display: flex; gap: 10px; justify-content: center; }
+.save-formula-btn {
+  padding: 12px 20px; border: 2px solid var(--dark-brown);
+  font-family: var(--font-secondary); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--dark-brown);
+  transition: background var(--t-base), color var(--t-base);
+}
+.save-formula-btn:hover { background: var(--dark-brown); color: var(--white); }
+
+/* ─── Featured Fragrances ─── */
+.featured-fragrances { padding: 5rem 0; background: var(--cream-light); }
+.featured-fragrances .section-title { font-size: 2rem; margin-bottom: 1.5rem; }
+
+/* Fragrance Placeholders */
+.frag-ph { width: 100%; height: 280px; }
+.frag-ph::after {
+  display: flex; align-items: center; justify-content: center; height: 100%;
+  font-family: var(--font-primary); font-size: 0.8rem; color: rgba(255,255,255,0.4);
+  letter-spacing: 3px; text-transform: uppercase; content: '✦ Fragrance';
+}
+.frag-v1 { background: linear-gradient(145deg, #F5E6D3 0%, #E8D4B8 50%, #c9a8a8 100%); }
+.frag-v2 { background: linear-gradient(145deg, #E8D4B8 0%, #c9a8a8 50%, #795757 100%); }
+.frag-v3 { background: linear-gradient(145deg, #3B3030 0%, #664343 50%, #c9a8a8 100%); }
+.frag-f1 { background: linear-gradient(145deg, #F2D5E0 0%, #D4A0B9 60%, #a06090 100%); }
+.frag-f2 { background: linear-gradient(145deg, #D4A0B9 0%, #a06090 60%, #703060 100%); }
+.frag-f3 { background: linear-gradient(145deg, #FFE0F0 0%, #F2D5E0 50%, #D4A0B9 100%); }
+.frag-w1 { background: linear-gradient(145deg, #8B7355 0%, #5C4033 60%, #3B2820 100%); }
+.frag-w2 { background: linear-gradient(145deg, #A08060 0%, #705030 60%, #402818 100%); }
+.frag-w3 { background: linear-gradient(145deg, #6B8F5E 0%, #5C4033 60%, #3B2820 100%); }
+.frag-o1 { background: linear-gradient(145deg, #4A2D6B 0%, #2A1540 60%, #150A20 100%); }
+.frag-o2 { background: linear-gradient(145deg, #D4A040 0%, #4A2D6B 50%, #2A1540 100%); }
+.frag-o3 { background: linear-gradient(145deg, #2A1540 0%, #4A2D6B 50%, #3B3030 100%); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) { .scent-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 768px) {
+  .scent-grid { grid-template-columns: repeat(2,1fr); }
+  .customizer-grid { grid-template-columns: 1fr; }
+  .customizer-title { font-size: 2rem; }
+  .frag-ph { height: 240px; }
+}
+@media (max-width: 480px) { .scent-grid { grid-template-columns: 1fr; } }

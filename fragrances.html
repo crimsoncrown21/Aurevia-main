@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumina Fragrances & Customizations — Explore scent families and create your signature fragrance.">
+  <title>Fragrances | Lumina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/globals.css">
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/fragrances.css">
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="navbar" class="navbar scrolled">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">Lumina</a>
+        <ul class="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="clothing.html">Clothing</a></li>
+          <li><a href="bags.html">Bags &amp; Charms</a></li>
+          <li><a href="fragrances.html">Fragrances</a></li>
+          <li><a href="gifting.html">Gifting</a></li>
+          <li><a href="trending.html">Trending</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Bag">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="cart-badge">0</span>
+          </button>
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Close menu"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="index.html">About</a><a href="clothing.html">Clothing</a><a href="bags.html">Bags &amp; Charms</a>
+    <a href="fragrances.html">Fragrances</a><a href="gifting.html">Gifting</a><a href="trending.html">Trending</a><a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Fragrances</span></nav>
+        <h1 class="page-title">Fragrances &amp; Customizations</h1>
+        <p class="page-subtitle">Discover your signature scent</p>
+      </div>
+    </section>
+
+    <!-- ═══ SCENT CATEGORIES ═══ -->
+    <section class="scent-categories">
+      <div class="container">
+        <h2 class="section-title">Explore Scent Families</h2>
+        <div class="scent-grid grid-4">
+          <div class="scent-card" data-scent="vanilla"><div class="scent-bg" style="background:linear-gradient(135deg,#F5E6D3 0%,#E8D4B8 100%)"></div><div class="scent-content"><div class="scent-icon">🍦</div><h3 class="scent-name">Vanilla</h3><p class="scent-count">12 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="floral"><div class="scent-bg" style="background:linear-gradient(135deg,#F2D5E0 0%,#D4A0B9 100%)"></div><div class="scent-content"><div class="scent-icon">🌸</div><h3 class="scent-name">Floral</h3><p class="scent-count">15 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="woody"><div class="scent-bg" style="background:linear-gradient(135deg,#8B7355 0%,#5C4033 100%)"></div><div class="scent-content"><div class="scent-icon">🌲</div><h3 class="scent-name">Woody</h3><p class="scent-count">10 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="fruity"><div class="scent-bg" style="background:linear-gradient(135deg,#FFD4A0 0%,#FF9E6D 100%)"></div><div class="scent-content"><div class="scent-icon">🍑</div><h3 class="scent-name">Fruity</h3><p class="scent-count">8 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="fresh"><div class="scent-bg" style="background:linear-gradient(135deg,#D4E8F0 0%,#A0C8E0 100%)"></div><div class="scent-content"><div class="scent-icon">💨</div><h3 class="scent-name">Fresh</h3><p class="scent-count">9 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="spicy"><div class="scent-bg" style="background:linear-gradient(135deg,#D4654A 0%,#8B2E1A 100%)"></div><div class="scent-content"><div class="scent-icon">🌶️</div><h3 class="scent-name">Spicy</h3><p class="scent-count">7 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="chocolate"><div class="scent-bg" style="background:linear-gradient(135deg,#6B3A2A 0%,#3E1F13 100%)"></div><div class="scent-content"><div class="scent-icon">🍫</div><h3 class="scent-name">Chocolate</h3><p class="scent-count">5 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="cinnamon"><div class="scent-bg" style="background:linear-gradient(135deg,#C4834A 0%,#8B5A2B 100%)"></div><div class="scent-content"><div class="scent-icon">🫚</div><h3 class="scent-name">Cinnamon</h3><p class="scent-count">4 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="jojoba"><div class="scent-bg" style="background:linear-gradient(135deg,#A8BF96 0%,#6B8F5E 100%)"></div><div class="scent-content"><div class="scent-icon">🌿</div><h3 class="scent-name">Jojoba</h3><p class="scent-count">6 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="oud"><div class="scent-bg" style="background:linear-gradient(135deg,#4A2D6B 0%,#2A1540 100%)"></div><div class="scent-content"><div class="scent-icon">✨</div><h3 class="scent-name">Arabic / Oud</h3><p class="scent-count">11 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="tropical"><div class="scent-bg" style="background:linear-gradient(135deg,#40B5AD 0%,#E87461 100%)"></div><div class="scent-content"><div class="scent-icon">🌴</div><h3 class="scent-name">Tropical</h3><p class="scent-count">6 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+          <div class="scent-card" data-scent="aquatic"><div class="scent-bg" style="background:linear-gradient(135deg,#7FBFCF 0%,#3D8FA0 100%)"></div><div class="scent-content"><div class="scent-icon">🌊</div><h3 class="scent-name">Aquatic</h3><p class="scent-count">8 Products</p></div><div class="scent-overlay"><button class="explore-btn">Explore</button></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CUSTOMIZATION SECTION ═══ -->
+    <section class="customizer-section" id="customizer">
+      <div class="container">
+        <h2 class="customizer-title">Create Your Signature Scent</h2>
+        <p class="customizer-subtitle">Design a fragrance that is uniquely yours</p>
+
+        <div class="customizer-grid">
+          <!-- Steps -->
+          <div class="customizer-steps">
+
+            <div class="step" data-step="1">
+              <div class="step-header">
+                <span class="step-num active">1</span>
+                <h3>Choose Your Base</h3>
+              </div>
+              <div class="step-options" id="baseOptions">
+                <button class="option-btn active" data-value="vanilla" data-price="0">Vanilla</button>
+                <button class="option-btn" data-value="floral" data-price="0">Floral</button>
+                <button class="option-btn" data-value="woody" data-price="5">Woody</button>
+                <button class="option-btn" data-value="fruity" data-price="0">Fruity</button>
+                <button class="option-btn" data-value="oud" data-price="15">Oud</button>
+              </div>
+            </div>
+
+            <div class="step" data-step="2">
+              <div class="step-header">
+                <span class="step-num">2</span>
+                <h3>Add Notes</h3>
+              </div>
+              <div class="step-options" id="noteOptions">
+                <button class="option-btn" data-value="bergamot" data-price="5">Bergamot</button>
+                <button class="option-btn" data-value="jasmine" data-price="8">Jasmine</button>
+                <button class="option-btn" data-value="sandalwood" data-price="10">Sandalwood</button>
+                <button class="option-btn" data-value="musk" data-price="7">Musk</button>
+                <button class="option-btn" data-value="rose" data-price="8">Rose</button>
+                <button class="option-btn" data-value="amber" data-price="6">Amber</button>
+              </div>
+            </div>
+
+            <div class="step" data-step="3">
+              <div class="step-header">
+                <span class="step-num">3</span>
+                <h3>Intensity</h3>
+              </div>
+              <div class="intensity-slider">
+                <input type="range" min="1" max="5" value="3" id="intensityRange">
+                <div class="intensity-labels">
+                  <span>Light</span><span>Medium</span><span>Strong</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Preview -->
+          <div class="customizer-preview">
+            <div class="preview-card">
+              <div class="preview-bottle"></div>
+              <h3 class="preview-name" id="previewName">Vanilla Dreams</h3>
+              <p class="preview-desc" id="previewDesc">A warm, inviting base</p>
+              <div class="preview-price">
+                <span id="previewPrice">$89.00</span>
+                <span class="preview-size">— 50ml</span>
+              </div>
+              <div class="preview-actions">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="save-formula-btn">Save Formula</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FEATURED FRAGRANCES ═══ -->
+    <section class="featured-fragrances">
+      <div class="container">
+        <h2 class="section-title">Best Sellers by Scent</h2>
+        <div class="fragrance-tabs">
+          <button class="tab-btn active" data-tab="vanilla">Vanilla</button>
+          <button class="tab-btn" data-tab="floral">Floral</button>
+          <button class="tab-btn" data-tab="woody">Woody</button>
+          <button class="tab-btn" data-tab="oud">Oud &amp; Arabic</button>
+        </div>
+
+        <div class="tab-content active" id="vanilla-tab">
+          <div class="product-grid grid-3">
+            <div class="product-card" data-price="89"><div class="product-image"><div class="frag-ph frag-v1"></div></div><div class="product-info"><h3 class="product-name">Vanilla Dream EDP</h3><div class="product-price"><span class="current-price">$89.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="75"><div class="product-image"><div class="frag-ph frag-v2"></div></div><div class="product-info"><h3 class="product-name">Warm Vanilla Mist</h3><div class="product-price"><span class="current-price">$75.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="120"><div class="product-image"><div class="frag-ph frag-v3"></div></div><div class="product-info"><h3 class="product-name">Vanilla Noir Intense</h3><div class="product-price"><span class="current-price">$120.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="floral-tab">
+          <div class="product-grid grid-3">
+            <div class="product-card" data-price="95"><div class="product-image"><div class="frag-ph frag-f1"></div></div><div class="product-info"><h3 class="product-name">Rose Garden EDP</h3><div class="product-price"><span class="current-price">$95.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="85"><div class="product-image"><div class="frag-ph frag-f2"></div></div><div class="product-info"><h3 class="product-name">Jasmine Nights</h3><div class="product-price"><span class="current-price">$85.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="110"><div class="product-image"><div class="frag-ph frag-f3"></div></div><div class="product-info"><h3 class="product-name">Peony Bloom</h3><div class="product-price"><span class="current-price">$110.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="woody-tab">
+          <div class="product-grid grid-3">
+            <div class="product-card" data-price="105"><div class="product-image"><div class="frag-ph frag-w1"></div></div><div class="product-info"><h3 class="product-name">Cedar & Sage</h3><div class="product-price"><span class="current-price">$105.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="115"><div class="product-image"><div class="frag-ph frag-w2"></div></div><div class="product-info"><h3 class="product-name">Sandalwood Elixir</h3><div class="product-price"><span class="current-price">$115.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="99"><div class="product-image"><div class="frag-ph frag-w3"></div></div><div class="product-info"><h3 class="product-name">Forest Walk</h3><div class="product-price"><span class="current-price">$99.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="oud-tab">
+          <div class="product-grid grid-3">
+            <div class="product-card" data-price="155"><div class="product-image"><div class="frag-ph frag-o1"></div></div><div class="product-info"><h3 class="product-name">Royal Oud</h3><div class="product-price"><span class="current-price">$155.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="180"><div class="product-image"><div class="frag-ph frag-o2"></div></div><div class="product-info"><h3 class="product-name">Arabian Nights</h3><div class="product-price"><span class="current-price">$180.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+            <div class="product-card" data-price="145"><div class="product-image"><div class="frag-ph frag-o3"></div></div><div class="product-info"><h3 class="product-name">Midnight Oud</h3><div class="product-price"><span class="current-price">$145.00</span></div><button class="add-to-cart-btn">Add to Cart</button></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><h3>Lumina</h3><p>Curated elegance for the intentional life. Clothing, leather goods, fragrances, and gifting — united by an unwavering commitment to quality and craft.</p><div class="footer-social"><a href="#" class="social-link" aria-label="Instagram"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="#" class="social-link" aria-label="Pinterest"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a><a href="#" class="social-link" aria-label="X (Twitter)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></div></div>
+        <div class="footer-col"><h4>Shop</h4><ul class="footer-links"><li><a href="clothing.html">Clothing</a></li><li><a href="bags.html">Bags</a></li><li><a href="fragrances.html">Fragrances</a></li><li><a href="gifting.html">Gifting</a></li><li><a href="trending.html">Trending</a></li></ul></div>
+        <div class="footer-col"><h4>Help</h4><ul class="footer-links"><li><a href="contact.html">FAQ</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Returns</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul class="footer-links"><li><a href="index.html">Our Story</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Press</a></li><li><a href="#">Instagram</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2025 Lumina. All rights reserved. &middot; Crafted with intention.</p></div></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/fragrances.js"></script>
+</body>
+</html>

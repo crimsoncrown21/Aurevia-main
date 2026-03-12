@@ -1,0 +1,454 @@
+/* ═══════════════════════════════════════════
+   GIFTING PAGE — styles/gifting.css
+   ═══════════════════════════════════════════ */
+
+/* ── Gift Sets ── */
+.gift-sets-section { padding: 3rem 0 4rem; }
+.gift-sets-section .section-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  color: var(--dark-brown);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.gift-card {
+  background: var(--cream-light);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.gift-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(59,48,48,.12);
+}
+
+.gift-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+.gift-ph {
+  width: 100%;
+  height: 100%;
+}
+.gift-ph-1 { background: linear-gradient(135deg, #f3d5c0 0%, #e8c4a8 50%, #d4a88c 100%); }
+.gift-ph-2 { background: linear-gradient(135deg, #e8b4b8 0%, #d4919a 50%, #c07080 100%); }
+.gift-ph-3 { background: linear-gradient(135deg, #c8dbb4 0%, #a8c89a 50%, #90b880 100%); }
+
+.occasion-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--warm-brown);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.gift-info { padding: 1.5rem; }
+.gift-name {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: var(--dark-brown);
+  margin-bottom: .4rem;
+}
+.gift-description {
+  font-size: .88rem;
+  color: var(--deep-brown);
+  opacity: .75;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.gift-contents {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.gift-contents li {
+  font-size: .82rem;
+  color: var(--deep-brown);
+  padding: .25rem 0 .25rem 1.2rem;
+  position: relative;
+}
+.gift-contents li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--warm-brown);
+  font-size: .65rem;
+  top: .35rem;
+}
+
+.gift-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 1rem;
+}
+.gift-actions {
+  display: flex;
+  gap: .75rem;
+}
+.gift-actions .add-to-cart-btn {
+  flex: 1;
+}
+.customize-btn {
+  flex: 1;
+  padding: .7rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--warm-brown);
+  color: var(--warm-brown);
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+}
+.customize-btn:hover {
+  background: var(--warm-brown);
+  color: #fff;
+}
+
+/* ── Gift Builder ── */
+.gift-builder-section {
+  padding: 4rem 0;
+  background: var(--cream-light);
+}
+.gift-builder-section .section-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  color: var(--dark-brown);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.builder-step {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.builder-step h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+}
+
+.container-options,
+.product-options,
+.bouquet-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.builder-option {
+  padding: .55rem 1.1rem;
+  background: var(--cream-bg);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--deep-brown);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.builder-option:hover {
+  border-color: var(--warm-brown);
+  color: var(--warm-brown);
+}
+.builder-option.active {
+  background: var(--warm-brown);
+  border-color: var(--warm-brown);
+  color: #fff;
+}
+
+.selection-counter {
+  font-size: .8rem;
+  color: var(--deep-brown);
+  opacity: .7;
+  margin-top: .6rem;
+}
+
+.gift-message {
+  width: 100%;
+  min-height: 100px;
+  padding: .9rem;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .88rem;
+  color: var(--dark-brown);
+  background: var(--cream-bg);
+  resize: vertical;
+  transition: border-color .3s;
+}
+.gift-message:focus {
+  outline: none;
+  border-color: var(--warm-brown);
+}
+.char-counter {
+  font-size: .75rem;
+  color: var(--deep-brown);
+  opacity: .6;
+  text-align: right;
+  margin-top: .35rem;
+}
+
+/* Builder Preview */
+.builder-preview { position: sticky; top: 100px; }
+.builder-preview-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(59,48,48,.08);
+}
+.builder-preview-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream-bg) 50%, var(--cream-light) 100%);
+  margin-bottom: 1.2rem;
+}
+.builder-preview-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  color: var(--dark-brown);
+  margin-bottom: .5rem;
+}
+.builder-total {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 1.2rem;
+}
+.builder-preview-card .add-to-cart-btn { width: 100%; }
+
+/* ── Mystery Gifts ── */
+.mystery-section { padding: 4rem 0; }
+.mystery-section .section-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  color: var(--dark-brown);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.mystery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.mystery-card {
+  background: var(--cream-light);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.mystery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(59,48,48,.12);
+}
+.mystery-card.featured {
+  border: 2px solid var(--warm-brown);
+  position: relative;
+}
+.mystery-card.featured::before {
+  content: '★ Most Popular';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--warm-brown);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
+}
+
+.mystery-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.mystery-ph {
+  width: 100%;
+  height: 100%;
+}
+.mystery-ph-1 { background: linear-gradient(135deg, #e0c8f0 0%, #c8a0e0 50%, #b088d0 100%); }
+.mystery-ph-2 { background: linear-gradient(135deg, #f0d0a0 0%, #e0b878 50%, #d0a060 100%); }
+.mystery-ph-3 { background: linear-gradient(135deg, #a8d8e8 0%, #80c0d8 50%, #60a8c8 100%); }
+
+.mystery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 4rem;
+  color: rgba(255,255,255,.6);
+  background: rgba(59,48,48,.15);
+  transition: background .3s;
+}
+.mystery-card:hover .mystery-overlay {
+  background: rgba(59,48,48,.25);
+}
+
+.mystery-info { padding: 1.5rem; text-align: center; }
+.mystery-info h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  color: var(--dark-brown);
+  margin-bottom: .3rem;
+}
+.mystery-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .82rem;
+  color: var(--warm-brown);
+  font-weight: 600;
+  margin-bottom: .8rem;
+}
+.mystery-hints {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.mystery-hints li {
+  font-size: .82rem;
+  color: var(--deep-brown);
+  opacity: .75;
+  padding: .2rem 0;
+}
+.mystery-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 1rem;
+}
+.mystery-btn { width: 100%; }
+
+/* ── Consultation ── */
+.consultation-section { padding: 4rem 0 5rem; }
+.consultation-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: var(--dark-brown);
+  border-radius: 20px;
+  padding: 3rem;
+  color: #fff;
+}
+
+.consultation-info h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  margin-bottom: .8rem;
+}
+.consultation-info > p {
+  font-size: .92rem;
+  opacity: .85;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.consultation-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.consultation-features li {
+  font-size: .88rem;
+  padding: .4rem 0 .4rem 1.5rem;
+  position: relative;
+  opacity: .9;
+}
+.consultation-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--cream-bg);
+  font-weight: 700;
+}
+
+.consultation-booking h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: 1.5rem;
+}
+.time-slot {
+  padding: .55rem 1.1rem;
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.3);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .25s;
+}
+.time-slot:hover,
+.time-slot.selected {
+  background: var(--cream-bg);
+  border-color: var(--cream-bg);
+  color: var(--dark-brown);
+}
+.book-consultation-btn {
+  width: 100%;
+  padding: .85rem;
+  background: var(--cream-bg);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+  cursor: pointer;
+  transition: background .3s, transform .2s;
+}
+.book-consultation-btn:hover {
+  background: var(--cream-light);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .builder-grid { grid-template-columns: 1fr; }
+  .builder-preview { position: static; }
+  .consultation-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+}
+@media (max-width: 768px) {
+  .mystery-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .gift-actions { flex-direction: column; }
+}

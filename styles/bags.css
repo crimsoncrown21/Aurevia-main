@@ -1,0 +1,207 @@
+/* =============================================
+   BAGS.CSS — Lumina E-Commerce
+   Bags & Charms page specific styles
+   ============================================= */
+
+/* ─── Products Section ─── */
+.products-section { padding: 3rem 0 5rem; background: var(--cream-bg); }
+
+/* ─── Featured Arrivals Carousel ─── */
+.featured-arrivals {
+  padding: 3rem 0;
+  background: var(--cream-light);
+}
+
+.featured-arrivals .section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+}
+
+.carousel-track::-webkit-scrollbar { height: 4px; }
+.carousel-track::-webkit-scrollbar-thumb { background: var(--cream-dark); border-radius: 2px; }
+
+.carousel-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(59,48,48,0.1);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 220px;
+}
+
+.carousel-info {
+  padding: 15px;
+}
+
+.carousel-info h3 {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--dark-brown);
+  margin-bottom: 6px;
+}
+
+.carousel-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--warm-brown);
+  border-radius: 50%;
+  color: var(--warm-brown);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--t-base), color var(--t-base);
+}
+
+.carousel-btn:hover {
+  background: var(--warm-brown);
+  color: var(--white);
+}
+
+/* Carousel image placeholders */
+.bag-arr-1 { background: linear-gradient(145deg, #8a6060 0%, #5a3535 60%, #2a1f1f 100%); }
+.bag-arr-2 { background: linear-gradient(145deg, #E8D9B8 0%, #c9a8a8 60%, #795757 100%); }
+.bag-arr-3 { background: linear-gradient(145deg, #c9a8a8 0%, #795757 50%, #3B3030 100%); }
+.bag-arr-4 { background: linear-gradient(145deg, #3B3030 0%, #664343 50%, #8a6060 100%); }
+.bag-arr-5 { background: linear-gradient(145deg, #d4b870 0%, #9a7830 60%, #4a3a10 100%); }
+
+/* ─── Bag Product Placeholders ─── */
+.bag-ph {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bag-ph::after {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  content: '✦ Bag';
+}
+
+.bag-ph-1 { background: linear-gradient(145deg, #8a6060 0%, #5a3535 60%, #2a1f1f 100%); }
+.bag-ph-2 { background: linear-gradient(145deg, #E8D9B8 0%, #c9a8a8 50%, #795757 100%); }
+.bag-ph-3 { background: linear-gradient(145deg, #b8a0c0 0%, #7a5575 60%, #3a2540 100%); }
+.bag-ph-4 { background: linear-gradient(145deg, #3B3030 0%, #664343 50%, #8a6060 100%); }
+.bag-ph-5 { background: linear-gradient(145deg, #c9a8a8 0%, #795757 50%, #3B3030 100%); }
+.bag-ph-6 { background: linear-gradient(145deg, #9b8260 0%, #664343 55%, #3B3030 100%); }
+.bag-ph-7 { background: linear-gradient(145deg, #d4b870 0%, #9a7830 60%, #4a3a10 100%); }
+.bag-ph-8 { background: linear-gradient(145deg, #664343 0%, #3B3030 60%, #1a1212 100%); }
+
+/* ─── Material Tags ─── */
+.material-tag {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+  background: var(--cream-light);
+  padding: 3px 10px;
+  margin-bottom: 8px;
+}
+
+/* ─── Charms Section ─── */
+.charms-section {
+  padding: 5rem 0;
+  background: var(--cream-light);
+}
+
+.charms-section .section-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.charm-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(59,48,48,0.1);
+}
+
+.charm-img {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charm-img::after {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  content: '✦';
+}
+
+.charm-1 { background: linear-gradient(135deg, #d4b870 0%, #9a7830 100%); }
+.charm-2 { background: linear-gradient(135deg, #8a6060 0%, #5a3535 100%); }
+.charm-3 { background: linear-gradient(135deg, #c9a8a8 0%, #795757 100%); }
+.charm-4 { background: linear-gradient(135deg, #E8D9B8 0%, #c9a8a8 100%); }
+.charm-5 { background: linear-gradient(135deg, #3B3030 0%, #664343 100%); }
+.charm-6 { background: linear-gradient(135deg, #b8a0c0 0%, #7a5575 100%); }
+.charm-7 { background: linear-gradient(135deg, #9b8260 0%, #664343 100%); }
+.charm-8 { background: linear-gradient(135deg, #664343 0%, #3B3030 100%); }
+
+.charm-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.charm-info h3 {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--dark-brown);
+  margin-bottom: 6px;
+}
+
+.charm-info .current-price {
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .carousel-btn { display: none; }
+  .bag-ph { height: 260px; }
+}
