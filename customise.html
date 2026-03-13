@@ -1,311 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Customise — Aurevia</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customise — Aurevia</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/globals.css"/>
-  <link rel="stylesheet" href="styles/responsive.css"/>
-  <link rel="stylesheet" href="styles/shared.css"/>
-  <link rel="stylesheet" href="styles/customise.css"/>
-</head>
-<body>
-
-  <!-- ═══════════════════════════════════════════════════════════════
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/globals.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/customise.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════════════════
        NAVIGATION
        ═══════════════════════════════════════════════════════════════ -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="nav-inner">
-
-        <!-- Logo -->
-        <a href="index.html" class="logo">Aurevia</a>
-
-        <!-- Desktop Nav -->
-        <ul class="nav-links">
-          <li><a href="index.html" class="hover-link">About</a></li>
-          <li><a href="clothing.html" class="hover-link">Clothing</a></li>
-          <li><a href="bags.html" class="hover-link">Bags</a></li>
-          <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
-          <li><a href="customise.html" class="active">Customise</a></li>
-          <li><a href="trending.html" class="hover-link">Trending</a></li>
-          <li><a href="contact.html" class="hover-link">Contact</a></li>
-        </ul>
-
-        <!-- Actions -->
-        <div class="nav-actions">
-          <button class="nav-icon-btn" aria-label="Bag">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/>
-            </svg>
-            <span class="cart-count" id="cartCount">0</span>
-          </button>
-          <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mobile-menu-header">
-      <a href="index.html" class="logo">Aurevia</a>
-      <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Close menu">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    <ul class="mobile-menu-nav">
-      <li><a href="index.html">About</a></li>
-      <li><a href="clothing.html">Clothing</a></li>
-      <li><a href="bags.html">Bags</a></li>
-      <li><a href="fragrances.html">Fragrances</a></li>
-      <li><a href="customise.html" class="active">Customise</a></li>
-      <li><a href="trending.html">Trending</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="mobile-menu-footer">
-      <div class="mobile-menu-social">
-        <a href="#" aria-label="Instagram">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Pinterest">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-          </svg>
-        </a>
-      </div>
-      <p class="mobile-menu-copyright">&copy; 2025 Aurevia</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       MAIN CONTENT
-       ═══════════════════════════════════════════════════════════════ -->
-  <main>
-
-    <!-- SECTION 1: HERO / HEADER -->
-    <section class="customise-hero">
+    <nav id="navbar" class="navbar">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-line reveal"></div>
-          <h1 class="hero-title reveal">Customise</h1>
-          <p class="hero-description reveal">
-            Create something uniquely yours. From personalized fragrances to custom alterations, we bring your vision to life.
-          </p>
-        </div>
-      </div>
-    </section>
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">Aurevia</a>
 
-    <!-- SECTION 2: CUSTOMISE YOUR ORDER (Main CTA Card) -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-card reveal">
-          <div class="cta-icon">
-            <i data-lucide="sparkles"></i>
+          <!-- Desktop Nav -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="hover-link">About</a></li>
+            <li><a href="clothing.html" class="hover-link">Clothing</a></li>
+            <li><a href="bags.html" class="hover-link">Bags</a></li>
+            <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
+            <li><a href="customise.html" class="active">Customise</a></li>
+            <li><a href="trending.html" class="hover-link">Trending</a></li>
+            <li><a href="contact.html" class="hover-link">Contact</a></li>
+          </ul>
+
+          <!-- Actions -->
+          <div class="nav-actions">
+            <button class="nav-icon-btn" aria-label="Bag">
+              <svg
+                width="22"
+                height="22"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M6 6h15l-1.5 9h-12z" />
+                <circle cx="9" cy="20" r="1.5" />
+                <circle cx="18" cy="20" r="1.5" />
+                <path d="M6 6L5 3H2" />
+              </svg>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button
+              class="hamburger"
+              id="hamburgerBtn"
+              aria-label="Menu"
+              aria-expanded="false"
+            >
+              <span></span><span></span><span></span>
+            </button>
           </div>
-          <h2 class="cta-title">Let's Customise Your Order</h2>
-          <p class="cta-description">
-            Have a specific vision in mind? Whether it's a bespoke fragrance blend, personalized embroidery, or a unique gift set tailored to your preferences — we're here to make it happen. Fill out our customization form and our team will get back to you within 24-48 hours with a personalized quote.
-          </p>
-          <a href="#" class="cta-button">
-            <span>Customise Now</span>
-            <i data-lucide="arrow-right" class="cta-arrow"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="logo">Aurevia</a>
+        <button
+          class="mobile-close-btn"
+          id="closeMenuBtn"
+          aria-label="Close menu"
+        >
+          <svg
+            width="28"
+            height="28"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-menu-nav">
+        <li><a href="index.html">About</a></li>
+        <li><a href="clothing.html">Clothing</a></li>
+        <li><a href="bags.html">Bags</a></li>
+        <li><a href="fragrances.html">Fragrances</a></li>
+        <li><a href="customise.html" class="active">Customise</a></li>
+        <li><a href="trending.html">Trending</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+        <div class="mobile-menu-social">
+          <a href="#" aria-label="Instagram">
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+              />
+            </svg>
           </a>
         </div>
+        <p class="mobile-menu-copyright">&copy; 2025 Aurevia</p>
       </div>
-    </section>
+    </div>
 
-    <!-- SECTION 3: WHAT YOU CAN CUSTOMISE -->
-    <section class="options-section">
-      <div class="container">
-        <h2 class="section-title reveal">What You Can Customise</h2>
-        
-        <div class="options-grid">
-          <!-- Card 1: Custom Fragrances -->
-          <div class="option-card reveal">
-            <div class="option-icon">
-              <i data-lucide="flower-2"></i>
-            </div>
-            <h3 class="option-title">Custom Fragrances</h3>
-            <p class="option-description">
-              Work with our perfumers to create a unique scent that's exclusively yours. Choose from our library of notes.
-            </p>
-          </div>
-
-          <!-- Card 2: Personalized Embroidery -->
-          <div class="option-card reveal">
-            <div class="option-icon">
-              <i data-lucide="scissors"></i>
-            </div>
-            <h3 class="option-title">Personalized Embroidery</h3>
-            <p class="option-description">
-              Add names, initials, or custom designs to clothing, bags, and accessories. Perfect for gifts.
-            </p>
-          </div>  
-
-          <!-- Card 4: Special Requests -->
-          <div class="option-card reveal">
-            <div class="option-icon">
-              <i data-lucide="star"></i>
-            </div>
-            <h3 class="option-title">Special Requests</h3>
-            <p class="option-description">
-              Have something unique in mind? We'd love to hear your ideas and make them a reality.
+    <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════ -->
+    <main>
+      <!-- SECTION 1: HERO / HEADER -->
+      <section class="customise-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-line reveal"></div>
+            <h1 class="hero-title reveal">Customise</h1>
+            <p class="hero-description reveal">
+              Create something uniquely yours. From personalized fragrances to
+              custom alterations, we bring your vision to life.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SECTION 4: HOW IT WORKS -->
-    <section class="process-section">
-      <div class="container">
-        <h2 class="section-title reveal">How It Works</h2>
-        
-        <div class="process-steps">
-          <!-- Step 1 -->
-          <div class="process-step reveal">
-            <span class="step-number">01</span>
-            <h3 class="step-title">Fill the Form</h3>
-            <p class="step-description">
-              Tell us about your customization idea through our detailed form. Include as much detail as possible.
+      <!-- SECTION 2: CUSTOMISE YOUR ORDER (Main CTA Card) -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card reveal">
+            <div class="cta-icon">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h2 class="cta-title">Let's Customise Your Order</h2>
+            <p class="cta-description">
+              Have a specific vision in mind? Whether it's a bespoke fragrance
+              blend, personalized embroidery. Fill out our
+              customization form and our team will get back to you within 24-48
+              hours with a personalized quote.
             </p>
-          </div>
-
-          <!-- Connector -->
-          <div class="step-connector reveal"></div>
-
-          <!-- Step 2 -->
-          <div class="process-step reveal">
-            <span class="step-number">02</span>
-            <h3 class="step-title">Get a Quote</h3>
-            <p class="step-description">
-              Our team will review your request and send a personalized quote within 24-48 hours.
-            </p>
-          </div>
-
-          <!-- Connector -->
-          <div class="step-connector reveal"></div>
-
-          <!-- Step 3 -->
-          <div class="process-step reveal">
-            <span class="step-number">03</span>
-            <h3 class="step-title">We Create</h3>
-            <p class="step-description">
-              Once approved, we bring your vision to life with care, precision, and quality craftsmanship.
-            </p>
+            <a
+              href="https://docs.google.com/forms/d/1KhmjA224N5NW5grS5wQhe-cpqS3kxIzRiwt_fX6bbEY/edit"
+              class="cta-button"
+            >
+              <span>Customise Now</span>
+              <i data-lucide="arrow-right" class="cta-arrow"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <!-- SECTION 3: WHAT YOU CAN CUSTOMISE -->
+      <section class="options-section">
+        <div class="container">
+          <h2 class="section-title reveal">What You Can Customise</h2>
 
-  <!-- ═══════════════════════════════════════════════════════════════
+          <div class="options-grid">
+            <!-- Card 1: Custom Fragrances -->
+            <div class="option-card reveal">
+              <div class="option-icon">
+                <i data-lucide="flower-2"></i>
+              </div>
+              <h3 class="option-title">Custom Fragrances</h3>
+              <p class="option-description">
+                Work with our perfumers to create a unique scent that's
+                exclusively yours. Choose from our library of notes.
+              </p>
+            </div>
+
+            <!-- Card 2: Personalized Embroidery -->
+            <div class="option-card reveal">
+              <div class="option-icon">
+                <i data-lucide="scissors"></i>
+              </div>
+              <h3 class="option-title">Personalized Embroidery</h3>
+              <p class="option-description">
+                Add names, initials, or custom designs to clothing, bags, and
+                accessories. Perfect for gifts.
+              </p>
+            </div>
+
+            <!-- Card 4: Special Requests -->
+            <div class="option-card reveal">
+              <div class="option-icon">
+                <i data-lucide="star"></i>
+              </div>
+              <h3 class="option-title">Special Requests</h3>
+              <p class="option-description">
+                Have something unique in mind? We'd love to hear your ideas and
+                make them a reality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: HOW IT WORKS -->
+      <section class="process-section">
+        <div class="container">
+          <h2 class="section-title reveal">How It Works</h2>
+
+          <div class="process-steps">
+            <!-- Step 1 -->
+            <div class="process-step reveal">
+              <span class="step-number">01</span>
+              <h3 class="step-title">Fill the Form</h3>
+              <p class="step-description">
+                Tell us about your customization idea through our detailed form.
+                Include as much detail as possible.
+              </p>
+            </div>
+
+            <!-- Connector -->
+            <div class="step-connector reveal"></div>
+
+            <!-- Step 2 -->
+            <div class="process-step reveal">
+              <span class="step-number">02</span>
+              <h3 class="step-title">Get a Quote</h3>
+              <p class="step-description">
+                Our team will review your request and send a personalized quote
+                within 24-48 hours.
+              </p>
+            </div>
+
+            <!-- Connector -->
+            <div class="step-connector reveal"></div>
+
+            <!-- Step 3 -->
+            <div class="process-step reveal">
+              <span class="step-number">03</span>
+              <h3 class="step-title">We Create</h3>
+              <p class="step-description">
+                Once approved, we bring your vision to life with care,
+                precision, and quality craftsmanship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3>Aurevia</h3>
+            <p>
+              Elegance in every detail. Clothing, leather goods, fragrances, and
+              customise — united by an unwavering commitment to quality and
+              craft.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li><a href="clothing.html">Clothing</a></li>
+              <li><a href="bags.html">Bags</a></li>
+              <li><a href="fragrances.html">Fragrances</a></li>
+              <li><a href="customise.html">Customise</a></li>
+              <li><a href="trending.html">New Arrivals</a></li>
+            </ul>
+          </div>
 
-        <!-- Brand -->
-        <div class="footer-brand">
-          <h3>Aurevia</h3>
-          <p>Elegance in every detail. Clothing, leather goods, fragrances, and customise — united by an unwavering commitment to quality and craft.</p>
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Instagram">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Pinterest">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="X (Twitter)">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+          <!-- Help -->
+          <div class="footer-col">
+            <h4>Help</h4>
+            <ul class="footer-links">
+              <li><a href="contact.html">FAQ</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- Connect -->
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <ul class="footer-links">
-            <li><a href="clothing.html">Clothing</a></li>
-            <li><a href="bags.html">Bags</a></li>
-            <li><a href="fragrances.html">Fragrances</a></li>
-            <li><a href="customise.html">Customise</a></li>
-            <li><a href="trending.html">New Arrivals</a></li>
-          </ul>
-        </div>
-
-        <!-- Help -->
-        <div class="footer-col">
-          <h4>Help</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html">FAQ</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">Size Guide</a></li>
-          </ul>
-        </div>
-
-        <!-- Connect -->
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Our Story</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-        </div>
-
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2025 Aurevia. All rights reserved. &middot; Crafted with intention.</p>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2025 Aurevia. All rights reserved. &middot; Crafted with
+            intention.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/customise.js"></script>
-  <script src="js/cart.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
-</body>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/customise.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
