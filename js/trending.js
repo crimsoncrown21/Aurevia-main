@@ -98,8 +98,17 @@ function renderRankingList() {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const productName = btn.dataset.product;
-      showAddedFeedback(btn);
-      // In real app: addToCart(productName)
+      const product = top20Data.find(p => p.name === productName);
+      if (product) {
+        addToCart({
+          id: product.name.toLowerCase().replace(/\s+/g, '-'),
+          name: product.name,
+          price: product.price,
+          image: '',
+          quantity: 1
+        });
+        showAddedFeedback(btn);
+      }
     });
   });
 }

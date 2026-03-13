@@ -25,31 +25,86 @@ updateNav();
 
 /* ─── 3. Mobile menu ─── */
 const mobileMenu   = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
 const hamburgerBtn = document.getElementById('hamburgerBtn');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
 
+let isMenuOpen = false;
+
 function openMenu() {
   if (!mobileMenu) return;
+  
+  isMenuOpen = true;
+  
+  // Add class to body to prevent scrolling
+  document.body.classList.add('menu-open');
+  
+  // Animate hamburger to X
+  if (hamburgerBtn) hamburgerBtn.classList.add('active');
+  
+  // Slide in drawer
   mobileMenu.classList.add('open');
   mobileMenu.setAttribute('aria-hidden', 'false');
+  
+  // Fade in overlay
+  if (mobileOverlay) mobileOverlay.classList.add('visible');
+  
+  // Set aria attributes for accessibility
   if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
   if (!mobileMenu) return;
+  
+  isMenuOpen = false;
+  
+  // Remove class from body to allow scrolling
+  document.body.classList.remove('menu-open');
+  
+  // Animate X back to hamburger
+  if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+  
+  // Slide out drawer
   mobileMenu.classList.remove('open');
   mobileMenu.setAttribute('aria-hidden', 'true');
+  
+  // Fade out overlay
+  if (mobileOverlay) mobileOverlay.classList.remove('visible');
+  
+  // Set aria attributes for accessibility
   if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
 }
 
-if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
-if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
-if (mobileMenu) {
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+function toggleMenu() {
+  if (isMenuOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMenu);
+if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    closeMenu();
+  }));
+}
+
+document.addEventListener('keydown', e => { 
+  if (e.key === 'Escape' && isMenuOpen) {
+    closeMenu();
+  }
+});
+
+// Close menu when resizing to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768 && isMenuOpen) {
+    closeMenu();
+  }
+});
 
 /* ─── 4. Scroll-reveal via Intersection Observer ─── */
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');

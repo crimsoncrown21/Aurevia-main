@@ -36,6 +36,11 @@
   padding: 0;
 }
 
+*:focus-visible {
+  outline: 2px solid var(--warm-brown);
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -180,6 +185,10 @@ button {
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(121, 87, 87, 0.35);
 }
+.btn-primary:focus-visible {
+  outline: 3px solid var(--deep-brown);
+  outline-offset: 2px;
+}
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-secondary {
@@ -201,5 +210,9 @@ button {
   background: var(--dark-brown);
   color: var(--white);
   transform: scale(1.05);
+}
+.btn-secondary:focus-visible {
+  outline: 3px solid var(--dark-brown);
+  outline-offset: 2px;
 }
 .btn-secondary:active { transform: scale(0.98); }

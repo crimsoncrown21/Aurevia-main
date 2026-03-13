@@ -160,8 +160,9 @@
 }
 
 .options-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
@@ -175,6 +176,8 @@
   text-align: center;
   min-height: 220px;
   transition: all 0.3s ease;
+  width: calc(33.333% - 20px);
+  min-width: 250px;
 }
 
 .option-card:hover {
@@ -295,7 +298,6 @@
   }
 
   .options-grid {
-    grid-template-columns: repeat(2, 1fr);
     max-width: 700px;
   }
 
@@ -351,11 +353,12 @@
   }
 
   .options-grid {
-    grid-template-columns: 1fr;
     max-width: 400px;
   }
 
   .option-card {
+    width: 100%;
+    min-width: 0;
     min-height: auto;
     padding: 25px 20px;
   }
