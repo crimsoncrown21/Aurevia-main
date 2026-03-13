@@ -400,6 +400,519 @@ const AUREVIA_PRODUCTS = [
     }
   },
 
+  {
+    id: 'bag-002',
+    name: 'Mini Crossbody Bag',
+    category: 'bags',
+    subcategory: 'crossbody',
+    brand: 'Aurevia',
+    price: 7387.00,
+    originalPrice: 8715.00,
+    discount: 15,
+    rating: 4.5,
+    reviewCount: 38,
+    colors: [
+      { name: 'Cognac', hex: '#8B5E3C' },
+      { name: 'Black',  hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Cognac: 10, Black: 18 },
+    images: [
+      'images/bags/sling bags/bag1.jpeg',
+      'images/bags/sling bags/bag2.jpeg',
+      'images/bags/sling bags/bag3.jpeg'
+    ],
+    description: 'A refined mini crossbody bag in supple pebbled leather. Compact yet remarkably functional, with an adjustable strap that takes you effortlessly from day to evening.',
+    keyFeatures: [
+      'Supple pebbled leather exterior',
+      'Adjustable and detachable shoulder strap',
+      'Interior card slots and zip compartment',
+      'Turn-lock closure in brushed gold'
+    ],
+    stylingTips: 'The perfect companion for evenings out — holds your essentials without compromise.',
+    details: { 'Material': 'Pebbled Italian Leather', 'Dimensions': '8″ × 6″ × 2.5″', 'Closure': 'Turn-Lock', 'Strap Drop': 'Adjustable 20″–24″', 'Lining': 'Suede', 'Hardware': 'Brushed Gold' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [
+      { author: 'Fatima H.', verified: true, rating: 5, date: '5 days ago', text: 'Perfect size, beautiful leather. The cognac colour is stunning in person.', color: 'Cognac', helpful: 14 }
+    ],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials or name (up to 5 characters)', price: 20 },
+        { type: 'strap', name: 'Custom Strap Length', description: 'Adjust strap to your preference', price: 10 },
+        { type: 'charm', name: 'Bag Charm', description: 'Add a matching leather charm', price: 18 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-003',
+    name: 'Elegant Evening Clutch',
+    category: 'bags',
+    subcategory: 'clutch',
+    brand: 'Aurevia',
+    price: 6566.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.7,
+    reviewCount: 29,
+    colors: [
+      { name: 'Gold', hex: '#D4AF37' },
+      { name: 'Black', hex: '#1a1a1a' },
+      { name: 'Navy', hex: '#2c3e50' }
+    ],
+    sizes: null,
+    stock: { Gold: 8, Black: 15, Navy: 6 },
+    images: [
+      'images/bags/clutch bags/bag3.jpeg'
+    ],
+    description: 'A sophisticated evening clutch with metallic accents. The perfect accessory for formal occasions, featuring a sleek silhouette and secure magnetic closure.',
+    keyFeatures: [
+      'Metallic textured exterior',
+      'Compact interior with card slots',
+      'Magnetic snap closure',
+      'Detachable chain strap'
+    ],
+    stylingTips: 'Pairs beautifully with evening gowns and cocktail dresses.',
+    details: { 'Material': 'Metallic Faux Leather', 'Dimensions': '10″ × 6″ × 2″', 'Closure': 'Magnetic Snap', 'Strap': 'Detachable Chain 48″', 'Lining': 'Satin', 'Hardware': 'Gold Tone' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials (up to 3 characters)', price: 15 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-004',
+    name: 'Quilted Mini Bag',
+    category: 'bags',
+    subcategory: 'clutch',
+    brand: 'Aurevia',
+    price: 8295.00,
+    originalPrice: 9954.00,
+    discount: 20,
+    rating: 4.6,
+    reviewCount: 22,
+    colors: [
+      { name: 'Blush', hex: '#F5E6E8' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Blush: 12, Black: 18 },
+    images: [
+      'images/bags/clutch bags/bag4.jpeg'
+    ],
+    description: 'A chic quilted mini bag with gold-tone hardware. The diamond-quilted pattern adds timeless elegance to this versatile piece.',
+    keyFeatures: [
+      'Diamond quilted pattern',
+      'Gold-tone chain strap',
+      'Multiple interior compartments',
+      'Turn-lock closure'
+    ],
+    stylingTips: 'Perfect for both daytime and evening wear.',
+    details: { 'Material': 'Quilted Vegan Leather', 'Dimensions': '9″ × 6″ × 3″', 'Closure': 'Turn-Lock', 'Strap': 'Chain 22″–48″', 'Lining': 'Polyester', 'Hardware': 'Gold Tone' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials', price: 15 },
+        { type: 'strap', name: 'Chain Length', description: 'Adjust chain length', price: 10 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-005',
+    name: 'Beaded Statement Clutch',
+    category: 'bags',
+    subcategory: 'clutch',
+    brand: 'Aurevia',
+    price: 12035.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.9,
+    reviewCount: 18,
+    colors: [
+      { name: 'Multi', hex: '#D4AF37' }
+    ],
+    sizes: null,
+    stock: { Multi: 6 },
+    images: [
+      'images/bags/clutch bags/bag5.jpeg'
+    ],
+    description: 'An artisanal beaded clutch featuring intricate hand-stitched patterns. A statement piece that elevates any evening ensemble.',
+    keyFeatures: [
+      'Hand-beaded exterior',
+      'One-of-a-kind artisanal design',
+      'Soft satin lining',
+      'Snap closure with hidden magnet'
+    ],
+    stylingTips: 'Let this clutch be the star — pair with understated jewelry.',
+    details: { 'Material': 'Hand-beaded with Satin Lining', 'Dimensions': '11″ × 7″ × 2″', 'Closure': 'Magnetic Snap', 'Strap': 'None', 'Lining': 'Satin', 'Hardware': 'Hidden Magnet' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'bag-006',
+    name: 'Pearl Handle Clutch',
+    category: 'bags',
+    subcategory: 'clutch',
+    brand: 'Aurevia',
+    price: 9130.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.8,
+    reviewCount: 24,
+    colors: [
+      { name: 'Ivory', hex: '#FFFFF0' },
+      { name: 'Sage', hex: '#9CAF88' }
+    ],
+    sizes: null,
+    stock: { Ivory: 9, Sage: 7 },
+    images: [
+      'images/bags/clutch bags/bag6.jpeg'
+    ],
+    description: 'A romantic clutch with an elegant pearl handle. The structured design and lustrous finish make it perfect for weddings and special occasions.',
+    keyFeatures: [
+      'Elegant pearl handle',
+      'Structured box design',
+      'Satin interior with mirror',
+      'Secure clasp closure'
+    ],
+    stylingTips: 'The perfect accessory for weddings and garden parties.',
+    details: { 'Material': 'Faux Leather with Pearl Handle', 'Dimensions': '8″ × 5″ × 3″', 'Closure': 'Clasp', 'Strap': 'Pearl Handle 5″', 'Lining': 'Satin with Mirror', 'Hardware': 'Gold Tone' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'bag-007',
+    name: 'Premium Leather Laptop Briefcase',
+    category: 'bags',
+    subcategory: 'laptop',
+    brand: 'Aurevia',
+    price: 15355.00,
+    originalPrice: 17430.00,
+    discount: 12,
+    rating: 4.7,
+    reviewCount: 42,
+    colors: [
+      { name: 'Tan', hex: '#C4A77D' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Tan: 10, Black: 14 },
+    images: [
+      'images/bags/laptop bags/bag3.jpeg'
+    ],
+    description: 'A professional leather briefcase designed for the modern executive. Fits up to 15" laptops with dedicated padding and organization compartments.',
+    keyFeatures: [
+      'Full-grain leather construction',
+      'Padded 15" laptop compartment',
+      'Multiple organizational pockets',
+      'Detachable shoulder strap',
+      'TSA-friendly design'
+    ],
+    stylingTips: 'The perfect companion for business travel and daily commutes.',
+    details: { 'Material': 'Full-Grain Leather', 'Dimensions': '16″ × 12″ × 4″', 'Closure': 'Zipper + Buckle', 'Strap': 'Detachable Shoulder Strap 48″', 'Lining': 'Nylon', 'Hardware': 'Brushed Silver' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials on front pocket', price: 25 },
+        { type: 'monogram', name: 'Interior Monogram', description: 'Personalized interior tag', price: 15 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-008',
+    name: 'Executive Rolling Laptop Bag',
+    category: 'bags',
+    subcategory: 'laptop',
+    brand: 'Aurevia',
+    price: 18765.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 31,
+    colors: [
+      { name: 'Charcoal', hex: '#3B3030' },
+      { name: 'Navy', hex: '#2c3e50' }
+    ],
+    sizes: null,
+    stock: { Charcoal: 8, Navy: 10 },
+    images: [
+      'images/bags/laptop bags/bag4.jpeg'
+    ],
+    description: 'A rolling laptop bag with premium features for the frequent traveler. Smooth-rolling wheels and a telescopic handle make airport navigation effortless.',
+    keyFeatures: [
+      'Smooth dual-wheel system',
+      'Telescopic handle with multiple stops',
+      'Padded 17" laptop compartment',
+      'Quick-access front pocket',
+      'Durable ballistic nylon'
+    ],
+    stylingTips: 'Essential for business travelers who value both style and function.',
+    details: { 'Material': 'Ballistic Nylon', 'Dimensions': '18″ × 14″ × 9″', 'Closure': 'Zipper', 'Strap': 'Telescopic Handle + Top Carry', 'Lining': 'Padded Nylon', 'Hardware': 'Gunmetal' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'bag-009',
+    name: 'Convertible Backpack Briefcase',
+    category: 'bags',
+    subcategory: 'laptop',
+    brand: 'Aurevia',
+    price: 14178.00,
+    originalPrice: 16185.00,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 53,
+    colors: [
+      { name: 'Brown', hex: '#5D4037' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Brown: 15, Black: 20 },
+    images: [
+      'images/bags/laptop bags/bag5.jpeg'
+    ],
+    description: 'A versatile bag that converts from briefcase to backpack in seconds. Perfect for commuters who need flexibility throughout their day.',
+    keyFeatures: [
+      '2-in-1 convertible design',
+      'Hidden backpack straps',
+      'Padded 16" laptop sleeve',
+      'RFID-blocking pocket',
+      'Water-resistant coating'
+    ],
+    stylingTips: 'Switch from professional meetings to casual commuting effortlessly.',
+    details: { 'Material': 'Water-Resistant Canvas', 'Dimensions': '17″ × 12″ × 5″', 'Closure': 'Zipper', 'Strap': 'Convertible Handle + Backpack Straps', 'Lining': 'Padded Polyester', 'Hardware': 'Matte Black' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Tag', description: 'Custom leather luggage tag', price: 20 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-010',
+    name: 'Woven Bucket Sling',
+    category: 'bags',
+    subcategory: 'sling',
+    brand: 'Aurevia',
+    price: 9954.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.6,
+    reviewCount: 37,
+    colors: [
+      { name: 'Natural', hex: '#D4A77D' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Natural: 18, Black: 22 },
+    images: [
+      'images/bags/sling bags/bag3.jpeg'
+    ],
+    description: 'A stylish woven bucket bag with a drawstring closure. The bohemian-inspired design features artisanal weaving and premium leather accents.',
+    keyFeatures: [
+      'Hand-woven straw body',
+      'Genuine leather base and trim',
+      'Drawstring closure with tassel',
+      'Adjustable leather shoulder strap',
+      'Cotton canvas lining'
+    ],
+    stylingTips: 'Perfect for summer outings and beach days.',
+    details: { 'Material': 'Woven Straw + Leather Trim', 'Dimensions': '10″ × 10″ × 7″', 'Closure': 'Drawstring', 'Strap': 'Adjustable Leather 20″–26″', 'Lining': 'Cotton Canvas', 'Hardware': 'Antique Brass' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'bag-011',
+    name: 'Canvas Market Tote',
+    category: 'bags',
+    subcategory: 'tote',
+    brand: 'Aurevia',
+    price: 5395.00,
+    originalPrice: 6225.00,
+    discount: 15,
+    rating: 4.4,
+    reviewCount: 28,
+    colors: [
+      { name: 'Natural', hex: '#F5F5DC' },
+      { name: 'Navy', hex: '#2c3e50' }
+    ],
+    sizes: null,
+    stock: { Natural: 25, Navy: 20 },
+    images: [
+      'images/bags/tote bags/bag3.jpeg'
+    ],
+    description: 'A durable canvas tote perfect for weekend markets and daily errands. The reinforced handles and spacious interior make it an everyday essential.',
+    keyFeatures: [
+      'Heavy-duty 16oz canvas',
+      'Reinforced double-stitched handles',
+      'Interior zip pocket',
+      'Key leash with clip',
+      'Water-resistant bottom panel'
+    ],
+    stylingTips: 'Ideal for farmers markets, beach days, and daily errands.',
+    details: { 'Material': '16oz Cotton Canvas', 'Dimensions': '18″ × 15″ × 6″', 'Closure': 'Open Top', 'Strap': 'Double Handle 12″ drop', 'Lining': 'Unlined with Zip Pocket', 'Hardware': 'Nickel' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Custom Embroidery', description: 'Add name or monogram', price: 18 },
+        { type: 'monogram', name: 'Canvas Patch', description: 'Sewn canvas patch with initials', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-012',
+    name: 'Leather Shopper Tote',
+    category: 'bags',
+    subcategory: 'tote',
+    brand: 'Aurevia',
+    price: 13269.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.9,
+    reviewCount: 45,
+    colors: [
+      { name: 'Cognac', hex: '#8B5E3C' },
+      { name: 'Chestnut', hex: '#654321' }
+    ],
+    sizes: null,
+    stock: { Cognac: 10, Chestnut: 8 },
+    images: [
+      'images/bags/tote bags/bag4.jpeg'
+    ],
+    description: 'A spacious leather shopper tote with a relaxed silhouette. The supple leather drapes beautifully while maintaining structure and durability.',
+    keyFeatures: [
+      'Full-grain leather with natural grain',
+      'Unlined interior with leather pockets',
+      'Magnetic snap closure',
+      'Reinforced rolled handles',
+      'Ages beautifully with patina'
+    ],
+    stylingTips: 'A classic that pairs with everything from jeans to business attire.',
+    details: { 'Material': 'Full-Grain Leather', 'Dimensions': '16″ × 14″ × 5″', 'Closure': 'Magnetic Snap', 'Strap': 'Rolled Handle 10″ drop', 'Lining': 'Unlined Leather', 'Hardware': 'Antique Brass' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials on interior pocket', price: 25 }
+      ]
+    }
+  },
+
+  {
+    id: 'bag-013',
+    name: 'Weekend Travel Tote',
+    category: 'bags',
+    subcategory: 'tote',
+    brand: 'Aurevia',
+    price: 11620.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.7,
+    reviewCount: 33,
+    colors: [
+      { name: 'Olive', hex: '#556B2F' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: null,
+    stock: { Olive: 12, Black: 16 },
+    images: [
+      'images/bags/tote bags/bag5.jpeg'
+    ],
+    description: 'A generously sized weekend tote designed for short getaways. Features a luggage sleeve to slide over suitcase handles for easy travel.',
+    keyFeatures: [
+      'Durable waxed canvas exterior',
+      'Luggage sleeve for travel convenience',
+      'Padded 15" laptop compartment',
+      'Shoe compartment with ventilation',
+      'Detachable padded shoulder strap'
+    ],
+    stylingTips: 'The perfect companion for weekend escapes and overnight trips.',
+    details: { 'Material': 'Waxed Canvas', 'Dimensions': '20″ × 13″ × 9″', 'Closure': 'Zipper', 'Strap': 'Handle 9″ + Shoulder Strap 48″', 'Lining': 'Water-Resistant Nylon', 'Hardware': 'Gunmetal' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Monogram Patch', description: 'Canvas monogram patch', price: 15 },
+        { type: 'tag', name: 'Luggage Tag', description: 'Matching leather luggage tag', price: 20 }
+      ]
+    }
+  },
+
   /* ─── FRAGRANCES ────────────────────────────── */
   {
     id: 'fragrance-001',
@@ -803,6 +1316,401 @@ const AUREVIA_PRODUCTS = [
       options: [
         { type: 'embroidery', name: 'Personalized Embroidery', description: 'Add initials or name', price: 15 },
         { type: 'patches', name: 'Custom Patches', description: 'Add decorative patches', price: 10 }
+      ]
+    }
+  },
+
+  /* ─── ADDITIONAL DRESS PRODUCTS ──────────── */
+  {
+    id: 'dress-004',
+    name: 'Floral Maxi Dress',
+    category: 'clothing',
+    subcategory: 'dresses',
+    brand: 'Aurevia',
+    price: 9954.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.6,
+    reviewCount: 34,
+    colors: [
+      { name: 'Multi Floral', hex: '#E8D9B8' },
+      { name: 'Navy Floral', hex: '#2c3e50' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 6, S: 12, M: 16, L: 10, XL: 5 },
+    images: [
+      'images/cloths/Dresses/dress4.jpeg'
+    ],
+    description: 'A flowing maxi dress with a beautiful floral print. The lightweight fabric and tiered design create effortless movement and elegance.',
+    keyFeatures: [
+      'Lightweight chiffon fabric',
+      'Elegant tiered design',
+      'Adjustable waist tie',
+      'Flattering V-neckline',
+      'Lined for comfort'
+    ],
+    stylingTips: 'Perfect for garden parties, brunches, or vacation getaways.',
+    details: { 'Material': '100% Polyester Chiffon', 'Fit': 'Relaxed with Tie Waist', 'Length': 'Maxi', 'Neckline': 'V-Neck', 'Sleeve Length': 'Short Sleeve', 'Care Instructions': 'Machine wash cold, hang dry' },
+    measurements: { 'Bust (Size M)': '38 inches (97 cm)', 'Waist (Size M)': '30 inches (76 cm)', 'Length (Size M)': '52 inches (132 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Personalized Embroidery', description: 'Add initials on hem', price: 15 },
+        { type: 'length', name: 'Custom Length', description: 'Adjust dress length', price: 20 }
+      ]
+    }
+  },
+
+  {
+    id: 'dress-005',
+    name: 'Cocktail Party Dress',
+    category: 'clothing',
+    subcategory: 'dresses',
+    brand: 'Aurevia',
+    price: 11620.00,
+    originalPrice: 14178.00,
+    discount: 18,
+    rating: 4.8,
+    reviewCount: 41,
+    colors: [
+      { name: 'Burgundy', hex: '#800020' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 4, S: 10, M: 14, L: 12, XL: 6 },
+    images: [
+      'images/cloths/Dresses/dress5.jpeg'
+    ],
+    description: 'A sophisticated cocktail dress with elegant lace detailing. The fitted bodice and flared skirt create a timeless silhouette for special occasions.',
+    keyFeatures: [
+      'Elegant lace overlay',
+      'Fitted bodice with boning',
+      'Flared A-line skirt',
+      'Invisible back zipper',
+      'Fully lined interior'
+    ],
+    stylingTips: 'Pair with statement heels and minimal jewelry for a stunning evening look.',
+    details: { 'Material': 'Lace with Polyester Lining', 'Fit': 'Fitted Bodice, Flared Skirt', 'Length': 'Knee Length', 'Neckline': 'Boat Neck', 'Sleeve Length': 'Cap Sleeve', 'Care Instructions': 'Dry clean only' },
+    measurements: { 'Bust (Size M)': '36 inches (91 cm)', 'Waist (Size M)': '28 inches (71 cm)', 'Length (Size M)': '38 inches (97 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Personalized Embroidery', description: 'Add initials inside neckline', price: 12 }
+      ]
+    }
+  },
+
+  /* ─── ADDITIONAL TOP PRODUCTS ──────────── */
+  {
+    id: 'top-004',
+    name: 'Ribbed Knit Tank',
+    category: 'clothing',
+    subcategory: 'tops',
+    brand: 'Aurevia',
+    price: 3315.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.3,
+    reviewCount: 19,
+    colors: [
+      { name: 'White', hex: '#FFFFFF' },
+      { name: 'Black', hex: '#1a1a1a' },
+      { name: 'Taupe', hex: '#8B7D6B' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 15, S: 20, M: 25, L: 18, XL: 10 },
+    images: [
+      'images/cloths/Tops & T-shirts/dress4.jpeg'
+    ],
+    description: 'A versatile ribbed knit tank with a flattering fitted silhouette. The stretchy fabric provides all-day comfort and easy layering.',
+    keyFeatures: [
+      'Soft ribbed knit fabric',
+      'Figure-hugging fit',
+      'High neckline',
+      'Thick shoulder straps',
+      'Breathable cotton blend'
+    ],
+    stylingTips: 'Layer under blazers or wear alone with high-waisted bottoms.',
+    details: { 'Material': '95% Cotton, 5% Spandex', 'Fit': 'Fitted', 'Neckline': 'High Neck', 'Sleeve Length': 'Sleeveless', 'Care Instructions': 'Machine wash cold, lay flat to dry' },
+    measurements: { 'Chest (Size M)': '34 inches (86 cm)', 'Length (Size M)': '24 inches (61 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'top-005',
+    name: 'Satin Blouse',
+    category: 'clothing',
+    subcategory: 'tops',
+    brand: 'Aurevia',
+    price: 6225.00,
+    originalPrice: 7470.00,
+    discount: 17,
+    rating: 4.7,
+    reviewCount: 27,
+    colors: [
+      { name: 'Champagne', hex: '#F7E7CE' },
+      { name: 'Emerald', hex: '#50C878' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 8, S: 12, M: 15, L: 10, XL: 5 },
+    images: [
+      'images/cloths/Tops & T-shirts/dress5.jpeg'
+    ],
+    description: 'An elegant satin blouse with delicate draping. The lustrous fabric and refined details make it perfect for both office and evening wear.',
+    keyFeatures: [
+      'Luxurious satin fabric',
+      'Elegant cowl neckline',
+      'Long sleeves with button cuffs',
+      'Relaxed, flowing fit',
+      'Mother-of-pearl buttons'
+    ],
+    stylingTips: 'Tuck into tailored trousers for work or pair with a satin skirt for evening.',
+    details: { 'Material': '100% Polyester Satin', 'Fit': 'Relaxed', 'Neckline': 'Cowl Neck', 'Sleeve Length': 'Long Sleeve', 'Care Instructions': 'Hand wash cold or dry clean' },
+    measurements: { 'Chest (Size M)': '40 inches (102 cm)', 'Length (Size M)': '26 inches (66 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'monogram', name: 'Cuff Monogram', description: 'Add initials on cuff', price: 10 }
+      ]
+    }
+  },
+
+  /* ─── ADDITIONAL BOTTOM PRODUCTS ──────────── */
+  {
+    id: 'bottom-004',
+    name: 'Denim Mini Skirt',
+    category: 'clothing',
+    subcategory: 'bottoms',
+    brand: 'Aurevia',
+    price: 4562.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 22,
+    colors: [
+      { name: 'Light Wash', hex: '#ADD8E6' },
+      { name: 'Dark Wash', hex: '#191970' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 10, S: 18, M: 20, L: 15, XL: 8 },
+    images: [
+      'images/cloths/Bottoms/derss1.jpeg'
+    ],
+    description: 'A classic denim mini skirt with a modern A-line cut. The versatile design pairs effortlessly with everything from tees to blouses.',
+    keyFeatures: [
+      'Premium stretch denim',
+      'Flattering A-line silhouette',
+      'Classic five-pocket styling',
+      'Raw hem detail',
+      'Button-fly closure'
+    ],
+    stylingTips: 'Style with the Relaxed Cotton Tee and sneakers for a casual weekend look.',
+    details: { 'Material': '98% Cotton, 2% Elastane', 'Fit': 'A-Line Mini', 'Length': 'Mini (16″)', 'Closure': 'Button Fly', 'Care Instructions': 'Machine wash cold, tumble dry low' },
+    measurements: { 'Waist (Size M)': '28 inches (71 cm)', 'Length (Size M)': '16 inches (41 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Pocket Embroidery', description: 'Add initials on back pocket', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'bottom-005',
+    name: 'Linen Culottes',
+    category: 'clothing',
+    subcategory: 'bottoms',
+    brand: 'Aurevia',
+    price: 5827.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.6,
+    reviewCount: 18,
+    colors: [
+      { name: 'Natural', hex: '#F5F5DC' },
+      { name: 'Sage', hex: '#9CAF88' },
+      { name: 'Navy', hex: '#2c3e50' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 6, S: 12, M: 16, L: 12, XL: 6 },
+    images: [
+      'images/cloths/Bottoms/dress4.jpeg'
+    ],
+    description: 'Breezy linen culottes perfect for warm-weather dressing. The cropped, wide-leg design offers comfort without sacrificing style.',
+    keyFeatures: [
+      '100% European linen',
+      'Cropped wide-leg silhouette',
+      'Elastic back waistband',
+      'Front pleat detail',
+      'Side pockets'
+    ],
+    stylingTips: 'Pair with the Silk Camisole and sandals for effortless summer elegance.',
+    details: { 'Material': '100% Linen', 'Fit': 'Wide-Leg Culotte', 'Length': 'Cropped (24″)', 'Waistband': 'Partial Elastic', 'Care Instructions': 'Machine wash cold, hang to dry' },
+    measurements: { 'Waist (Size M)': '28 inches (71 cm)', 'Inseam (Size M)': '24 inches (61 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: { available: false, options: [] }
+  },
+
+  {
+    id: 'bottom-006',
+    name: 'Paperbag Waist Shorts',
+    category: 'clothing',
+    subcategory: 'bottoms',
+    brand: 'Aurevia',
+    price: 4140.00,
+    originalPrice: 4988.00,
+    discount: 17,
+    rating: 4.4,
+    reviewCount: 16,
+    colors: [
+      { name: 'Khaki', hex: '#C3B091' },
+      { name: 'Black', hex: '#1a1a1a' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 8, S: 14, M: 18, L: 12, XL: 6 },
+    images: [
+      'images/cloths/Bottoms/dress5.jpeg'
+    ],
+    description: 'Stylish paperbag waist shorts with a self-tie belt. The high-rise design and relaxed fit make them a summer wardrobe essential.',
+    keyFeatures: [
+      'Lightweight cotton twill',
+      'Paperbag waist with belt',
+      'High-rise design',
+      'Side and back pockets',
+      'Cuffed hem'
+    ],
+    stylingTips: 'Wear with a tucked-in tank and espadrilles for a chic summer look.',
+    details: { 'Material': '100% Cotton Twill', 'Fit': 'Relaxed with Tie Waist', 'Length': 'Mid-Thigh (4″ inseam)', 'Rise': 'High Rise', 'Care Instructions': 'Machine wash cold, tumble dry low' },
+    measurements: { 'Waist (Size M)': '28 inches (71 cm)', 'Inseam (Size M)': '4 inches (10 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Belt Embroidery', description: 'Add initials on belt', price: 10 }
+      ]
+    }
+  },
+
+  /* ─── ADDITIONAL HOODIE/ SWEATSHIRT PRODUCTS ──────────── */
+  {
+    id: 'sweatshirt-004',
+    name: 'Zip-Up Hoodie',
+    category: 'clothing',
+    subcategory: 'sweatshirts',
+    brand: 'Aurevia',
+    price: 7470.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 31,
+    colors: [
+      { name: 'Heather Grey', hex: '#B8B8B8' },
+      { name: 'Black', hex: '#1a1a1a' },
+      { name: 'Navy', hex: '#2c3e50' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 8, S: 15, M: 22, L: 18, XL: 10 },
+    images: [
+      'images/cloths/Hoodies and Sweatshirts/dress4.jpeg'
+    ],
+    description: 'A versatile zip-up hoodie with a relaxed fit. Perfect for layering during transitional weather or casual lounging.',
+    keyFeatures: [
+      'Soft fleece-lined interior',
+      'Full front zipper',
+      'Adjustable drawstring hood',
+      'Kangaroo front pockets',
+      'Ribbed cuffs and hem'
+    ],
+    stylingTips: 'Layer over a tee with joggers for a relaxed athleisure look.',
+    details: { 'Material': '80% Cotton, 20% Polyester', 'Fit': 'Relaxed', 'Closure': 'Full Zip', 'Pockets': 'Kangaroo', 'Care Instructions': 'Machine wash cold, tumble dry low' },
+    measurements: { 'Chest (Size M)': '44 inches (112 cm)', 'Length (Size M)': '27 inches (69 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Chest Embroidery', description: 'Add initials or small design', price: 15 },
+        { type: 'patches', name: 'Sleeve Patch', description: 'Custom fabric patch', price: 10 }
+      ]
+    }
+  },
+
+  {
+    id: 'sweatshirt-005',
+    name: 'Cropped Sweatshirt',
+    category: 'clothing',
+    subcategory: 'sweatshirts',
+    brand: 'Aurevia',
+    price: 5395.00,
+    originalPrice: 6225.00,
+    discount: 13,
+    rating: 4.7,
+    reviewCount: 24,
+    colors: [
+      { name: 'Blush', hex: '#F5E6E8' },
+      { name: 'Lilac', hex: '#C8A2C8' }
+    ],
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    stock: { XS: 12, S: 18, M: 20, L: 14, XL: 6 },
+    images: [
+      'images/cloths/Hoodies and Sweatshirts/dress5.jpeg'
+    ],
+    description: 'A trendy cropped sweatshirt with a relaxed, boxy fit. The shorter length pairs perfectly with high-waisted bottoms.',
+    keyFeatures: [
+      'Soft brushed fleece',
+      'Boxy, cropped silhouette',
+      'Dropped shoulder design',
+      'Ribbed neckline and hem',
+      'Relaxed crew neck'
+    ],
+    stylingTips: 'Pair with high-waisted Wide-Leg Pants for a modern, balanced look.',
+    details: { 'Material': '85% Cotton, 15% Polyester', 'Fit': 'Boxy Cropped', 'Length': 'Cropped (20″)', 'Neckline': 'Crew Neck', 'Care Instructions': 'Machine wash cold, tumble dry low' },
+    measurements: { 'Chest (Size M)': '46 inches (117 cm)', 'Length (Size M)': '20 inches (51 cm)' },
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'sale',
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'embroidery', name: 'Chest Monogram', description: 'Add initials', price: 12 }
       ]
     }
   }
