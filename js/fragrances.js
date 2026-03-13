@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (saveBtn) {
     saveBtn.addEventListener('click', () => {
       const formula = { base: selectedBase, notes: selectedNotes, intensity: intensity };
-      localStorage.setItem('lumina_custom_fragrance', JSON.stringify(formula));
+      localStorage.setItem('Aurevia_custom_fragrance', JSON.stringify(formula));
       saveBtn.textContent = 'Saved!';
       setTimeout(() => { saveBtn.textContent = 'Save Formula'; }, 2000);
     });

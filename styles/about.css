@@ -1,5 +1,5 @@
 /* =============================================
-   ABOUT.CSS — Lumina E-Commerce
+   ABOUT.CSS — Aurevia E-Commerce
    Home / About page specific styles
    ============================================= */
 
@@ -415,7 +415,7 @@
 }
 
 .about-img-placeholder::after {
-  content: '✦ LUMINA ✦';
+  content: '✦ AUREVIA ✦';
   font-family: var(--font-primary);
   font-size: 0.9rem;
   color: rgba(255, 240, 209, 0.35);

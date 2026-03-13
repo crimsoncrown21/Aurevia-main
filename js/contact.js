@@ -1,7 +1,7 @@
 'use strict';
 
 /* ═══════════════════════════════════════════
-   CONTACT.JS — Lumina E-Commerce
+   CONTACT.JS — Aurevia E-Commerce
    Contact page functionality
    ═══════════════════════════════════════════ */
 

@@ -1,7 +1,7 @@
 'use strict';
 
 /* ═══════════════════════════════════════════
-   CUSTOMISE.JS — Lumina E-Commerce
+   CUSTOMISE.JS — Aurevia E-Commerce
    Customise page functionality
    ═══════════════════════════════════════════ */
 

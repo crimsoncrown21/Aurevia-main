@@ -2,7 +2,7 @@
 
 /* ─── Shopping Cart (localStorage) ─── */
 
-let cart = JSON.parse(localStorage.getItem('lumina_cart')) || [];
+let cart = JSON.parse(localStorage.getItem('aurevia_cart')) || [];
 
 function addToCart(productId, name, price, image, quantity) {
   quantity = quantity || 1;
@@ -46,7 +46,7 @@ function getCartCount() {
 }
 
 function saveCart() {
-  localStorage.setItem('lumina_cart', JSON.stringify(cart));
+  localStorage.setItem('aurevia_cart', JSON.stringify(cart));
 }
 
 function updateCartUI() {

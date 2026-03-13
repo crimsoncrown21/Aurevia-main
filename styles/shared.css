@@ -1,5 +1,5 @@
 /* =============================================
-   SHARED.CSS — Lumina E-Commerce
+   SHARED.CSS — Aurevia E-Commerce
    Navbar, Footer, Product Grid, Animations
    Shared across all pages except index.html
    ============================================= */
@@ -105,16 +105,27 @@
 }
 
 /* Hamburger */
-.hamburger-btn {
+.hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
   height: 18px;
-  color: var(--dark-brown);
-  transition: color var(--t-base);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
-.hamburger-btn:hover { color: var(--warm-brown); }
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--dark-brown);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span { background: var(--warm-brown); }
 
 /* ─── Mobile menu ─────────────────────────────── */
 .mobile-menu {
@@ -714,7 +725,7 @@
   .navbar { height: 60px; }
   .nav-inner { height: 60px; }
   .nav-links { display: none !important; }
-  .hamburger-btn { display: flex; }
+  .hamburger { display: flex; }
 
   .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
 

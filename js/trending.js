@@ -1,7 +1,7 @@
 'use strict';
 
 /* ═══════════════════════════════════════════
-   TRENDING.JS — Lumina E-Commerce
+   TRENDING.JS — Aurevia E-Commerce
    Trending page functionality
    ═══════════════════════════════════════════ */
 
