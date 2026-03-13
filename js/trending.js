@@ -75,7 +75,7 @@ function renderRankingList() {
   if (!container) return;
 
   container.innerHTML = top20Data.map(item => `
-    <div class="ranking-card" data-rank="${item.rank}">
+    <div class="ranking-card reveal" data-rank="${item.rank}">
       <span class="rank-number">${String(item.rank).padStart(2, '0')}</span>
       <div class="rank-image">
         <div class="product-placeholder ${item.image}" style="width:100%;height:100%;background:var(--cream-bg);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:var(--font-secondary);font-size:0.8rem;">
@@ -140,7 +140,7 @@ function renderTrendingCategory(category) {
   const products = trendingByCategory[category] || [];
   
   container.innerHTML = products.map(product => `
-    <div class="product-card">
+    <div class="product-card reveal">
       <div class="product-image">
         <div class="product-placeholder" style="width:100%;aspect-ratio:3/4;background:var(--cream-bg);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:var(--font-secondary);">
           <span>${product.name}</span>
@@ -171,7 +171,7 @@ function renderMostLoved() {
   if (!container) return;
 
   container.innerHTML = mostLovedData.map(item => `
-    <div class="loved-card">
+    <div class="loved-card reveal">
       <div class="live-viewers">
         <span class="pulse-dot"></span>
         <span>${item.viewers} people viewing</span>

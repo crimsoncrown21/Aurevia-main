@@ -112,6 +112,19 @@ const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-righ
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
+    
+    /* Stagger items inside grid containers */
+    const grid = entry.target.closest(
+      '.problems-grid, .categories-grid, .trust-grid, .project-features, .product-grid, .footer-grid'
+    );
+    if (grid) {
+      const siblings = Array.from(
+        grid.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+      );
+      entry.target.style.transitionDelay =
+        siblings.indexOf(entry.target) * 0.1 + 's';
+    }
+    
     entry.target.classList.add('visible');
     observer.unobserve(entry.target);
   });
