@@ -55,6 +55,15 @@
 .carousel-img {
   width: 100%;
   height: 220px;
+  overflow: hidden;
+}
+
+.carousel-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--cream-light);
+  display: block;
 }
 
 .carousel-info {

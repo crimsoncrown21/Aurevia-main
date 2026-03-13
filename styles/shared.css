@@ -424,9 +424,11 @@ body.menu-open {
 
 .product-image img {
   width: 100%;
+  aspect-ratio: 3 / 4;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--cream-light);
   transition: transform 0.5s ease;
 }
 

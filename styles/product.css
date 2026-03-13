@@ -426,7 +426,9 @@
   color: var(--dark-brown);
   outline: none;
   pointer-events: none;
+  -webkit-appearance: textfield;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .qty-input::-webkit-inner-spin-button,
@@ -1024,3 +1026,188 @@
   .tabs-nav { overflow-x: auto; flex-wrap: nowrap; }
   .tab-nav-btn { white-space: nowrap; }
 }
+
+/* ─── CUSTOMIZATION TAB ───────────────────── */
+.customization-intro {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--dark-brown);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.customization-options-grid {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.customization-option {
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.customization-option:hover {
+  border-color: var(--warm-brown);
+}
+
+.customization-option.selected {
+  border-color: var(--warm-brown);
+  background: var(--white);
+  box-shadow: 0 4px 15px rgba(121, 87, 87, 0.1);
+}
+
+.customization-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.customization-option-info {
+  flex: 1;
+}
+
+.customization-option-name {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  color: var(--dark-brown);
+  margin-bottom: 6px;
+}
+
+.customization-option-desc {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--warm-brown);
+  line-height: 1.5;
+}
+
+.customization-option-price {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--deep-brown);
+  white-space: nowrap;
+}
+
+/* Custom Checkbox */
+.customization-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.customization-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.customization-checkbox .checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--warm-brown);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: var(--white);
+}
+
+.customization-checkbox .checkmark::after {
+  content: '✓';
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.customization-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: var(--warm-brown);
+  border-color: var(--warm-brown);
+}
+
+.customization-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  opacity: 1;
+}
+
+.customization-checkbox .label-text {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--dark-brown);
+}
+
+.customization-note {
+  background: var(--cream-bg);
+  border-left: 4px solid var(--warm-brown);
+  padding: 16px 20px;
+  border-radius: 0 4px 4px 0;
+}
+
+.customization-note p {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: var(--dark-brown);
+  line-height: 1.6;
+}
+
+.no-customization {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--warm-brown);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.no-customization a {
+  color: var(--warm-brown);
+  text-decoration: underline;
+}
+
+.no-customization a:hover {
+  color: var(--dark-brown);
+}
+
+/* Gallery with actual images */
+.gallery-main-image {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-light);
+}
+
+.gallery-fallback {
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  color: var(--cream-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-fallback {
+  font-family: var(--font-secondary);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: rgba(59,48,48,0.4);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--cream-light);
+}
+

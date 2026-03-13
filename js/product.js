@@ -201,6 +201,50 @@ function buildPage(p) {
       <button class="start-return-btn">Start a Return</button>`;
   }
 
+  /* Tab: Customization */
+  const customizationEl = document.getElementById('tabCustomization');
+  if (customizationEl) {
+    if (p.customization && p.customization.available && p.customization.options.length > 0) {
+      const options = p.customization.options.map(opt => `
+        <div class="customization-option" data-type="${opt.type}">
+          <div class="customization-option-header">
+            <div class="customization-option-info">
+              <h3 class="customization-option-name">${opt.name}</h3>
+              <p class="customization-option-desc">${opt.description}</p>
+            </div>
+            <div class="customization-option-price">${opt.price === 0 ? 'Free' : '+$' + opt.price.toFixed(2)}</div>
+          </div>
+          <label class="customization-checkbox">
+            <input type="checkbox" name="customization" value="${opt.type}" data-price="${opt.price}">
+            <span class="checkmark"></span>
+            <span class="label-text">Add this customization</span>
+          </label>
+        </div>
+      `).join('');
+      
+      customizationEl.innerHTML = `
+        <h2 class="tab-heading">Customize Your ${p.name}</h2>
+        <p class="customization-intro">Make it uniquely yours with our premium customization options. Each piece is carefully handcrafted to your specifications.</p>
+        <div class="customization-options-grid">
+          ${options}
+        </div>
+        <div class="customization-note">
+          <p><strong>Note:</strong> Customized items require an additional 3-5 business days for processing. Personalized items cannot be returned unless defective.</p>
+        </div>`;
+      
+      /* Add event listeners to checkboxes */
+      setTimeout(() => {
+        customizationEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', updateCustomizationTotal);
+        });
+      }, 0);
+    } else {
+      customizationEl.innerHTML = `
+        <h2 class="tab-heading">Customization</h2>
+        <p class="no-customization">This product is not eligible for customization. Browse our <a href="customise.html">Customise</a> page for bespoke options.</p>`;
+    }
+  }
+
   /* Update tab Review count label */
   const tabRevBtn = document.querySelector('[data-tab="reviews"]');
   if (tabRevBtn) tabRevBtn.textContent = `Reviews (${p.reviewCount})`;
@@ -212,24 +256,27 @@ function buildGalleryHTML(p) {
   const thumbGallery = document.getElementById('thumbnailGallery');
   if (!wrap) return;
 
-  /* Gradient classes for placeholders */
-  const gradients = ['gallery-gradient-1','gallery-gradient-2','gallery-gradient-3','gallery-gradient-4'];
-
+  /* Use actual product images */
+  const images = p.images || [];
+  
   /* Main image */
   wrap.innerHTML = `
     <div id="badgeOverlay" class="product-badge-overlay"></div>
-    <div class="gallery-placeholder ${gradients[0]}" id="mainPlaceholder">
-      <img id="mainProductImg" class="main-product-img" src="" alt="${p.name}" style="display:none;" onerror="this.style.display='none'">
-      <span id="mainPlaceholderText">${p.name.split(' ').slice(0,2).join(' ')}</span>
+    <div class="gallery-main-image" id="mainPlaceholder">
+      <img id="mainProductImg" class="main-product-img" src="${images[0] || ''}" alt="${p.name}" style="display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="gallery-fallback" style="display:none;">${p.name.split(' ').slice(0,2).join(' ')}</div>
     </div>`;
 
   /* Thumbnails */
-  if (thumbGallery) {
-    thumbGallery.innerHTML = (p.images || []).map((src, i) =>
-      `<button class="thumb-btn${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="View image ${i+1}">
-        <div class="thumb-ph ${gradients[i % gradients.length]}">${i+1}</div>
+  if (thumbGallery && images.length > 0) {
+    thumbGallery.innerHTML = images.map((src, i) =>
+      `<button class="thumb-btn${i === 0 ? ' active' : ''}" data-index="${i}" data-src="${src}" aria-label="View image ${i+1}">
+        <img src="${src}" alt="Thumbnail ${i+1}" class="thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="thumb-fallback" style="display:none;">${i+1}</div>
       </button>`
     ).join('');
+  } else if (thumbGallery) {
+    thumbGallery.innerHTML = '';
   }
 }
 
@@ -255,17 +302,18 @@ function initGallery() {
 function changeImage(idx) {
   currentImageIdx = idx;
   thumbBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
-  /* Fade transition */
-  if (mainPh) {
-    mainPh.style.opacity = '0';
-    mainPh.style.transition = 'opacity 0.3s ease';
-    setTimeout(() => {
-      const gradients = ['gallery-gradient-1','gallery-gradient-2','gallery-gradient-3','gallery-gradient-4'];
-      mainPh.className = `gallery-placeholder ${gradients[idx % gradients.length]}`;
-      const txt = mainPh.querySelector('#mainPlaceholderText');
-      if (txt) txt.textContent = `View ${idx + 1}`;
-      mainPh.style.opacity = '1';
-    }, 180);
+  
+  /* Update main image with actual src */
+  if (mainImg && thumbBtns[idx]) {
+    const newSrc = thumbBtns[idx].dataset.src;
+    if (newSrc) {
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = newSrc;
+        mainImg.style.display = 'block';
+        mainImg.style.opacity = '1';
+      }, 180);
+    }
   }
 }
 
@@ -474,3 +522,23 @@ document.addEventListener('DOMContentLoaded', () => {
   sgCloseBtn?.addEventListener('click', () => sgModal?.classList.remove('open'));
   sgModal?.addEventListener('click', e => { if (e.target === sgModal) sgModal.classList.remove('open'); });
 });
+
+/* ─── Customization ──────────────────────────── */
+function updateCustomizationTotal(e) {
+  const checkbox = e.target;
+  const option = checkbox.closest('.customization-option');
+  
+  if (checkbox.checked) {
+    option.classList.add('selected');
+  } else {
+    option.classList.remove('selected');
+  }
+  
+  /* Calculate and display total customization cost */
+  const checked = document.querySelectorAll('input[name="customization"]:checked');
+  let total = 0;
+  checked.forEach(cb => total += parseFloat(cb.dataset.price) || 0);
+  
+  /* You can add logic here to update the main price display */
+  console.log('Customization total: $' + total.toFixed(2));
+}

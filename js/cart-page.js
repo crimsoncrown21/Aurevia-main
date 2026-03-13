@@ -9,7 +9,7 @@
 const PROMO_CODES = {
   WELCOME10: { discount: 10, type: 'percent', label: '10% off' },
   SAVE20:    { discount: 20, type: 'percent', label: '20% off' },
-  FLAT15:    { discount: 15, type: 'fixed',   label: '$15 off'  }
+  FLAT15:    { discount: 15, type: 'fixed',   label: '₹15 off'  }
 };
 
 const TAX_RATE       = 0.08;     // 8%
@@ -91,7 +91,7 @@ function buildCardHTML(item, index) {
       <div class="cart-item-info">
         <a class="cart-item-name" href="product.html?id=${item.id}">${item.name}</a>
         ${variantParts.length ? `<p class="cart-item-variants">${variantParts.join(' · ')}</p>` : ''}
-        <p class="cart-item-unit-price">$${item.price.toFixed(2)} each</p>
+        <p class="cart-item-unit-price">₹${item.price.toFixed(2)} each</p>
         <div class="cart-item-actions-row">
           <div class="cart-qty-control">
             <button class="cart-qty-btn cqb-minus" onclick="changeQty(${index}, -1)" aria-label="Decrease" ${item.quantity <= 1 ? 'disabled' : ''}>−</button>
@@ -99,7 +99,7 @@ function buildCardHTML(item, index) {
             <button class="cart-qty-btn cqb-plus"  onclick="changeQty(${index},  1)" aria-label="Increase" ${item.quantity >= 10 ? 'disabled' : ''}>+</button>
           </div>
           <div class="cart-item-total-remove">
-            <span class="cart-item-total">$${lineTotal}</span>
+            <span class="cart-item-total">₹${lineTotal}</span>
             <button class="cart-remove-btn" onclick="removeItem(${index})" aria-label="Remove ${item.name}">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
               Remove
@@ -170,19 +170,19 @@ function updateSummary(cart) {
   const tax     = taxable * TAX_RATE;
   const total   = taxable + shipping + tax;
 
-  if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+  if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toFixed(2)}`;
   if (shippingEl) {
-    shippingEl.textContent = shipping === 0 && subtotal > 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+    shippingEl.textContent = shipping === 0 && subtotal > 0 ? 'FREE' : `₹${shipping.toFixed(2)}`;
     shippingEl.closest('.summary-row')?.classList.toggle('free-ship', shipping === 0 && subtotal > 0);
   }
-  if (taxEl) taxEl.textContent = `$${tax.toFixed(2)}`;
+  if (taxEl) taxEl.textContent = `₹${tax.toFixed(2)}`;
 
   if (discountRowEl) {
     discountRowEl.style.display = discountAmt > 0 ? 'flex' : 'none';
-    if (discountEl) discountEl.textContent = `-$${discountAmt.toFixed(2)}`;
+    if (discountEl) discountEl.textContent = `-₹${discountAmt.toFixed(2)}`;
   }
 
-  if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+  if (totalEl) totalEl.textContent = `₹${total.toFixed(2)}`;
 
   if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
 }
