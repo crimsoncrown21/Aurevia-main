@@ -9,7 +9,7 @@
 /* ─── Featured Arrivals Carousel ─── */
 .featured-arrivals {
   padding: 3rem 0;
-  background: var(--cream-light);
+  background: var(--cream-bg);
 }
 
 .featured-arrivals .section-title {
@@ -21,6 +21,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 

@@ -19,32 +19,42 @@
 <body>
 
   <!-- ═══ NAVIGATION ═══ -->
-  <nav id="navbar" class="navbar scrolled">
+  <nav id="navbar" class="navbar">
     <div class="container">
       <div class="nav-inner">
+
+        <!-- Logo -->
         <a href="index.html" class="logo">Lumina</a>
+
+        <!-- Desktop Nav -->
         <ul class="nav-links">
-          <li><a href="index.html">About</a></li>
-          <li><a href="clothing.html">Clothing</a></li>
-          <li><a href="bags.html">Bags &amp; Charms</a></li>
-          <li><a href="fragrances.html">Fragrances</a></li>
-          <li><a href="gifting.html">Gifting</a></li>
-          <li><a href="trending.html">Trending</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="hover-link">About</a></li>
+          <li><a href="clothing.html" class="active">Clothing</a></li>
+          <li><a href="bags.html" class="hover-link">Bags</a></li>
+          <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
+          <li><a href="customise.html" class="hover-link">Customise</a></li>
+          <li><a href="trending.html" class="hover-link">Trending</a></li>
+          <li><a href="contact.html" class="hover-link">Contact</a></li>
         </ul>
+
+        <!-- Actions -->
         <div class="nav-actions">
-          <button class="nav-icon-btn" aria-label="Bag">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+          <button class="nav-icon-btn" aria-label="Search">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <span class="cart-badge">0</span>
           </button>
-          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          <button class="nav-icon-btn" aria-label="Bag">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/>
             </svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
           </button>
         </div>
+
       </div>
     </div>
   </nav>
@@ -58,9 +68,9 @@
     </button>
     <a href="index.html">About</a>
     <a href="clothing.html">Clothing</a>
-    <a href="bags.html">Bags &amp; Charms</a>
+    <a href="bags.html">Bags</a>
     <a href="fragrances.html">Fragrances</a>
-    <a href="gifting.html">Gifting</a>
+    <a href="customise.html">Customise</a>
     <a href="trending.html">Trending</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -71,11 +81,11 @@
     <!-- ═══ PAGE HERO ═══ -->
     <section class="page-hero">
       <div class="container">
-        <nav class="breadcrumb">
-          <a href="index.html">Home</a> / <span>Clothing</span>
-        </nav>
-        <h1 class="page-title">Clothing Collection</h1>
-        <p class="page-subtitle">Discover timeless pieces crafted for elegance</p>
+        <div class="hero-content">
+          <div class="hero-line reveal"></div>
+          <h1 class="page-title reveal">Clothing Collection</h1>
+          <p class="page-subtitle reveal">Discover timeless pieces crafted for elegance</p>
+        </div>
       </div>
     </section>
 
@@ -485,7 +495,7 @@
             <li><a href="clothing.html">Clothing</a></li>
             <li><a href="bags.html">Bags</a></li>
             <li><a href="fragrances.html">Fragrances</a></li>
-            <li><a href="gifting.html">Gifting</a></li>
+            <li><a href="customise.html">Customise</a></li>
             <li><a href="trending.html">Trending</a></li>
           </ul>
         </div>

@@ -1,834 +1,1167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lumina — Curated clothing, leather goods, fragrances, and gifting for the intentional life.">
-  <title>Lumina | Curated Elegance</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lumina — Curated clothing, leather goods, fragrances, and gifting for the intentional life."
+    />
+    <title>Lumina | Curated Elegance</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/globals.css">
-  <link rel="stylesheet" href="styles/about.css">
-</head>
-<body>
-
-  <!-- ============================================================
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/globals.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+  </head>
+  <body>
+    <!-- ============================================================
        §1  NAVIGATION BAR
        ============================================================ -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="nav-inner">
+    <nav id="navbar" class="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">Lumina</a>
 
-        <!-- Logo -->
-        <a href="#" class="logo">Lumina</a>
+          <!-- Desktop Nav -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">About</a></li>
+            <li><a href="clothing.html" class="hover-link">Clothing</a></li>
+            <li><a href="bags.html" class="hover-link">Bags</a></li>
+            <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
+            <li><a href="customise.html" class="hover-link">Customise</a></li>
+            <li><a href="trending.html" class="hover-link">Trending</a></li>
+            <li><a href="contact.html" class="hover-link">Contact</a></li>
+          </ul>
 
-        <!-- Desktop Nav -->
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" class="hover-link active">About</a></li>
-          <li><a href="clothing.html" class="hover-link">Clothing</a></li>
-          <li><a href="bags.html" class="hover-link">Bags &amp; Charms</a></li>
-          <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
-          <li><a href="gifting.html" class="hover-link">Gifting</a></li>
-          <li><a href="trending.html" class="hover-link">Trending</a></li>
-          <li><a href="contact.html" class="hover-link">Contact</a></li>
-        </ul>
-
-        <!-- Actions -->
-        <div class="nav-actions">
-          <button class="nav-icon-btn" aria-label="Search">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <button class="nav-icon-btn" aria-label="Bag">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-              <line x1="3" y1="6" x2="21" y2="6"/>
-              <path d="M16 10a4 4 0 01-8 0"/>
-            </svg>
-            <span class="cart-badge">2</span>
-          </button>
-          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-              <line x1="3" y1="6"  x2="21" y2="6"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-              <line x1="3" y1="18" x2="21" y2="18"/>
-            </svg>
-          </button>
+          <!-- Actions -->
+          <div class="nav-actions">
+            <button class="nav-icon-btn" aria-label="Search">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="nav-icon-btn" aria-label="Bag">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/>
+              </svg>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
-
       </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <button
+        class="mobile-close-btn"
+        id="closeMenuBtn"
+        aria-label="Close menu"
+      >
+        <svg
+          width="28"
+          height="28"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <a href="index.html">About</a>
+      <a href="clothing.html">Clothing</a>
+      <a href="bags.html">Bags</a>
+      <a href="fragrances.html">Fragrances</a>
+      <a href="customise.html">Customise</a>
+      <a href="trending.html">Trending</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Close menu">
-      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-    <a href="index.html">About</a>
-    <a href="clothing.html">Clothing</a>
-    <a href="bags.html">Bags &amp; Charms</a>
-    <a href="fragrances.html">Fragrances</a>
-    <a href="gifting.html">Gifting</a>
-    <a href="trending.html">Trending</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-
-  <main>
-
-    <!-- ============================================================
+    <main>
+      <!-- ============================================================
          §2  HERO SECTION
          ============================================================ -->
-    <section id="hero" class="hero">
-
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-shape hero-shape-1"></div>
-        <div class="hero-shape hero-shape-2"></div>
-        <div class="hero-shape hero-shape-3"></div>
-      </div>
-
-      <div class="hero-content">
-        <div class="hero-deco-line" aria-hidden="true"></div>
-        <h1 class="hero-brand">Lumina</h1>
-        <p class="hero-tagline">Where Elegance Meets Intention</p>
-        <div class="hero-buttons">
-          <a href="#collections" class="btn-primary">Shop Now</a>
-          <a href="#about"       class="btn-secondary">Our Story</a>
+      <section id="hero" class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-shape hero-shape-1"></div>
+          <div class="hero-shape hero-shape-2"></div>
+          <div class="hero-shape hero-shape-3"></div>
         </div>
-      </div>
 
-      <div class="hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <svg class="scroll-arrow" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
+        <div class="hero-content">
+          <div class="hero-deco-line" aria-hidden="true"></div>
+          <h1 class="hero-brand">Lumina</h1>
+          <p class="hero-tagline">Where Elegance Meets Intention</p>
+          <div class="hero-buttons">
+            <a href="#collections" class="btn-primary">Shop Now</a>
+            <a href="#about" class="btn-secondary">Our Story</a>
+          </div>
+        </div>
 
-    </section>
+        <div class="hero-scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <svg
+            class="scroll-arrow"
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+      </section>
 
-
-    <!-- ============================================================
+      <!-- ============================================================
          §3  ABOUT US INTRODUCTION
          ============================================================ -->
-    <section id="about" class="about-section">
-      <div class="container">
+      <section id="about" class="about-section">
+        <div class="container">
+          <header class="about-header reveal">
+            <p class="section-subtitle">Heritage &amp; Values</p>
+            <h2 class="section-title">Our Story</h2>
+            <hr class="section-divider" />
+          </header>
 
-        <header class="about-header reveal">
-          <p class="section-subtitle">Heritage &amp; Values</p>
-          <h2 class="section-title">Our Story</h2>
-          <hr class="section-divider">
-        </header>
+          <div class="about-content">
+            <!-- Text Column -->
+            <div class="about-text reveal-left">
+              <p>
+                Lumina began one winter morning, born from a simple belief: the
+                things we use every day — our clothes, our scents, our bags —
+                matter more than their function. They show who we are, hold our
+                memories, and reflect what we value. Our founder worked in
+                fashion and fragrance for years, but grew tired of trends that
+                looked pretty yet lacked meaning, story, or responsibility. So
+                she asked a simple question: what if a brand focused on
+                permanence instead? What if we made pieces so well-designed and
+                honestly crafted that they would last through every season and
+                become part of your life's story?
+              </p>
 
-        <div class="about-content">
-
-          <!-- Text Column -->
-          <div class="about-text reveal-left">
-
-            <p>Lumina was born in the quiet hours of a winter morning, from a deep-seated conviction that
-            the objects we surround ourselves with — the clothes we wear, the scents we carry, the bags
-            we reach for each day — are never merely functional. They are expressions of identity, vessels
-            of memory, and silent declarations of our values. Our founder, having spent years in the fashion
-            and fragrance industries, grew increasingly disillusioned with the relentless churn of trends
-            that produced beautiful things with no soul, no story, and no accountability. The spark that
-            became Lumina was a simple question: what if a brand could be built entirely around the idea
-            of permanence — crafting pieces so thoughtfully designed, so honestly made, that they would
-            outlast every passing season and become woven into the fabric of the lives they entered?</p>
-
-            <p>From the very beginning, Lumina was built on a foundation of rigorous curation. Every single
+              <!-- <p>From the very beginning, Lumina was built on a foundation of rigorous curation. Every single
             product in our collection passes through a multi-stage selection process that examines not only
             the aesthetic quality and material integrity of each piece, but also the ethical practices of the
             artisans and ateliers that create them. We have visited workshops in Florence, sourced leathers
             from tanneries with century-long traditions, and collaborated with master perfumers who still
             believe that the finest fragrances take years — not weeks — to develop properly. This level of
             commitment is not performative; it is intrinsic to everything Lumina represents. We do not
-            compromise on quality, and we never will, regardless of commercial pressure or passing trend.</p>
+            compromise on quality, and we never will, regardless of commercial pressure or passing trend.</p> -->
 
-            <p>Sustainability is not a marketing strategy at Lumina — it is a moral obligation. We are
-            acutely aware of the environmental cost of fashion and the beauty industry, and we have structured
-            our entire supply chain around principles of transparency, minimalism, and regeneration. Our
-            packaging is plastic-free and fully recyclable. We deliberately limit the size of our collections,
-            preferring depth over breadth, so that each product is a considered addition to your life rather
-            than another impulse purchase gathering dust in a wardrobe you cannot see the back of. We believe
-            that owning fewer, better things is the most radical and meaningful act of consumption available
-            to the modern individual.</p>
+              <blockquote class="about-mission">
+                "At Lumina, we believe beauty is not a trend. It is a standard —
+                one we hold ourselves to in every stitch, every note, and every
+                quiet interaction with the people we serve."
+              </blockquote>
 
-            <blockquote class="about-mission">
-              "At Lumina, we believe beauty is not a trend. It is a standard — one we hold ourselves to
-              in every stitch, every note, and every quiet interaction with the people we serve."
-            </blockquote>
+              <a href="#collections" class="about-cta hover-link">
+                Explore Our Collections
+                <svg
+                  class="arrow"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
 
-            <a href="#collections" class="about-cta hover-link">
-              Explore Our Collections
-              <svg class="arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-
-          </div>
-
-          <!-- Image Column -->
-          <div class="reveal-right">
-            <div class="about-image-frame">
-              <div class="about-img-placeholder" role="img" aria-label="Lumina brand photography"></div>
+            <!-- Image Column -->
+            <div class="reveal-right">
+              <div class="about-image-frame">
+                <div
+                  class="about-img-placeholder"
+                  role="img"
+                  aria-label="Lumina brand photography"
+                ></div>
+              </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <!-- ============================================================
+      <!-- ============================================================
          §4  PROBLEMS WE SOLVE
          ============================================================ -->
-    <section id="problems" class="problems-section">
-      <div class="container">
+      <section id="problems" class="problems-section">
+        <div class="container">
+          <header class="problems-header reveal">
+            <p class="section-subtitle">Why We Exist</p>
+            <h2 class="section-title">Problems We Solve</h2>
+            <hr class="section-divider" />
+          </header>
 
-        <header class="problems-header reveal">
-          <p class="section-subtitle">Why We Exist</p>
-          <h2 class="section-title">Problems We Solve</h2>
-          <hr class="section-divider">
-        </header>
+          <div class="problems-grid">
+            <article class="problem-card reveal">
+              <div class="problem-icon" aria-hidden="true">
+                <svg
+                  width="60"
+                  height="60"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <h3>Fast Fashion Fatigue</h3>
+              <p>
+                The relentless pace of mass-market fashion has left consumers
+                exhausted and wardrobes overflowing with pieces that lose their
+                appeal within weeks. Lumina offers a different path — one of
+                deliberate, lasting quality over disposable novelty. Every
+                garment you own should earn its place in your life, not simply
+                fill a passing and forgettable moment.
+              </p>
+            </article>
 
-        <div class="problems-grid">
+            <article class="problem-card reveal">
+              <div class="problem-icon" aria-hidden="true">
+                <svg
+                  width="60"
+                  height="60"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                  />
+                </svg>
+              </div>
+              <h3>Impersonal Shopping</h3>
+              <p>
+                Modern retail has become a faceless transaction, utterly devoid
+                of meaning. The joy of discovering something that speaks
+                directly to your sensibility has been lost in an ocean of
+                algorithm-driven suggestions. At Lumina, we restore that
+                personal dimension by curating collections that tell a story and
+                invite genuine, lasting connection between person and object.
+              </p>
+            </article>
 
-          <article class="problem-card reveal">
-            <div class="problem-icon" aria-hidden="true">
-              <svg width="60" height="60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                <polyline points="17 6 23 6 23 12"/>
-              </svg>
-            </div>
-            <h3>Fast Fashion Fatigue</h3>
-            <p>The relentless pace of mass-market fashion has left consumers exhausted and wardrobes
-            overflowing with pieces that lose their appeal within weeks. Lumina offers a different path —
-            one of deliberate, lasting quality over disposable novelty. Every garment you own should earn
-            its place in your life, not simply fill a passing and forgettable moment.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <div class="problem-icon" aria-hidden="true">
-              <svg width="60" height="60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-              </svg>
-            </div>
-            <h3>Impersonal Shopping</h3>
-            <p>Modern retail has become a faceless transaction, utterly devoid of meaning. The joy of
-            discovering something that speaks directly to your sensibility has been lost in an ocean of
-            algorithm-driven suggestions. At Lumina, we restore that personal dimension by curating
-            collections that tell a story and invite genuine, lasting connection between person and object.</p>
-          </article>
-
-          <article class="problem-card reveal">
-            <div class="problem-icon" aria-hidden="true">
-              <svg width="60" height="60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-              </svg>
-            </div>
-            <h3>Scent Confusion</h3>
-            <p>The fragrance market is bewildering — thousands of options, misleading marketing language,
-            and the impossible task of choosing a signature scent from a digital catalogue without guidance.
-            We demystify this journey. Our curated fragrance collections are thoughtfully guided by the
-            philosophy that your scent should be discovered as an extension of your identity, not imposed.</p>
-          </article>
-
+            <article class="problem-card reveal">
+              <div class="problem-icon" aria-hidden="true">
+                <svg
+                  width="60"
+                  height="60"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <h3>Scent Confusion</h3>
+              <p>
+                The fragrance market is bewildering — thousands of options,
+                misleading marketing language, and the impossible task of
+                choosing a signature scent from a digital catalogue without
+                guidance. We demystify this journey. Our curated fragrance
+                collections are thoughtfully guided by the philosophy that your
+                scent should be discovered as an extension of your identity, not
+                imposed.
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <!-- ============================================================
+      <!-- ============================================================
          §5  OUR SOLUTION
          ============================================================ -->
-    <section id="solution" class="solution-section">
-      <div class="container">
+      <section id="solution" class="solution-section">
+        <div class="container">
+          <header class="solution-header reveal">
+            <p class="section-subtitle">How We Help</p>
+            <h2 class="section-title">Our Solution</h2>
+            <hr class="section-divider" />
+          </header>
 
-        <header class="solution-header reveal">
-          <p class="section-subtitle">How We Help</p>
-          <h2 class="section-title">Our Solution</h2>
-          <hr class="section-divider">
-        </header>
-
-        <!-- Row 1: image LEFT, text RIGHT -->
-        <div class="solution-row reveal">
-          <div class="solution-img">
-            <div class="solution-img-placeholder sol-img-1" role="img" aria-label="Curated clothing collection"></div>
+          <!-- Row 1: image LEFT, text RIGHT -->
+          <div class="solution-row reveal">
+            <div class="solution-img">
+              <div
+                class="solution-img-placeholder sol-img-1"
+                role="img"
+                aria-label="Curated clothing collection"
+              ></div>
+            </div>
+            <div class="solution-text">
+              <p class="section-subtitle" style="text-align: left">01</p>
+              <h3>Curated Collections</h3>
+              <p>
+                Every item in the Lumina collection is hand-selected by
+                specialists who understand that true style cannot be
+                manufactured at scale. We spend months sourcing, evaluating, and
+                refining our selections so that when you browse our catalogue,
+                you encounter only pieces worthy of lasting appreciation —
+                clothing tailored to real lives, bags built for real journeys,
+                fragrances crafted for people who understand that beauty should
+                endure.
+              </p>
+              <a href="#collections" class="solution-link">
+                Explore Collections
+                <svg
+                  class="arrow"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="solution-text">
-            <p class="section-subtitle" style="text-align:left;">01</p>
-            <h3>Curated Collections</h3>
-            <p>Every item in the Lumina collection is hand-selected by specialists who understand that true
-            style cannot be manufactured at scale. We spend months sourcing, evaluating, and refining our
-            selections so that when you browse our catalogue, you encounter only pieces worthy of lasting
-            appreciation — clothing tailored to real lives, bags built for real journeys, fragrances crafted
-            for people who understand that beauty should endure.</p>
-            <a href="#collections" class="solution-link">
-              Explore Collections
-              <svg class="arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
+
+          <!-- Row 2: text LEFT, image RIGHT (reverse) -->
+          <div class="solution-row reverse reveal">
+            <div class="solution-img">
+              <div
+                class="solution-img-placeholder sol-img-2"
+                role="img"
+                aria-label="Bespoke fragrance service"
+              ></div>
+            </div>
+            <div class="solution-text">
+              <p class="section-subtitle" style="text-align: left">02</p>
+              <h3>Custom Fragrances</h3>
+              <p>
+                We believe your scent should be as individual as your
+                fingerprint. Our bespoke fragrance service connects you with
+                master perfumers who listen — truly listen — to your olfactory
+                history, your lifestyle, your aspirations. The result is a
+                fragrance that is uniquely and unmistakably yours. No two are
+                alike. Each begins with a conversation and ends with a small
+                bottle that carries the full and articulate weight of your
+                identity.
+              </p>
+              <a href="#collections" class="solution-link">
+                Create Yours
+                <svg
+                  class="arrow"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 3: image LEFT, text RIGHT -->
+          <div class="solution-row reveal">
+            <div class="solution-img">
+              <div
+                class="solution-img-placeholder sol-img-3"
+                role="img"
+                aria-label="Sustainable practices"
+              ></div>
+            </div>
+            <div class="solution-text">
+              <p class="section-subtitle" style="text-align: left">03</p>
+              <h3>Sustainable Practices</h3>
+              <p>
+                Our commitment to the planet is not a footnote — it is the
+                foundation upon which Lumina is built. From carbon-neutral
+                shipping to zero-plastic packaging, from ethically sourced
+                materials to living wages for every craftsperson in our supply
+                chain, we have made sustainability the non-negotiable standard
+                by which we operate. When you choose Lumina, you become part of
+                a different kind of fashion story — one that respects both
+                people and planet in equal measure.
+              </p>
+              <a href="#about" class="solution-link">
+                Learn More
+                <svg
+                  class="arrow"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Row 2: text LEFT, image RIGHT (reverse) -->
-        <div class="solution-row reverse reveal">
-          <div class="solution-img">
-            <div class="solution-img-placeholder sol-img-2" role="img" aria-label="Bespoke fragrance service"></div>
-          </div>
-          <div class="solution-text">
-            <p class="section-subtitle" style="text-align:left;">02</p>
-            <h3>Custom Fragrances</h3>
-            <p>We believe your scent should be as individual as your fingerprint. Our bespoke fragrance
-            service connects you with master perfumers who listen — truly listen — to your olfactory
-            history, your lifestyle, your aspirations. The result is a fragrance that is uniquely and
-            unmistakably yours. No two are alike. Each begins with a conversation and ends with a small
-            bottle that carries the full and articulate weight of your identity.</p>
-            <a href="#collections" class="solution-link">
-              Create Yours
-              <svg class="arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Row 3: image LEFT, text RIGHT -->
-        <div class="solution-row reveal">
-          <div class="solution-img">
-            <div class="solution-img-placeholder sol-img-3" role="img" aria-label="Sustainable practices"></div>
-          </div>
-          <div class="solution-text">
-            <p class="section-subtitle" style="text-align:left;">03</p>
-            <h3>Sustainable Practices</h3>
-            <p>Our commitment to the planet is not a footnote — it is the foundation upon which Lumina is
-            built. From carbon-neutral shipping to zero-plastic packaging, from ethically sourced materials
-            to living wages for every craftsperson in our supply chain, we have made sustainability the
-            non-negotiable standard by which we operate. When you choose Lumina, you become part of a
-            different kind of fashion story — one that respects both people and planet in equal measure.</p>
-            <a href="#about" class="solution-link">
-              Learn More
-              <svg class="arrow" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ============================================================
+      <!-- ============================================================
          §6  PROJECT INTRODUCTION (dark section)
          ============================================================ -->
-    <section id="project" class="project-section">
-      <div class="container">
+      <section id="project" class="project-section">
+        <div class="container">
+          <div class="project-intro reveal">
+            <p class="section-subtitle">Our Commitment</p>
+            <h2 class="section-title">The Lumina Experience</h2>
+            <hr class="project-divider" />
+            <p>
+              Lumina is more than a curated marketplace — it is an experience
+              designed from the ground up for those who refuse to settle. We are
+              a destination for individuals who understand that the most
+              meaningful possessions are never accidental. Our platform brings
+              together clothing, leather goods, fragrances, and gifting under a
+              single, unified philosophy of quality without compromise. Whether
+              you are building a capsule wardrobe of timeless essentials,
+              seeking a fragrance that becomes your olfactory signature, or
+              searching for the perfect gift that communicates genuine care and
+              deep consideration — Lumina is where that search ends. We are
+              proud to be your trusted companion in the pursuit of a more
+              intentional, more beautiful life.
+            </p>
+          </div>
 
-        <div class="project-intro reveal">
-          <p class="section-subtitle">Our Commitment</p>
-          <h2 class="section-title">The Lumina Experience</h2>
-          <hr class="project-divider">
-          <p>Lumina is more than a curated marketplace — it is an experience designed from the ground up
-          for those who refuse to settle. We are a destination for individuals who understand that the most
-          meaningful possessions are never accidental. Our platform brings together clothing, leather goods,
-          fragrances, and gifting under a single, unified philosophy of quality without compromise. Whether
-          you are building a capsule wardrobe of timeless essentials, seeking a fragrance that becomes your
-          olfactory signature, or searching for the perfect gift that communicates genuine care and deep
-          consideration — Lumina is where that search ends. We are proud to be your trusted companion in
-          the pursuit of a more intentional, more beautiful life.</p>
+          <div class="project-features">
+            <div class="project-feat reveal">
+              <div class="project-feat-icon" aria-hidden="true">
+                <svg
+                  width="64"
+                  height="64"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <h4>Quality</h4>
+            </div>
+
+            <div class="project-feat reveal">
+              <div class="project-feat-icon" aria-hidden="true">
+                <svg
+                  width="64"
+                  height="64"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 20h9" />
+                  <path
+                    d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
+                  />
+                </svg>
+              </div>
+              <h4>Custom</h4>
+            </div>
+
+            <div class="project-feat reveal">
+              <div class="project-feat-icon" aria-hidden="true">
+                <svg
+                  width="64"
+                  height="64"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+                  />
+                </svg>
+              </div>
+              <h4>Ethical</h4>
+            </div>
+
+            <div class="project-feat reveal">
+              <div class="project-feat-icon" aria-hidden="true">
+                <svg
+                  width="64"
+                  height="64"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+                </svg>
+              </div>
+              <h4>Curated</h4>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="project-features">
-
-          <div class="project-feat reveal">
-            <div class="project-feat-icon" aria-hidden="true">
-              <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </div>
-            <h4>Quality</h4>
-          </div>
-
-          <div class="project-feat reveal">
-            <div class="project-feat-icon" aria-hidden="true">
-              <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-              </svg>
-            </div>
-            <h4>Custom</h4>
-          </div>
-
-          <div class="project-feat reveal">
-            <div class="project-feat-icon" aria-hidden="true">
-              <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-              </svg>
-            </div>
-            <h4>Ethical</h4>
-          </div>
-
-          <div class="project-feat reveal">
-            <div class="project-feat-icon" aria-hidden="true">
-              <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-              </svg>
-            </div>
-            <h4>Curated</h4>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
+      <!-- ============================================================
          §7  FEATURED CATEGORIES
          ============================================================ -->
-    <section id="collections" class="categories-section">
-      <div class="container">
+      <section id="collections" class="categories-section">
+        <div class="container">
+          <header class="categories-header reveal">
+            <p class="section-subtitle">Our World</p>
+            <h2 class="section-title">Explore Our Collections</h2>
+            <hr class="section-divider" />
+          </header>
 
-        <header class="categories-header reveal">
-          <p class="section-subtitle">Our World</p>
-          <h2 class="section-title">Explore Our Collections</h2>
-          <hr class="section-divider">
-        </header>
+          <div class="categories-grid">
+            <div
+              class="cat-card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Shop Clothing"
+            >
+              <div class="cat-img cat-img-clothing"></div>
+              <div class="cat-overlay">
+                <span class="cat-name">Clothing</span>
+                <a href="clothing.html" class="cat-btn">Shop Now &rarr;</a>
+              </div>
+            </div>
 
-        <div class="categories-grid">
+            <div
+              class="cat-card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Shop Bags"
+            >
+              <div class="cat-img cat-img-bags"></div>
+              <div class="cat-overlay">
+                <span class="cat-name">Bags</span>
+                <a href="bags.html" class="cat-btn">Shop Now &rarr;</a>
+              </div>
+            </div>
 
-          <div class="cat-card reveal" tabindex="0" role="button" aria-label="Shop Clothing">
-            <div class="cat-img cat-img-clothing"></div>
-            <div class="cat-overlay">
-              <span class="cat-name">Clothing</span>
-              <button class="cat-btn">Shop Now &rarr;</button>
+            <div
+              class="cat-card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Shop Fragrances"
+            >
+              <div class="cat-img cat-img-fragrances"></div>
+              <div class="cat-overlay">
+                <span class="cat-name">Fragrances</span>
+                <a href="fragrances.html" class="cat-btn">Shop Now &rarr;</a>
+              </div>
+            </div>
+
+            <div
+              class="cat-card reveal"
+              tabindex="0"
+              role="button"
+              aria-label="Shop Gifting"
+            >
+              <div class="cat-img cat-img-gifting"></div>
+              <div class="cat-overlay">
+                <span class="cat-name">Customise</span>
+                <a href="customise.html" class="cat-btn">Shop Now &rarr;</a>
+              </div>
             </div>
           </div>
-
-          <div class="cat-card reveal" tabindex="0" role="button" aria-label="Shop Bags">
-            <div class="cat-img cat-img-bags"></div>
-            <div class="cat-overlay">
-              <span class="cat-name">Bags</span>
-              <button class="cat-btn">Shop Now &rarr;</button>
-            </div>
-          </div>
-
-          <div class="cat-card reveal" tabindex="0" role="button" aria-label="Shop Fragrances">
-            <div class="cat-img cat-img-fragrances"></div>
-            <div class="cat-overlay">
-              <span class="cat-name">Fragrances</span>
-              <button class="cat-btn">Shop Now &rarr;</button>
-            </div>
-          </div>
-
-          <div class="cat-card reveal" tabindex="0" role="button" aria-label="Shop Gifting">
-            <div class="cat-img cat-img-gifting"></div>
-            <div class="cat-overlay">
-              <span class="cat-name">Gifting</span>
-              <button class="cat-btn">Shop Now &rarr;</button>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <!-- ============================================================
+      <!-- ============================================================
          §8  TESTIMONIALS / TRUST
          ============================================================ -->
-    <section id="testimonials" class="testimonials-section">
-      <div class="container">
+      <section id="testimonials" class="testimonials-section">
+        <div class="container">
+          <header class="testimonials-header reveal">
+            <p class="section-subtitle">Customer Stories</p>
+            <h2 class="section-title">What Our Customers Say</h2>
+            <hr class="section-divider" />
+          </header>
 
-        <header class="testimonials-header reveal">
-          <p class="section-subtitle">Customer Stories</p>
-          <h2 class="section-title">What Our Customers Say</h2>
-          <hr class="section-divider">
-        </header>
+          <!-- Carousel -->
+          <div class="carousel-wrap reveal">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="t-slide active">
+                <div class="t-card">
+                  <span class="t-quote-mark" aria-hidden="true">"</span>
+                  <p class="t-text">
+                    Lumina has completely changed the way I think about my
+                    wardrobe. I used to buy things impulsively and regret them
+                    within weeks. Now, every piece I own from Lumina feels like
+                    a considered investment — something that actually reflects
+                    who I am and will be part of my life for years to come.
+                  </p>
+                  <p class="t-author">Priya Mehta</p>
+                  <p class="t-role">Designer, Mumbai</p>
+                </div>
+              </div>
 
-        <!-- Carousel -->
-        <div class="carousel-wrap reveal">
+              <div class="t-slide">
+                <div class="t-card">
+                  <span class="t-quote-mark" aria-hidden="true">"</span>
+                  <p class="t-text">
+                    The bespoke fragrance service is extraordinary. I had always
+                    struggled to find a scent that felt truly mine. The team at
+                    Lumina listened to me with a care I had never experienced in
+                    retail, and what they created for me is nothing short of a
+                    personal masterpiece — a scent that is unmistakably,
+                    completely mine.
+                  </p>
+                  <p class="t-author">James Okafor</p>
+                  <p class="t-role">Architect, Lagos</p>
+                </div>
+              </div>
 
-          <div class="carousel-track" id="carouselTrack">
+              <div class="t-slide">
+                <div class="t-card">
+                  <span class="t-quote-mark" aria-hidden="true">"</span>
+                  <p class="t-text">
+                    Gifting used to feel like such a chore — I would spend hours
+                    searching and inevitably settle for something generic.
+                    Lumina's gifting collection is unlike anything else. Every
+                    piece has a story, a craftsmanship, and an intentionality
+                    that makes giving as meaningful as receiving. My recipients
+                    are always genuinely moved.
+                  </p>
+                  <p class="t-author">Sofia Andreou</p>
+                  <p class="t-role">Publisher, Athens</p>
+                </div>
+              </div>
 
-            <div class="t-slide active">
-              <div class="t-card">
-                <span class="t-quote-mark" aria-hidden="true">"</span>
-                <p class="t-text">Lumina has completely changed the way I think about my wardrobe. I used
-                to buy things impulsively and regret them within weeks. Now, every piece I own from Lumina
-                feels like a considered investment — something that actually reflects who I am and will be
-                part of my life for years to come.</p>
-                <p class="t-author">Priya Mehta</p>
-                <p class="t-role">Designer, Mumbai</p>
+              <div class="t-slide">
+                <div class="t-card">
+                  <span class="t-quote-mark" aria-hidden="true">"</span>
+                  <p class="t-text">
+                    What impresses me most about Lumina is the consistency of
+                    their principles. Every interaction — from browsing their
+                    website to opening a package — reflects the same commitment
+                    to quality and care. It is rare to find a brand that
+                    actually lives its values rather than simply advertising
+                    them. Lumina is genuinely that brand.
+                  </p>
+                  <p class="t-author">Hiroshi Tanaka</p>
+                  <p class="t-role">Entrepreneur, Tokyo</p>
+                </div>
               </div>
             </div>
+            <!-- /carousel-track -->
 
-            <div class="t-slide">
-              <div class="t-card">
-                <span class="t-quote-mark" aria-hidden="true">"</span>
-                <p class="t-text">The bespoke fragrance service is extraordinary. I had always struggled to
-                find a scent that felt truly mine. The team at Lumina listened to me with a care I had never
-                experienced in retail, and what they created for me is nothing short of a personal
-                masterpiece — a scent that is unmistakably, completely mine.</p>
-                <p class="t-author">James Okafor</p>
-                <p class="t-role">Architect, Lagos</p>
+            <div class="carousel-controls">
+              <button
+                class="c-arrow"
+                id="prevBtn"
+                aria-label="Previous testimonial"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+
+              <div class="c-dots" id="cDots">
+                <button
+                  class="c-dot active"
+                  data-index="0"
+                  aria-label="Testimonial 1"
+                ></button>
+                <button
+                  class="c-dot"
+                  data-index="1"
+                  aria-label="Testimonial 2"
+                ></button>
+                <button
+                  class="c-dot"
+                  data-index="2"
+                  aria-label="Testimonial 3"
+                ></button>
+                <button
+                  class="c-dot"
+                  data-index="3"
+                  aria-label="Testimonial 4"
+                ></button>
               </div>
+
+              <button
+                class="c-arrow"
+                id="nextBtn"
+                aria-label="Next testimonial"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
+          </div>
+          <!-- /carousel-wrap -->
 
-            <div class="t-slide">
-              <div class="t-card">
-                <span class="t-quote-mark" aria-hidden="true">"</span>
-                <p class="t-text">Gifting used to feel like such a chore — I would spend hours searching
-                and inevitably settle for something generic. Lumina's gifting collection is unlike anything
-                else. Every piece has a story, a craftsmanship, and an intentionality that makes giving as
-                meaningful as receiving. My recipients are always genuinely moved.</p>
-                <p class="t-author">Sofia Andreou</p>
-                <p class="t-role">Publisher, Athens</p>
-              </div>
-            </div>
-
-            <div class="t-slide">
-              <div class="t-card">
-                <span class="t-quote-mark" aria-hidden="true">"</span>
-                <p class="t-text">What impresses me most about Lumina is the consistency of their
-                principles. Every interaction — from browsing their website to opening a package — reflects
-                the same commitment to quality and care. It is rare to find a brand that actually lives its
-                values rather than simply advertising them. Lumina is genuinely that brand.</p>
-                <p class="t-author">Hiroshi Tanaka</p>
-                <p class="t-role">Entrepreneur, Tokyo</p>
-              </div>
-            </div>
-
-          </div><!-- /carousel-track -->
-
-          <div class="carousel-controls">
-            <button class="c-arrow" id="prevBtn" aria-label="Previous testimonial">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"/>
+          <!-- Trust Badges -->
+          <div class="trust-grid">
+            <div class="trust-item reveal">
+              <svg
+                class="trust-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
-            </button>
-
-            <div class="c-dots" id="cDots">
-              <button class="c-dot active" data-index="0" aria-label="Testimonial 1"></button>
-              <button class="c-dot"        data-index="1" aria-label="Testimonial 2"></button>
-              <button class="c-dot"        data-index="2" aria-label="Testimonial 3"></button>
-              <button class="c-dot"        data-index="3" aria-label="Testimonial 4"></button>
+              <h4>Secure Payment</h4>
+              <p>256-bit SSL encrypted transactions</p>
             </div>
 
-            <button class="c-arrow" id="nextBtn" aria-label="Next testimonial">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"/>
+            <div class="trust-item reveal">
+              <svg
+                class="trust-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
               </svg>
-            </button>
+              <h4>Free Shipping</h4>
+              <p>On all orders above &#8377;2,500</p>
+            </div>
+
+            <div class="trust-item reveal">
+              <svg
+                class="trust-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
+              </svg>
+              <h4>Easy Returns</h4>
+              <p>Hassle-free 30-day return policy</p>
+            </div>
+
+            <div class="trust-item reveal">
+              <svg
+                class="trust-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+              <h4>Quality Guaranteed</h4>
+              <p>Every product vetted by our experts</p>
+            </div>
           </div>
-
-        </div><!-- /carousel-wrap -->
-
-        <!-- Trust Badges -->
-        <div class="trust-grid">
-
-          <div class="trust-item reveal">
-            <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            <h4>Secure Payment</h4>
-            <p>256-bit SSL encrypted transactions</p>
-          </div>
-
-          <div class="trust-item reveal">
-            <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="1" y="3" width="15" height="13"/>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-              <circle cx="5.5" cy="18.5" r="2.5"/>
-              <circle cx="18.5" cy="18.5" r="2.5"/>
-            </svg>
-            <h4>Free Shipping</h4>
-            <p>On all orders above &#8377;2,500</p>
-          </div>
-
-          <div class="trust-item reveal">
-            <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="1 4 1 10 7 10"/>
-              <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
-            </svg>
-            <h4>Easy Returns</h4>
-            <p>Hassle-free 30-day return policy</p>
-          </div>
-
-          <div class="trust-item reveal">
-            <svg class="trust-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-            <h4>Quality Guaranteed</h4>
-            <p>Every product vetted by our experts</p>
-          </div>
-
         </div>
+      </section>
 
-      </div>
-    </section>
-
-
-    <!-- ============================================================
+      <!-- ============================================================
          §9  CTA / NEWSLETTER BANNER
          ============================================================ -->
-    <section id="newsletter" class="cta-section">
-      <div class="container">
-        <h2>Join the Lumina Family</h2>
-        <p>Subscribe for exclusive collections, early access, and stories from our world</p>
+      <section id="newsletter" class="cta-section">
+        <div class="container">
+          <h2>Join the Lumina Family</h2>
+          <p>
+            Subscribe for exclusive collections, early access, and stories from
+            our world
+          </p>
 
-        <form class="cta-form" id="ctaForm" novalidate>
-          <input
-            type="email"
-            class="cta-input"
-            id="ctaEmail"
-            placeholder="Your email address"
-            autocomplete="email"
-            required
+          <form class="cta-form" id="ctaForm" novalidate>
+            <input
+              type="email"
+              class="cta-input"
+              id="ctaEmail"
+              placeholder="Your email address"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" class="cta-submit">Subscribe</button>
+          </form>
+
+          <div
+            class="cta-success"
+            id="ctaSuccess"
+            aria-live="polite"
+            role="status"
           >
-          <button type="submit" class="cta-submit">Subscribe</button>
-        </form>
-
-        <div class="cta-success" id="ctaSuccess" aria-live="polite" role="status">
-          <div class="cta-check" aria-hidden="true">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
+            <div class="cta-check" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <span>Thank you for joining us. Welcome to Lumina.</span>
           </div>
-          <span>Thank you for joining us. Welcome to Lumina.</span>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
-
-
-  <!-- ============================================================
+    <!-- ============================================================
        §10  FOOTER
        ============================================================ -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="footer-grid">
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3>Lumina</h3>
+            <p>
+              Curated elegance for the intentional life. Clothing, leather
+              goods, fragrances, and gifting — united by an unwavering
+              commitment to quality and craft.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg
+                  width="22"
+                  height="22"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Pinterest">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="X (Twitter)">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-        <!-- Brand -->
-        <div class="footer-brand">
-          <h3>Lumina</h3>
-          <p>Curated elegance for the intentional life. Clothing, leather goods, fragrances, and gifting
-          — united by an unwavering commitment to quality and craft.</p>
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="Instagram">
-              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Pinterest">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="X (Twitter)">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+          <!-- Shop -->
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li><a href="clothing.html">Clothing</a></li>
+              <li><a href="bags.html">Bags</a></li>
+              <li><a href="fragrances.html">Fragrances</a></li>
+              <li><a href="customise.html">Customise</a></li>
+              <li><a href="trending.html">New Arrivals</a></li>
+            </ul>
+          </div>
+
+          <!-- Help -->
+          <div class="footer-col">
+            <h4>Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- Connect -->
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
           </div>
         </div>
-
-        <!-- Shop -->
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <ul class="footer-links">
-            <li><a href="clothing.html">Clothing</a></li>
-            <li><a href="bags.html">Bags</a></li>
-            <li><a href="fragrances.html">Fragrances</a></li>
-            <li><a href="gifting.html">Gifting</a></li>
-            <li><a href="trending.html">New Arrivals</a></li>
-          </ul>
-        </div>
-
-        <!-- Help -->
-        <div class="footer-col">
-          <h4>Help</h4>
-          <ul class="footer-links">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">Size Guide</a></li>
-          </ul>
-        </div>
-
-        <!-- Connect -->
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Our Story</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-        </div>
-
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2025 Lumina. All rights reserved. &nbsp;&middot;&nbsp; Crafted with intention.</p>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2025 Lumina. All rights reserved. &nbsp;&middot;&nbsp;
+            Crafted with intention.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-
-  <!-- ============================================================
+    <!-- ============================================================
        JAVASCRIPT
        ============================================================ -->
-  <script>
-    'use strict';
+    <script>
+      "use strict";
 
-    /* ─── 1. Navbar: transparent → solid on scroll ─── */
-    const navbar     = document.getElementById('navbar');
-    const navLinkEls = document.querySelectorAll('.nav-links a');
-    const sections   = document.querySelectorAll('section[id]');
+      /* ─── 1. Navbar: transparent → solid on scroll ─── */
+      const navbar = document.getElementById("navbar");
+      const navLinkEls = document.querySelectorAll(".nav-links a");
+      const sections = document.querySelectorAll("section[id]");
 
-    function updateNav() {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      function updateNav() {
+        navbar.classList.toggle("scrolled", window.scrollY > 60);
 
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
-      });
-      navLinkEls.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
-    }
-
-    window.addEventListener('scroll', updateNav, { passive: true });
-    updateNav();
-
-
-    /* ─── 2. Mobile menu ─── */
-    const mobileMenu   = document.getElementById('mobileMenu');
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-
-    function openMenu() {
-      mobileMenu.classList.add('open');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    hamburgerBtn.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-
-
-    /* ─── 3. Scroll-reveal via Intersection Observer ─── */
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-
-        /* Stagger items inside grid containers */
-        const grid = entry.target.closest(
-          '.problems-grid, .categories-grid, .trust-grid, .project-features'
-        );
-        if (grid) {
-          const siblings = Array.from(
-            grid.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+        let current = "";
+        sections.forEach((sec) => {
+          if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
+        });
+        navLinkEls.forEach((a) => {
+          a.classList.toggle(
+            "active",
+            a.getAttribute("href") === "#" + current,
           );
-          entry.target.style.transitionDelay = (siblings.indexOf(entry.target) * 0.1) + 's';
-        }
-
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-    revealEls.forEach(el => observer.observe(el));
-
-
-    /* ─── 4. Testimonials carousel ─── */
-    const slides  = document.querySelectorAll('.t-slide');
-    const dots    = document.querySelectorAll('.c-dot');
-    let   current = 0;
-    let   timer;
-
-    function goTo(idx) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (idx + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-    }
-
-    function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
-    function resetAuto()  { clearInterval(timer); startAuto(); }
-
-    document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
-    document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
-    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
-
-    startAuto();
-
-
-    /* ─── 5. Newsletter form ─── */
-    document.getElementById('ctaForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('ctaEmail').value.trim();
-      if (!email) return;
-      e.target.style.display = 'none';
-      document.getElementById('ctaSuccess').classList.add('show');
-    });
-
-
-    /* ─── 6. Smooth-scroll anchor links ─── */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 68, behavior: 'smooth' });
-      });
-    });
-
-
-    /* ─── 7. Subtle hero parallax on background ─── */
-    const heroBg = document.querySelector('.hero-bg');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < window.innerHeight) {
-        heroBg.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
+        });
       }
-    }, { passive: true });
 
-  </script>
+      window.addEventListener("scroll", updateNav, { passive: true });
+      updateNav();
 
-</body>
+      /* ─── 2. Mobile menu ─── */
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const closeMenuBtn = document.getElementById("closeMenuBtn");
+
+      function openMenu() {
+        mobileMenu.classList.add("open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        hamburgerBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      hamburgerBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      /* ─── 3. Scroll-reveal via Intersection Observer ─── */
+      const revealEls = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            /* Stagger items inside grid containers */
+            const grid = entry.target.closest(
+              ".problems-grid, .categories-grid, .trust-grid, .project-features",
+            );
+            if (grid) {
+              const siblings = Array.from(
+                grid.querySelectorAll(".reveal, .reveal-left, .reveal-right"),
+              );
+              entry.target.style.transitionDelay =
+                siblings.indexOf(entry.target) * 0.1 + "s";
+            }
+
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      revealEls.forEach((el) => observer.observe(el));
+
+      /* ─── 4. Testimonials carousel ─── */
+      const slides = document.querySelectorAll(".t-slide");
+      const dots = document.querySelectorAll(".c-dot");
+      let current = 0;
+      let timer;
+
+      function goTo(idx) {
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
+        current = (idx + slides.length) % slides.length;
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
+      }
+
+      function startAuto() {
+        timer = setInterval(() => goTo(current + 1), 5000);
+      }
+      function resetAuto() {
+        clearInterval(timer);
+        startAuto();
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        goTo(current - 1);
+        resetAuto();
+      });
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        goTo(current + 1);
+        resetAuto();
+      });
+      dots.forEach((d) =>
+        d.addEventListener("click", () => {
+          goTo(+d.dataset.index);
+          resetAuto();
+        }),
+      );
+
+      startAuto();
+
+      /* ─── 5. Newsletter form ─── */
+      document.getElementById("ctaForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("ctaEmail").value.trim();
+        if (!email) return;
+        e.target.style.display = "none";
+        document.getElementById("ctaSuccess").classList.add("show");
+      });
+
+      /* ─── 6. Smooth-scroll anchor links ─── */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#") return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 68, behavior: "smooth" });
+        });
+      });
+
+      /* ─── 7. Subtle hero parallax on background ─── */
+      const heroBg = document.querySelector(".hero-bg");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY < window.innerHeight) {
+            heroBg.style.transform =
+              "translateY(" + window.scrollY * 0.18 + "px)";
+          }
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
 </html>
