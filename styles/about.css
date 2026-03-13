@@ -1336,6 +1336,11 @@
   .categories-grid  { grid-template-columns: repeat(2, 1fr); }
   .trust-grid       { grid-template-columns: repeat(2, 1fr); }
   .footer-grid      { grid-template-columns: 1fr 1fr; }
+
+  /* Hide scroll indicator when buttons stack to prevent overlap */
+  .hero-scroll {
+    display: none !important;
+  }
 }
 
 /* ── Mobile: < 768px ── */

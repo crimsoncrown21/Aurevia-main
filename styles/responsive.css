@@ -213,6 +213,12 @@
     display: flex !important;
   }
 
+  /* Hide scroll indicator on smaller screens to prevent overlap */
+  .hero-scroll,
+  .hero .hero-scroll {
+    display: none !important;
+  }
+
   /* Update display utilities */
   .hide-desktop {
     display: block !important;
@@ -294,6 +300,14 @@
     font-size: 1.5rem;
   }
 
+  .nav-links {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
   /* Spacing */
   .section-padding {
     padding: 40px 15px;
@@ -334,9 +348,9 @@
 
   /* Hero Section */
   .hero {
-    min-height: 350px !important;
+    min-height: 500px !important;
     height: auto !important;
-    padding: 80px 15px 40px !important;
+    padding: 100px 15px 40px !important;
   }
 
   .hero-buttons {
@@ -459,7 +473,7 @@
   }
 
   /* Mobile menu */
-  .mobile-drawer {
+  .mobile-menu {
     width: 85vw !important;
     max-width: 320px !important;
   }
@@ -475,183 +489,17 @@
     font-size: 1.3rem;
   }
 
-  .mobile-drawer {
+  .mobile-menu {
     width: 90vw !important;
   }
 }
 
-/* ─── 7. Mobile Navigation Enhancement ────────── */
-
-/* Mobile Menu Overlay */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(59, 48, 48, 0.5);
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.mobile-overlay.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Enhanced Mobile Drawer */
-.mobile-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 280px;
-  max-width: 320px;
-  height: 100vh;
-  background: var(--cream-bg);
-  z-index: 1001;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: -5px 0 30px rgba(59, 48, 48, 0.15);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-.mobile-drawer.open {
-  transform: translateX(0);
-}
-
-/* Drawer Header */
-.mobile-drawer-header {
-  height: 70px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--cream-dark);
-  flex-shrink: 0;
-}
-
-.mobile-drawer-header .logo {
-  font-size: 1.4rem;
-}
-
-/* Drawer Navigation */
-.mobile-drawer-nav {
-  flex: 1;
-  padding: 20px 0;
-  list-style: none;
-  margin: 0;
-}
-
-.mobile-drawer-nav li {
-  border-bottom: 1px solid var(--cream-dark);
-}
-
-.mobile-drawer-nav a {
-  display: block;
-  padding: 18px 30px;
-  font-family: var(--font-secondary);
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--dark-brown);
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.mobile-drawer-nav a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  background: var(--warm-brown);
-  transition: width 0.2s ease;
-}
-
-.mobile-drawer-nav a:hover {
-  background: var(--cream-light);
-  color: var(--warm-brown);
-  padding-left: 35px;
-}
-
-.mobile-drawer-nav a:hover::before {
-  width: 4px;
-}
-
-.mobile-drawer-nav a.active {
-  background: var(--warm-brown);
-  color: var(--cream-bg);
-  font-weight: 600;
-}
-
-/* Drawer Footer */
-.mobile-drawer-footer {
-  padding: 25px 20px;
-  border-top: 1px solid var(--cream-dark);
-  flex-shrink: 0;
-}
-
-.mobile-drawer-social {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 15px;
-}
-
-.mobile-drawer-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  color: var(--warm-brown);
-  transition: all 0.2s ease;
-}
-
-.mobile-drawer-social a:hover {
-  color: var(--dark-brown);
-  transform: scale(1.15);
-}
-
-.mobile-drawer-copyright {
-  font-family: var(--font-secondary);
-  font-size: 0.75rem;
-  color: var(--warm-brown);
-  text-align: center;
-  margin: 0;
-}
-
-/* Body scroll lock */
-body.menu-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
-/* Hamburger Animation States */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
+/* ─── 7. Removed dead mobile drawer code ────────── */
 
 /* ─── 8. Hero Sections Responsive ───────────── */
 @media (max-width: 991px) {
   .hero {
-    min-height: 400px;
+    min-height: 550px;
   }
 
   .page-hero {
@@ -661,7 +509,7 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .hero-content {
-    padding: 0 15px;
+    padding: 40px 15px;
   }
 
   .hero-scroll {
