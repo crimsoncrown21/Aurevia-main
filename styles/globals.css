@@ -94,17 +94,19 @@ button {
 .reveal,
 .reveal-left,
 .reveal-right {
+  -webkit-transition: opacity 0.8s ease-out, -webkit-transform 0.8s ease-out;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.reveal       { opacity: 0; transform: translateY(40px); }
-.reveal-left  { opacity: 0; transform: translateX(-50px); }
-.reveal-right { opacity: 0; transform: translateX(50px); }
+.reveal       { opacity: 0; -webkit-transform: translateY(40px); transform: translateY(40px); }
+.reveal-left  { opacity: 0; -webkit-transform: translateX(-50px); transform: translateX(-50px); }
+.reveal-right { opacity: 0; -webkit-transform: translateX(50px); transform: translateX(50px); }
 
 .reveal.visible,
 .reveal-left.visible,
 .reveal-right.visible {
   opacity: 1;
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 

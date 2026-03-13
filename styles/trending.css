@@ -6,7 +6,7 @@
 /* ═══ TOP 20 SECTION ═══ */
 .top-20-section {
   padding: 60px 0 40px;
-  background: var(--white);
+  background: var(--cream-bg);
 }
 
 .ranking-list {
@@ -46,7 +46,7 @@
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
-  background: var(--cream-bg);
+  background: var(--cream-light);
 }
 
 .rank-image img {
@@ -153,7 +153,7 @@
 /* ═══ MOST LOVED SECTION ═══ */
 .most-loved-section {
   padding: 60px 0;
-  background: var(--white);
+  background: var(--cream-bg);
 }
 
 .loved-carousel {

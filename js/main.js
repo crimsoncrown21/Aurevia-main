@@ -109,28 +109,33 @@ window.addEventListener('resize', () => {
 /* ─── 4. Scroll-reveal via Intersection Observer ─── */
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    
-    /* Stagger items inside grid containers */
-    const grid = entry.target.closest(
-      '.problems-grid, .categories-grid, .trust-grid, .project-features, .product-grid, .footer-grid'
-    );
-    if (grid) {
-      const siblings = Array.from(
-        grid.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+// Fallback: immediately show elements if IntersectionObserver not supported or on reduced motion
+if (!window.IntersectionObserver || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  revealEls.forEach(el => el.classList.add('visible'));
+} else {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      
+      /* Stagger items inside grid containers */
+      const grid = entry.target.closest(
+        '.problems-grid, .categories-grid, .trust-grid, .project-features, .product-grid, .footer-grid'
       );
-      entry.target.style.transitionDelay =
-        siblings.indexOf(entry.target) * 0.1 + 's';
-    }
-    
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      if (grid) {
+        const siblings = Array.from(
+          grid.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+        );
+        entry.target.style.transitionDelay =
+          siblings.indexOf(entry.target) * 0.1 + 's';
+      }
+      
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-revealEls.forEach(el => observer.observe(el));
+  revealEls.forEach(el => observer.observe(el));
+}
 
 /* ─── 5. Smooth-scroll anchor links ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

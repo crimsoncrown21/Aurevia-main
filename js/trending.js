@@ -5,112 +5,69 @@
    Trending page functionality
    ═══════════════════════════════════════════ */
 
-// ═══ Sample Trending Data ═══
-const top20Data = [
-  { rank: 1, name: "Vanilla Dream Eau de Parfum", category: "Fragrance", price: 89, views: 2340, badge: "hot", image: "fragrance-1" },
-  { rank: 2, name: "Silk Midi Dress - Cream", category: "Clothing", price: 165, views: 1890, badge: "bestseller", image: "dress-1" },
-  { rank: 3, name: "Leather Crossbody Bag", category: "Bags", price: 185, views: 1560, badge: "rising", image: "bag-1" },
-  { rank: 4, name: "Oud & Spice Collection", category: "Fragrance", price: 120, views: 1420, badge: "hot", image: "fragrance-2" },
-  { rank: 5, name: "Cashmere Blend Sweater", category: "Clothing", price: 145, views: 1280, badge: "bestseller", image: "sweater-1" },
-  { rank: 6, name: "The Essential Gift Set", category: "Gifts", price: 129, views: 1150, badge: "rising", image: "gift-1" },
-  { rank: 7, name: "Tote Bag - Canvas", category: "Bags", price: 120, views: 1080, badge: "bestseller", image: "bag-2" },
-  { rank: 8, name: "Floral Silk Scarf", category: "Clothing", price: 75, views: 980, badge: "rising", image: "scarf-1" },
-  { rank: 9, name: "Arabic Night Perfume", category: "Fragrance", price: 150, views: 920, badge: "hot", image: "fragrance-3" },
-  { rank: 10, name: "Weekend Travel Set", category: "Gifts", price: 199, views: 890, badge: "bestseller", image: "gift-2" },
-  { rank: 11, name: "Linen Blazer - Sand", category: "Clothing", price: 195, views: 840, badge: "rising", image: "blazer-1" },
-  { rank: 12, name: "Sling Bag - Mini", category: "Bags", price: 95, views: 780, badge: "rising", image: "bag-3" },
-  { rank: 13, name: "Custom Fragrance Kit", category: "Gifts", price: 79, views: 720, badge: "bestseller", image: "gift-3" },
-  { rank: 14, name: "Cotton Wide-Leg Trousers", category: "Clothing", price: 110, views: 680, badge: "rising", image: "bottom-1" },
-  { rank: 15, name: "Laptop Sleeve - Leather", category: "Bags", price: 135, views: 640, badge: "bestseller", image: "bag-4" },
-  { rank: 16, name: "Tropical Breeze Cologne", category: "Fragrance", price: 85, views: 590, badge: "hot", image: "fragrance-4" },
-  { rank: 17, name: "Embroidered Tote", category: "Bags", price: 145, views: 560, badge: "rising", image: "bag-5" },
-  { rank: 18, name: "Luxury Bath Set", category: "Gifts", price: 89, views: 520, badge: "bestseller", image: "gift-4" },
-  { rank: 19, name: "Wool Blend Coat", category: "Clothing", price: 285, views: 480, badge: "rising", image: "coat-1" },
-  { rank: 20, name: "Mystery Surprise Box", category: "Gifts", price: 59, views: 450, badge: "hot", image: "gift-5" }
+// ═══ Top 7 Data with Images ═══
+const top7Data = [
+  { rank: 1, name: "Elegant Summer Dress", category: "Clothing", price: 7387, views: 2340, badge: "hot", image: "images/cloths/Dresses/dress1.jpeg" },
+  { rank: 2, name: "Silk Wrap Dress", category: "Clothing", price: 129, views: 1890, badge: "bestseller", image: "images/cloths/Dresses/dress2.jpeg" },
+  { rank: 3, name: "Linen Blouse", category: "Clothing", price: 4897, views: 1560, badge: "rising", image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
+  { rank: 4, name: "Tailored Trousers", category: "Clothing", price: 6557, views: 1420, badge: "hot", image: "images/cloths/Bottoms/derss1.jpeg" },
+  { rank: 5, name: "Cashmere Hoodie", category: "Clothing", price: 7885, views: 1280, badge: "bestseller", image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
+  { rank: 6, name: "Classic Leather Tote", category: "Bags", price: 10707, views: 1150, badge: "rising", image: "images/bags/tote bags/bag1.jpeg" },
+  { rank: 7, name: "Mini Crossbody Bag", category: "Bags", price: 7387, views: 1080, badge: "bestseller", image: "images/bags/sling bags/bag1.jpeg" }
 ];
 
 const trendingByCategory = {
   clothing: [
-    { name: "Silk Midi Dress", price: 165, image: "dress-1" },
-    { name: "Cashmere Sweater", price: 145, image: "sweater-1" },
-    { name: "Linen Blazer", price: 195, image: "blazer-1" },
-    { name: "Wide-Leg Trousers", price: 110, image: "bottom-1" },
-    { name: "Wool Coat", price: 285, image: "coat-1" }
+    { name: "Elegant Summer Dress", price: 7387, image: "images/cloths/Dresses/dress1.jpeg" },
+    { name: "Silk Wrap Dress", price: 129, image: "images/cloths/Dresses/dress2.jpeg" },
+    { name: "Linen Blouse", price: 4897, image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
+    { name: "Tailored Trousers", price: 6557, image: "images/cloths/Bottoms/derss1.jpeg" },
+    { name: "Cashmere Hoodie", price: 7885, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" }
   ],
   bags: [
-    { name: "Leather Crossbody", price: 185, image: "bag-1" },
-    { name: "Canvas Tote", price: 120, image: "bag-2" },
-    { name: "Mini Sling", price: 95, image: "bag-3" },
-    { name: "Laptop Sleeve", price: 135, image: "bag-4" },
-    { name: "Embroidered Tote", price: 145, image: "bag-5" }
+    { name: "Classic Leather Tote", price: 10707, image: "images/bags/tote bags/bag1.jpeg" },
+    { name: "Mini Crossbody Bag", price: 7387, image: "images/bags/sling bags/bag1.jpeg" },
+    { name: "Evening Clutch", price: 6566, image: "images/bags/clutch bags/bag3.jpeg" },
+    { name: "Quilted Mini Bag", price: 8200, image: "images/bags/tote bags/bag2.jpeg" },
+    { name: "Weekender Duffle", price: 12500, image: "images/bags/tote bags/bag3.jpeg" }
   ],
   fragrances: [
-    { name: "Vanilla Dream", price: 89, image: "fragrance-1" },
-    { name: "Oud & Spice", price: 120, image: "fragrance-2" },
-    { name: "Arabic Night", price: 150, image: "fragrance-3" },
-    { name: "Tropical Breeze", price: 85, image: "fragrance-4" },
-    { name: "Cinnamon Woods", price: 95, image: "fragrance-5" }
+    { name: "Vanilla Dream", price: 4599 },
+    { name: "Oud Collection", price: 5999 },
+    { name: "Floral Essence", price: 3899 },
+    { name: "Citrus Blend", price: 3299 },
+    { name: "Amber Nights", price: 5299 }
   ],
   gifts: [
-    { name: "Essential Set", price: 129, image: "gift-1" },
-    { name: "Travel Set", price: 199, image: "gift-2" },
-    { name: "Fragrance Kit", price: 79, image: "gift-3" },
-    { name: "Bath Set", price: 89, image: "gift-4" },
-    { name: "Mystery Box", price: 59, image: "gift-5" }
+    { name: "Luxury Gift Set", price: 7999 },
+    { name: "Premium Hamper", price: 9999 },
+    { name: "Self Care Box", price: 4599 },
+    { name: "Accessory Bundle", price: 3299 },
+    { name: "Mini Surprise Box", price: 1999 }
   ]
 };
 
 const mostLovedData = [
-  { name: "Vanilla Dream Eau de Parfum", viewers: 23, sold: 156, popularity: 95, image: "fragrance-1" },
-  { name: "Silk Midi Dress - Cream", viewers: 18, sold: 134, popularity: 88, image: "dress-1" },
-  { name: "Leather Crossbody Bag", viewers: 31, sold: 128, popularity: 92, image: "bag-1" },
-  { name: "Cashmere Blend Sweater", viewers: 15, sold: 98, popularity: 82, image: "sweater-1" },
-  { name: "The Essential Gift Set", viewers: 12, sold: 87, popularity: 78, image: "gift-1" },
-  { name: "Oud & Spice Collection", viewers: 19, sold: 76, popularity: 85, image: "fragrance-2" }
+  { name: "Elegant Summer Dress", viewers: 23, sold: 156, popularity: 95, image: "images/cloths/Dresses/dress1.jpeg" },
+  { name: "Silk Wrap Dress", viewers: 18, sold: 134, popularity: 88, image: "images/cloths/Dresses/dress2.jpeg" },
+  { name: "Classic Leather Tote", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/bag1.jpeg" },
+  { name: "Cashmere Hoodie", viewers: 15, sold: 98, popularity: 82, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
+  { name: "Luxury Gift Set", viewers: 12, sold: 87, popularity: 78 },
+  { name: "Oud Collection", viewers: 19, sold: 76, popularity: 85 }
 ];
 
-// ═══ Render Top 20 Ranking List ═══
-function renderRankingList() {
-  const container = document.getElementById('rankingList');
-  if (!container) return;
+// ═══ Get Image HTML ═══
+function getImageHtml(name, imagePath) {
+  if (imagePath) {
+    return `<img src="${imagePath}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:2;" onerror="this.style.display='none';">`;
+  }
+  return '';
+}
 
-  container.innerHTML = top20Data.map(item => `
-    <div class="ranking-card reveal" data-rank="${item.rank}">
-      <span class="rank-number">${String(item.rank).padStart(2, '0')}</span>
-      <div class="rank-image">
-        <div class="product-placeholder ${item.image}" style="width:100%;height:100%;background:var(--cream-bg);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:var(--font-secondary);font-size:0.8rem;">
-          ${item.name.split(' ')[0]}
-        </div>
-        ${item.badge ? `<span class="trend-badge ${item.badge}">${getBadgeText(item.badge)}</span>` : ''}
-      </div>
-      <div class="rank-info">
-        <span class="rank-category">${item.category}</span>
-        <h3 class="rank-name">${item.name}</h3>
-        <div class="rank-price">$${item.price.toFixed(2)}</div>
-        <div class="rank-stats">${item.views.toLocaleString()} views today</div>
-        <button class="quick-add-btn" data-product="${item.name}">Quick Add</button>
-      </div>
-    </div>
-  `).join('');
-
-  // Add click handlers for quick add
-  container.querySelectorAll('.quick-add-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const productName = btn.dataset.product;
-      const product = top20Data.find(p => p.name === productName);
-      if (product) {
-        addToCart({
-          id: product.name.toLowerCase().replace(/\s+/g, '-'),
-          name: product.name,
-          price: product.price,
-          image: '',
-          quantity: 1
-        });
-        showAddedFeedback(btn);
-      }
-    });
-  });
+// ═══ Placeholder HTML ═══
+function getPlaceholderHtml(name) {
+  const shortName = name.split(' ').slice(0, 2).join(' ');
+  return `<div class="product-placeholder" style="width:100%;height:100%;background:linear-gradient(135deg, #FFF0D1 0%, #E8D9B8 100%);display:flex;align-items:center;justify-content:center;color:#795757;font-family:'Montserrat',sans-serif;font-size:0.85rem;text-align:center;padding:15px;position:absolute;top:0;left:0;z-index:1;"><span>${shortName}</span></div>`;
 }
 
 function getBadgeText(badge) {
@@ -132,19 +89,61 @@ function showAddedFeedback(btn) {
   }, 1500);
 }
 
+// ═══ Render Top 7 Ranking List ═══
+function renderRankingList() {
+  const container = document.getElementById('rankingList');
+  if (!container) return;
+
+  container.innerHTML = top7Data.map(item => `
+    <div class="ranking-card" data-rank="${item.rank}">
+      <span class="rank-number">${String(item.rank).padStart(2, '0')}</span>
+      <div class="rank-image" style="position:relative; overflow:hidden;">
+        ${getImageHtml(item.name, item.image)}
+        ${getPlaceholderHtml(item.name)}
+        ${item.badge ? `<span class="trend-badge ${item.badge}">${getBadgeText(item.badge)}</span>` : ''}
+      </div>
+      <div class="rank-info">
+        <span class="rank-category">${item.category}</span>
+        <h3 class="rank-name">${item.name}</h3>
+        <div class="rank-price">₹${item.price.toLocaleString()}</div>
+        <div class="rank-stats">${item.views.toLocaleString()} views today</div>
+        <button class="quick-add-btn" data-product="${item.name}">Quick Add</button>
+      </div>
+    </div>
+  `).join('');
+
+  // Add click handlers
+  container.querySelectorAll('.quick-add-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const productName = btn.dataset.product;
+      const product = top7Data.find(p => p.name === productName);
+      if (product && typeof addToCart === 'function') {
+        addToCart({
+          id: product.name.toLowerCase().replace(/\s+/g, '-'),
+          name: product.name,
+          price: product.price,
+          image: product.image || '',
+          quantity: 1
+        });
+        showAddedFeedback(btn);
+      }
+    });
+  });
+}
+
 // ═══ Render Trending by Category ═══
 function renderTrendingCategory(category) {
   const container = document.getElementById(`trending-${category}-grid`);
   if (!container) return;
 
   const products = trendingByCategory[category] || [];
-  
+
   container.innerHTML = products.map(product => `
-    <div class="product-card reveal">
-      <div class="product-image">
-        <div class="product-placeholder" style="width:100%;aspect-ratio:3/4;background:var(--cream-bg);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:var(--font-secondary);">
-          <span>${product.name}</span>
-        </div>
+    <div class="product-card">
+      <div class="product-image" style="position:relative; aspect-ratio:3/4; overflow:hidden;">
+        ${getImageHtml(product.name, product.image)}
+        ${getPlaceholderHtml(product.name)}
         <div class="product-overlay">
           <button class="quick-view-btn">Quick View</button>
         </div>
@@ -157,7 +156,7 @@ function renderTrendingCategory(category) {
       <div class="product-info">
         <h3 class="product-name">${product.name}</h3>
         <div class="product-price">
-          <span class="current-price">$${product.price.toFixed(2)}</span>
+          <span class="current-price">₹${product.price.toLocaleString()}</span>
         </div>
         <button class="add-to-cart-btn">Add to Cart</button>
       </div>
@@ -171,13 +170,14 @@ function renderMostLoved() {
   if (!container) return;
 
   container.innerHTML = mostLovedData.map(item => `
-    <div class="loved-card reveal">
+    <div class="loved-card">
       <div class="live-viewers">
         <span class="pulse-dot"></span>
         <span>${item.viewers} people viewing</span>
       </div>
-      <div class="product-placeholder" style="width:100%;height:280px;background:var(--cream-bg);display:flex;align-items:center;justify-content:center;color:var(--warm-brown);font-family:var(--font-secondary);">
-        <span>${item.name.split(' ')[0]}</span>
+      <div class="loved-image" style="position:relative; height:280px; overflow:hidden;">
+        ${getImageHtml(item.name, item.image)}
+        ${getPlaceholderHtml(item.name)}
       </div>
       <div class="loved-info">
         <h3>${item.name}</h3>
@@ -189,7 +189,7 @@ function renderMostLoved() {
     </div>
   `).join('');
 
-  // Animate bars on scroll
+  // Animate bars
   setTimeout(() => {
     container.querySelectorAll('.bar-fill').forEach(bar => {
       const width = bar.style.width;
@@ -208,21 +208,17 @@ function initCategoryTabs() {
     tab.addEventListener('click', () => {
       const category = tab.dataset.category;
 
-      // Update tabs
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Update content
       contents.forEach(c => c.classList.remove('active'));
       const target = document.getElementById(`${category}-trending`);
       if (target) target.classList.add('active');
 
-      // Render if not already done
       renderTrendingCategory(category);
     });
   });
 
-  // Initial render
   renderTrendingCategory('clothing');
 }
 
