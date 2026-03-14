@@ -124,7 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* Legacy add-to-cart buttons on category pages (no variant selection) */
+  const isProductPage = window.location.pathname.includes('product.html');
+  
   document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    // Change button text to "Buy Now" on listing pages
+    if (!isProductPage) {
+      btn.textContent = 'Buy Now';
+    }
+    
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -136,6 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const id = card.dataset.id || card.querySelector('.product-name, h3')?.textContent.trim().replace(/\s+/g, '-').toLowerCase() || 'product';
+      
+      // On listing pages: redirect to product page
+      if (!isProductPage) {
+        window.location.href = `product.html?id=${encodeURIComponent(id)}`;
+        return;
+      }
+      
+      // On product page: proceed with normal add to cart
       const name = card.querySelector('.product-name, h3')?.textContent.trim() || 'Product';
       const priceText = card.dataset.price || card.querySelector('.current-price')?.textContent.replace(/[^0-9.]/g, '') || '0';
       const price = parseFloat(priceText);

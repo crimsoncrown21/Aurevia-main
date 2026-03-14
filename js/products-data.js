@@ -874,9 +874,8 @@ const AUREVIA_PRODUCTS = [
     sizes: ['30ml', '50ml', '100ml'],
     stock: { '30ml': 25, '50ml': 18, '100ml': 10 },
     images: [
-      'images/fragrances/vanilla-1.jpg',
-      'images/fragrances/vanilla-2.jpg',
-      'images/fragrances/vanilla-3.jpg'
+      'images/fragrances/sweet/vanilla.jpg',
+      'images/fragrances/sweet/citrus.jpg'
     ],
     description: 'A warm and inviting oriental fragrance that wraps you in a comforting embrace. Vanilla Dream opens with a bright citrus burst before settling into a lush floral heart and a deeply sensual base of vanilla and sandalwood.',
     keyFeatures: [
@@ -923,8 +922,8 @@ const AUREVIA_PRODUCTS = [
     sizes: ['30ml', '50ml', '100ml'],
     stock: { '30ml': 20, '50ml': 15, '100ml': 8 },
     images: [
-      'images/fragrances/fresh-1.jpg',
-      'images/fragrances/fresh-2.jpg'
+      'images/fragrances/fresh/aquatic.jpg',
+      'images/fragrances/fresh/Jojoba.jpeg'
     ],
     description: 'An opulent meeting of Bulgarian Rose and rare Agarwood Oud. This is a fragrance for those who appreciate depth, mystery, and the ancient art of Arabic perfumery translated into a contemporary context.',
     keyFeatures: [
@@ -951,6 +950,309 @@ const AUREVIA_PRODUCTS = [
         { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
         { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 },
         { type: 'scent', name: 'Scent Layering Kit', description: 'Add complementary scent samples', price: 25 }
+      ]
+    }
+  },
+
+  /* ─── ADDITIONAL FRAGRANCE PRODUCTS ──────────── */
+  {
+    id: 'fragrance-003',
+    name: 'Tropical Breeze EDP',
+    category: 'fragrances',
+    subcategory: 'sweet',
+    brand: 'Aurevia',
+    price: 1070.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 67,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 18, '50ml': 12, '100ml': 6 },
+    images: [
+      'images/fragrances/sweet/tropical .png',
+      'images/fragrances/sweet/citrus.jpg'
+    ],
+    description: 'A refreshing tropical escape in a bottle. Tropical Breeze captures the essence of sun-kissed beaches with notes of coconut, pineapple, and a hint of sea salt.',
+    keyFeatures: [
+      'Long-lasting sillage of 5–7 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Refillable bottle design to reduce waste',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Perfect for summer days and tropical getaways. Layer with our Coconut Body Lotion for enhanced longevity.',
+    details: { 'Concentration': 'Eau de Parfum (15% concentrate)', 'Top Notes': 'Pineapple, Coconut, Bergamot', 'Middle Notes': 'Frangipani, Jasmine, Sea Salt', 'Base Notes': 'Sandalwood, Vanilla, Musk', 'Longevity': '5–7 hours', 'Sillage': 'Moderate', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-004',
+    name: 'Citrus Spark EDP',
+    category: 'fragrances',
+    subcategory: 'sweet',
+    brand: 'Aurevia',
+    price: 1110.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.4,
+    reviewCount: 52,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 22, '50ml': 16, '100ml': 8 },
+    images: [
+      'images/fragrances/sweet/citrus.jpg',
+      'images/fragrances/sweet/tropical .png'
+    ],
+    description: 'An energizing burst of citrus sunshine. Citrus Spark opens with zesty grapefruit and bergamot, settling into a heart of neroli and a clean musk base.',
+    keyFeatures: [
+      'Long-lasting sillage of 4–6 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Refillable bottle design to reduce waste',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Perfect for morning wear and office settings. A refreshing pick-me-up any time of day.',
+    details: { 'Concentration': 'Eau de Parfum (14% concentrate)', 'Top Notes': 'Grapefruit, Bergamot, Lemon', 'Middle Notes': 'Neroli, Green Tea, Mint', 'Base Notes': 'White Musk, Cedarwood', 'Longevity': '4–6 hours', 'Sillage': 'Soft to Moderate', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'new',
+    isNew: true,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-005',
+    name: 'Floral Rain EDP',
+    category: 'fragrances',
+    subcategory: 'fresh',
+    brand: 'Aurevia',
+    price: 1095.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.7,
+    reviewCount: 78,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 20, '50ml': 15, '100ml': 10 },
+    images: [
+      'images/fragrances/fresh/floral.jpeg',
+      'images/fragrances/fresh/aquatic.jpg'
+    ],
+    description: 'A delicate bouquet of fresh florals after spring rain. Floral Rain combines peony, lily of the valley, and a touch of green leaves for a truly refreshing scent.',
+    keyFeatures: [
+      'Long-lasting sillage of 5–7 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Refillable bottle design to reduce waste',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Ideal for spring days and romantic evenings. A graceful, feminine fragrance for any occasion.',
+    details: { 'Concentration': 'Eau de Parfum (16% concentrate)', 'Top Notes': 'Green Leaves, Rain Accord', 'Middle Notes': 'Peony, Lily of the Valley, Rose', 'Base Notes': 'White Musk, Soft Woods', 'Longevity': '5–7 hours', 'Sillage': 'Moderate', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-006',
+    name: 'Jojoba Fresh EDP',
+    category: 'fragrances',
+    subcategory: 'fresh',
+    brand: 'Aurevia',
+    price: 1045.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.3,
+    reviewCount: 45,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 15, '50ml': 10, '100ml': 5 },
+    images: [
+      'images/fragrances/fresh/Jojoba.jpeg',
+      'images/fragrances/fresh/floral.jpeg'
+    ],
+    description: 'A clean, botanical fragrance inspired by nature\'s purity. Jojoba Fresh blends herbal notes with a touch of jojoba oil essence for a unique, skin-loving scent.',
+    keyFeatures: [
+      'Long-lasting sillage of 4–6 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Contains nourishing jojoba oil notes',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Perfect for everyday wear and active lifestyles. A clean, approachable scent that works anywhere.',
+    details: { 'Concentration': 'Eau de Parfum (14% concentrate)', 'Top Notes': 'Lemon, Basil, Mint', 'Middle Notes': 'Jojoba Blossom, Lavender, Green Tea', 'Base Notes': 'Soft Woods, White Musk', 'Longevity': '4–6 hours', 'Sillage': 'Soft to Moderate', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-007',
+    name: 'Spice Market EDP',
+    category: 'fragrances',
+    subcategory: 'woody',
+    brand: 'Aurevia',
+    price: 1160.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.6,
+    reviewCount: 63,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 12, '50ml': 8, '100ml': 4 },
+    images: [
+      'images/fragrances/woddy/spicy.jpg',
+      'images/fragrances/woddy/Oud.jpeg'
+    ],
+    description: 'An exotic journey through an eastern spice bazaar. Spice Market features warm cinnamon, cardamom, and a hint of saffron over a rich amber base.',
+    keyFeatures: [
+      'Long-lasting sillage of 6–8 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Complex, evolving scent profile',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Best for cooler weather and evening occasions. A bold, confident fragrance for those who love warmth.',
+    details: { 'Concentration': 'Eau de Parfum (18% concentrate)', 'Top Notes': 'Cardamom, Cinnamon, Saffron', 'Middle Notes': 'Clove, Rose, Incense', 'Base Notes': 'Amber, Vanilla, Sandalwood', 'Longevity': '6–8 hours', 'Sillage': 'Moderate to Strong', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-008',
+    name: 'Arabian Oud EDP',
+    category: 'fragrances',
+    subcategory: 'woody',
+    brand: 'Aurevia',
+    price: 1200.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.8,
+    reviewCount: 89,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 10, '50ml': 6, '100ml': 3 },
+    images: [
+      'images/fragrances/woddy/Oud.jpeg',
+      'images/fragrances/woddy/spicy.jpg'
+    ],
+    description: 'A luxurious, deep oud fragrance that commands attention. Arabian Oud combines rare agarwood with rose and amber for a truly majestic scent experience.',
+    keyFeatures: [
+      'Long-lasting sillage of 8–10 hours',
+      'Hand-crafted by a Dubai master perfumer',
+      'Features authentic agarwood oud',
+      'Luxurious and commanding presence',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'For special occasions and formal events. A little goes a long way - apply sparingly for maximum impact.',
+    details: { 'Concentration': 'Eau de Parfum (20% concentrate)', 'Top Notes': 'Saffron, Raspberry, Bergamot', 'Middle Notes': 'Agarwood Oud, Rose, Incense', 'Base Notes': 'Amber, Musk, Sandalwood', 'Longevity': '8–10 hours', 'Sillage': 'Strong', 'Origin': 'Dubai / Grasse collaborative' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: 'bestseller',
+    isNew: false,
+    isBestseller: true,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 },
+        { type: 'scent', name: 'Scent Layering Kit', description: 'Add complementary scent samples', price: 25 }
+      ]
+    }
+  },
+
+  {
+    id: 'fragrance-009',
+    name: 'Leather Reserve EDP',
+    category: 'fragrances',
+    subcategory: 'woody',
+    brand: 'Aurevia',
+    price: 1180.00,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 71,
+    colors: null,
+    sizes: ['30ml', '50ml', '100ml'],
+    stock: { '30ml': 14, '50ml': 10, '100ml': 5 },
+    images: [
+      'images/fragrances/woddy/leather.jpeg',
+      'images/fragrances/woddy/Oud.jpeg'
+    ],
+    description: 'A sophisticated leather fragrance with timeless elegance. Leather Reserve blends rich suede notes with birch tar and a hint of violet for a modern classic.',
+    keyFeatures: [
+      'Long-lasting sillage of 6–8 hours',
+      'Hand-crafted by a Grasse master perfumer',
+      'Vegan and cruelty-free formulation',
+      'Rich, sophisticated leather accord',
+      'Presented in a signature Aurevia gift box'
+    ],
+    stylingTips: 'Perfect for formal occasions and evening wear. An elegant, commanding fragrance for the discerning individual.',
+    details: { 'Concentration': 'Eau de Parfum (18% concentrate)', 'Top Notes': 'Bergamot, Violet Leaf, Cardamom', 'Middle Notes': 'Leather, Birch Tar, Jasmine', 'Base Notes': 'Amber, Musk, Patchouli', 'Longevity': '6–8 hours', 'Sillage': 'Moderate to Strong', 'Origin': 'Grasse, France' },
+    measurements: {},
+    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
+    reviews: [],
+    badge: null,
+    isNew: false,
+    isBestseller: false,
+    customization: {
+      available: true,
+      options: [
+        { type: 'engraving', name: 'Bottle Engraving', description: 'Personalize with name or message (up to 20 characters)', price: 15 },
+        { type: 'giftwrap', name: 'Premium Gift Wrapping', description: 'Luxury gift box with ribbon', price: 12 }
       ]
     }
   },

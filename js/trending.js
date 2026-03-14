@@ -99,27 +99,18 @@ function renderRankingList() {
         <h3 class="rank-name">${item.name}</h3>
         <div class="rank-price">₹${item.price.toLocaleString()}</div>
         <div class="rank-stats">${item.views.toLocaleString()} views today</div>
-        <button class="quick-add-btn" data-product="${item.name}">Quick Add</button>
+        <button class="quick-add-btn buy-now-btn" data-product="${item.name}">Buy Now</button>
       </div>
     </div>
   `).join('');
 
-  // Add click handlers
-  container.querySelectorAll('.quick-add-btn').forEach(btn => {
+  // Add click handlers for Buy Now buttons
+  container.querySelectorAll('.buy-now-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const productName = btn.dataset.product;
-      const product = top7Data.find(p => p.name === productName);
-      if (product && typeof addToCart === 'function') {
-        addToCart({
-          id: product.name.toLowerCase().replace(/\s+/g, '-'),
-          name: product.name,
-          price: product.price,
-          image: product.image || '',
-          quantity: 1
-        });
-        showAddedFeedback(btn);
-      }
+      const id = productName.toLowerCase().replace(/\s+/g, '-');
+      window.location.href = `product.html?id=${encodeURIComponent(id)}`;
     });
   });
 }
@@ -132,7 +123,7 @@ function renderTrendingCategory(category) {
   const products = trendingByCategory[category] || [];
 
   container.innerHTML = products.map(product => `
-    <div class="product-card">
+    <div class="product-card" data-id="${product.name.toLowerCase().replace(/\s+/g, '-')}">
       <div class="product-image" style="position:relative; aspect-ratio:3/4; overflow:hidden;">
         ${getImageHtml(product.name, product.image)}
         ${getPlaceholderHtml(product.name)}
@@ -150,10 +141,23 @@ function renderTrendingCategory(category) {
         <div class="product-price">
           <span class="current-price">₹${product.price.toLocaleString()}</span>
         </div>
-        <button class="add-to-cart-btn">Add to Cart</button>
+        <button class="add-to-cart-btn buy-now-btn">Buy Now</button>
       </div>
     </div>
   `).join('');
+  
+  // Attach Buy Now click handlers to dynamically rendered buttons
+  container.querySelectorAll('.buy-now-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest('.product-card');
+      const id = card?.dataset.id;
+      if (id) {
+        window.location.href = `product.html?id=${encodeURIComponent(id)}`;
+      }
+    });
+  });
 }
 
 // ═══ Render Most Loved Section ═══
