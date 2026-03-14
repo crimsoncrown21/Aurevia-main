@@ -71,32 +71,6 @@
   color: var(--deep-brown);
 }
 
-/* Social Links in Contact */
-.contact-info .social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.contact-info .social-link {
-  width: 44px;
-  height: 44px;
-  background: var(--cream-bg);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--warm-brown);
-  transition: background var(--t-base), color var(--t-base),
-              transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.contact-info .social-link:hover {
-  background: var(--warm-brown);
-  color: var(--white);
-  transform: scale(1.15) translateY(-2px);
-}
-
 /* Contact Form */
 .contact-form-wrapper {
   background: var(--cream-light);

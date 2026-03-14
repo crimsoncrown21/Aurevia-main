@@ -369,17 +369,13 @@
 
   /* Footer - Stacked layout */
   .footer-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns:  1fr !important;
     gap: 2rem !important;
   }
 
   .footer-brand {
     grid-column: 1 / -1 !important;
     text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
   }
 
   .footer-col {

@@ -435,7 +435,7 @@ body.menu-open {
 
 .page-title {
   font-family: var(--font-primary);
-  font-size: 3rem;
+  font-size: clamp(1.6rem, 5vw, 3rem);
   color: var(--dark-brown);
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -809,6 +809,32 @@ body.menu-open {
   border-color: var(--warm-brown);
 }
 
+/* Horizontal scroll on small screens to prevent awkward wrapping */
+@media (max-width: 480px) {
+  .tab-buttons,
+  .fragrance-tabs,
+  .category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-buttons::-webkit-scrollbar,
+  .fragrance-tabs::-webkit-scrollbar,
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn,
+  .cat-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
 .tab-content {
   display: none;
 }
@@ -849,27 +875,6 @@ body.menu-open {
   line-height: 1.75;
   opacity: 0.8;
   margin-bottom: 1.5rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 0.9rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  color: var(--cream-dark);
-  border-radius: 50%;
-  transition: color var(--t-base), transform var(--t-spring), filter var(--t-base);
-}
-.social-link:hover {
-  color: var(--cream-bg);
-  transform: scale(1.22) translateY(-2px);
-  filter: drop-shadow(0 0 8px rgba(255, 240, 209, 0.4));
 }
 
 .footer-col h4 {
@@ -986,8 +991,8 @@ body.menu-open {
 
   .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
 
-  .page-hero { padding: 120px 0 40px; min-height: 150px; }
-  .page-title { font-size: 2rem; }
+  /* Tighten page-hero on mobile — contact/trending/bags/clothing pages */
+  .page-hero { padding: 100px 0 30px; min-height: auto; }
 
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-brand { grid-column: 1 / -1; }

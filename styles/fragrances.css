@@ -160,12 +160,24 @@
 .frag-o2 { background: linear-gradient(145deg, #D4A040 0%, #4A2D6B 50%, #2A1540 100%); }
 .frag-o3 { background: linear-gradient(145deg, #2A1540 0%, #4A2D6B 50%, #3B3030 100%); }
 
-/* ─── Responsive ─── */
 @media (max-width: 1024px) { .scent-grid { grid-template-columns: repeat(3,1fr); } }
 @media (max-width: 768px) {
   .scent-grid { grid-template-columns: repeat(2,1fr); }
   .customizer-grid { grid-template-columns: 1fr; }
   .customizer-title { font-size: 2rem; }
   .frag-ph { height: 240px; }
+
+  /* Fragrance category tab buttons: horizontal scroll on small screens */
+  .featured-fragrances .section-title,
+  .scent-categories .section-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    letter-spacing: 2px;
+  }
 }
-@media (max-width: 480px) { .scent-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .scent-grid { grid-template-columns: 1fr; }
+
+  .scent-card { height: 200px; }
+
+  .customizer-title { font-size: 1.7rem; }
+}

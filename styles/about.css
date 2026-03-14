@@ -490,7 +490,6 @@
 }
 
 .scroll-arrow { animation: bounceDown 2.2s ease-in-out infinite; }
- .scroll-arrow { animation: none; }
 
 /* ─────────────────────────────────────────────
    §3  ABOUT US SECTION
@@ -827,23 +826,25 @@
 
 .project-feat {
   text-align: center;
-  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
   transition: transform var(--t-base);
 }
 
-.project-feat:hover { transform: translateY(-8px); }
+.project-feat:hover { transform: translateY(-4px); }
 
 .project-feat-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.2rem;
+  width: 48px;
+  height: 48px;
   color: var(--cream-bg);
   transition: transform var(--t-base), filter var(--t-base);
 }
 
 .project-feat:hover .project-feat-icon {
-  transform: scale(1.12);
-  filter: drop-shadow(0 0 12px rgba(255,240,209,0.5));
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(255,240,209,0.4));
 }
 
 .project-feat h4 {
@@ -852,7 +853,15 @@
   font-weight: 700;
   color: var(--cream-bg);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.project-feat p {
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  color: var(--cream-dark);
+  line-height: 1.5;
+  max-width: 200px;
 }
 
 /* ─────────────────────────────────────────────
@@ -1247,27 +1256,6 @@
   line-height: 1.75;
   opacity: 0.8;
   margin-bottom: 1.5rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 0.9rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  color: var(--cream-dark);
-  border-radius: 50%;
-  transition: color var(--t-base), transform var(--t-spring), filter var(--t-base);
-}
-.social-link:hover {
-  color: var(--cream-bg);
-  transform: scale(1.22) translateY(-2px);
-  filter: drop-shadow(0 0 8px rgba(255, 240, 209, 0.4));
 }
 
 .footer-col h4 {
