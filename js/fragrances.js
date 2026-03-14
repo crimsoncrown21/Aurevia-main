@@ -100,5 +100,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* Add to Cart for custom fragrance */
+  const customizerAddBtn = document.querySelector('.customizer-preview .add-to-cart-btn');
+  if (customizerAddBtn) {
+    customizerAddBtn.addEventListener('click', () => {
+      const name = previewName ? previewName.textContent.trim() : 'Custom Fragrance';
+      const priceText = previewPrice ? previewPrice.textContent : '$89.00';
+      const price = parseFloat(priceText.replace(/[^0-9.]/g, '')) || 89;
+
+      // Generate unique ID based on configuration
+      const noteStr = selectedNotes.length > 0 ? selectedNotes.join('-') : 'none';
+      const uniqueId = `custom-${selectedBase}-${noteStr}-${intensity}`;
+
+      // Build description of the custom formula
+      const intensityLabels = ['Very Light', 'Light', 'Medium', 'Strong', 'Very Strong'];
+      const intensityLabel = intensityLabels[intensity - 1] || 'Medium';
+      const formulaDesc = `Base: ${selectedBase}${selectedNotes.length > 0 ? ', Notes: ' + selectedNotes.join(', ') : ''}, Intensity: ${intensityLabel}`;
+
+      addToCart({
+        id: uniqueId,
+        name: name,
+        price: price,
+        image: '',
+        quantity: 1,
+        category: 'Custom Fragrance',
+        color: formulaDesc
+      });
+
+      if (typeof animateCartBadge === 'function') animateCartBadge();
+      if (typeof showGlobalToast === 'function') showGlobalToast('Custom fragrance added to cart!', 'success');
+    });
+  }
+
   updatePreview();
 });

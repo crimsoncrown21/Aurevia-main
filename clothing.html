@@ -1,763 +1,1236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aurevia Clothing Collection — Timeless dresses, tops, bottoms, and more crafted for elegance.">
-  <title>Clothing | Aurevia</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aurevia Clothing Collection — Timeless dresses, tops, bottoms, and more crafted for elegance."
+    />
+    <title>Clothing | Aurevia</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/globals.css">
-  <link rel="stylesheet" href="styles/responsive.css">
-  <link rel="stylesheet" href="styles/shared.css">
-  <link rel="stylesheet" href="styles/clothing.css">
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/globals.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/clothing.css" />
+  </head>
+  <body>
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav id="navbar" class="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">Aurevia</a>
 
-  <!-- ═══ NAVIGATION ═══ -->
-  <nav id="navbar" class="navbar">
-    <div class="container">
-      <div class="nav-inner">
+          <!-- Desktop Nav -->
+          <ul class="nav-links">
+            <li><a href="index.html" class="hover-link">About</a></li>
+            <li><a href="clothing.html" class="active">Clothing</a></li>
+            <li><a href="bags.html" class="hover-link">Bags</a></li>
+            <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
+            <li><a href="customise.html" class="hover-link">Customise</a></li>
+            <li><a href="trending.html" class="hover-link">Trending</a></li>
+            <li><a href="contact.html" class="hover-link">Contact</a></li>
+          </ul>
 
-        <!-- Logo -->
+          <!-- Actions -->
+          <div class="nav-actions">
+            <button class="nav-icon-btn" aria-label="Bag">
+              <svg
+                width="22"
+                height="22"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M6 6h15l-1.5 9h-12z" />
+                <circle cx="9" cy="20" r="1.5" />
+                <circle cx="18" cy="20" r="1.5" />
+                <path d="M6 6L5 3H2" />
+              </svg>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button
+              class="hamburger"
+              id="hamburgerBtn"
+              aria-label="Menu"
+              aria-expanded="false"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-header">
         <a href="index.html" class="logo">Aurevia</a>
-
-        <!-- Desktop Nav -->
-        <ul class="nav-links">
-          <li><a href="index.html" class="hover-link">About</a></li>
-          <li><a href="clothing.html" class="active">Clothing</a></li>
-          <li><a href="bags.html" class="hover-link">Bags</a></li>
-          <li><a href="fragrances.html" class="hover-link">Fragrances</a></li>
-          <li><a href="customise.html" class="hover-link">Customise</a></li>
-          <li><a href="trending.html" class="hover-link">Trending</a></li>
-          <li><a href="contact.html" class="hover-link">Contact</a></li>
-        </ul>
-
-        <!-- Actions -->
-        <div class="nav-actions">
-          <button class="nav-icon-btn" aria-label="Bag">
-            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/>
+        <button
+          class="mobile-close-btn"
+          id="closeMenuBtn"
+          aria-label="Close menu"
+        >
+          <svg
+            width="28"
+            height="28"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-menu-nav">
+        <li><a href="index.html">About</a></li>
+        <li><a href="clothing.html" class="active">Clothing</a></li>
+        <li><a href="bags.html">Bags</a></li>
+        <li><a href="fragrances.html">Fragrances</a></li>
+        <li><a href="customise.html">Customise</a></li>
+        <li><a href="trending.html">Trending</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+        <div class="mobile-menu-social">
+          <a href="#" aria-label="Instagram">
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
-            <span class="cart-count" id="cartCount">0</span>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="mobile-menu-copyright">&copy; 2025 Aurevia</p>
+      </div>
+    </div>
+
+    <main>
+      <!-- ═══ PAGE HERO ═══ -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-line reveal"></div>
+            <h1 class="page-title reveal">Clothing Collection</h1>
+            <p class="page-subtitle reveal">
+              Discover timeless pieces crafted for elegance
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CATEGORY FILTERS ═══ -->
+      <section class="category-filters">
+        <div class="container">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="dresses">Dresses</button>
+            <button class="filter-btn" data-category="tops">
+              Tops &amp; T-shirts
+            </button>
+            <button class="filter-btn" data-category="bottoms">Bottoms</button>
+            <button class="filter-btn" data-category="sweatshirts">
+              Sweatshirts &amp; Hoodies
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PRODUCT GRID ═══ -->
+      <section class="products-section">
+        <div class="container">
+          <div class="products-header">
+            <p class="results-count">Showing 21 of 21 products</p>
+            <div class="sort-filter">
+              <select class="sort-select">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-grid grid-3" id="clothing-grid">
+            <!-- Product 1 -->
+            <div
+              class="product-card reveal"
+              data-id="dress-001"
+              data-category="dresses"
+              data-price="7387"
+              data-date="20260301"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Dresses/dress1.jpeg"
+                  alt="Elegant Summer Dress"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-20%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Denim Corset Asymmetrical Dress</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,250</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                  <span class="color-swatch" style="background: #795757"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+              class="product-card reveal"
+              data-id="dress-002"
+              data-category="dresses"
+              data-price="10707"
+              data-date="20260228"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Dresses/dress2.jpeg"
+                  alt="Silk Wrap Dress"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge new">New</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  Midnight Stardust Embellished Dress
+                </h3>
+                <div class="product-price">
+                  <span class="current-price">₹2,500</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #664343"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+              class="product-card reveal"
+              data-id="top-001"
+              data-category="tops"
+              data-price="4897"
+              data-date="20260305"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Tops & T-shirts/dress1.jpeg"
+                  alt="Linen Blouse"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Noir Back Butterfly Tee</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,100</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #fff8e7"></span>
+                  <span class="color-swatch" style="background: #795757"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div
+              class="product-card reveal"
+              data-id="top-002"
+              data-category="tops"
+              data-price="3735"
+              data-date="20260220"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Tops & T-shirts/dress2.jpeg"
+                  alt="Relaxed Cotton Tee"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Eclipse Butterfly Embellished Top</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                  <span class="color-swatch" style="background: #795757"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div
+              class="product-card reveal"
+              data-id="trousers-001"
+              data-category="bottoms"
+              data-price="6557"
+              data-date="20260310"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Bottoms/derss1.jpeg"
+                  alt="Tailored Trousers"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge new">New</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Floral Vine Flare Denim Jeans</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                  <span class="color-swatch" style="background: #664343"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div
+              class="product-card reveal"
+              data-id="bottom-002"
+              data-category="bottoms"
+              data-price="5727"
+              data-date="20260215"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Bottoms/dress2.jpeg"
+                  alt="Pleated Midi Skirt"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-15%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">
+                  Vintage Garden Embroidered Denim Skirt
+                </h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,150</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                  <span class="color-swatch" style="background: #795757"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div
+              class="product-card reveal"
+              data-id="hoodie-001"
+              data-category="sweatshirts"
+              data-price="7885"
+              data-date="20260308"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Hoodies and Sweatshirts/dress1.jpeg"
+                  alt="Cashmere Hoodie"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Midnight Star Cut-Out Hoodie</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,250</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div
+              class="product-card reveal"
+              data-id="sweatshirt-002"
+              data-category="sweatshirts"
+              data-price="7055"
+              data-date="20260225"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Hoodies and Sweatshirts/dress2.jpeg"
+                  alt="Oversized Sweatshirt"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Indigo Bloom Quarter Zip Hoodie</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #795757"></span>
+                  <span class="color-swatch" style="background: #fff0d1"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div
+              class="product-card reveal"
+              data-id="dress-003"
+              data-category="dresses"
+              data-price="12865"
+              data-date="20260312"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Dresses/dress3.jpeg"
+                  alt="Evening Gown"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge new">New</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Blue Porcelain Garden Dress</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                  <span class="color-swatch" style="background: #664343"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div
+              class="product-card reveal"
+              data-id="top-003"
+              data-category="tops"
+              data-price="5395"
+              data-date="20260302"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Tops & T-shirts/dress3.jpeg"
+                  alt="Silk Camisole"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Indigo Star Embroidered Tee</h3>
+                <div class="product-price">
+                  <span class="current-price">₹850</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #fff8e7"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div
+              class="product-card reveal"
+              data-id="bottom-003"
+              data-category="bottoms"
+              data-price="7387"
+              data-date="20260306"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Bottoms/dress3.jpeg"
+                  alt="Wide-Leg Pants"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Midnight Stardust Wide-Leg Jeans</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #3b3030"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div
+              class="product-card reveal"
+              data-id="sweatshirt-003"
+              data-category="sweatshirts"
+              data-price="9130"
+              data-date="20260311"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Hoodies and Sweatshirts/dress3.jpeg"
+                  alt="Knit Jumpsuit"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-10%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Ocean Patchwork Hoodie</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #795757"></span>
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 13 - Floral Maxi Dress -->
+            <div
+              class="product-card reveal"
+              data-id="dress-004"
+              data-category="dresses"
+              data-price="9954"
+              data-date="20260315"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Dresses/dress4.jpeg"
+                  alt="Floral Maxi Dress"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge new">New</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Aurora Drift Ruffle Gown</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,500</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #e8d9b8"></span>
+                  <span class="color-swatch" style="background: #2c3e50"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 14 - Cocktail Party Dress -->
+            <div
+              class="product-card reveal"
+              data-id="dress-005"
+              data-category="dresses"
+              data-price="11620"
+              data-date="20260314"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Dresses/dress5.jpeg"
+                  alt="Cocktail Party Dress"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-18%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Azure Crochet Dress</h3>
+                <div class="product-price">
+                  <span class="current-price">₹2,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #800020"></span>
+                  <span class="color-swatch" style="background: #1a1a1a"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 15 - Ribbed Knit Tank -->
+            <div
+              class="product-card reveal"
+              data-id="top-004"
+              data-category="tops"
+              data-price="3315"
+              data-date="20260309"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Tops & T-shirts/dress4.jpeg"
+                  alt="Ribbed Knit Tank"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Denim Drape Asymmetrical Camisole</h3>
+                <div class="product-price">
+                  <span class="current-price">₹900</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #ffffff"></span>
+                  <span class="color-swatch" style="background: #1a1a1a"></span>
+                  <span class="color-swatch" style="background: #8b7d6b"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 16 - Satin Blouse -->
+            <div
+              class="product-card reveal"
+              data-id="top-005"
+              data-category="tops"
+              data-price="6225"
+              data-date="20260313"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Tops & T-shirts/dress5.jpeg"
+                  alt="Satin Blouse"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-17%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Obsidian Floret Halter Top price</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,200</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #f7e7ce"></span>
+                  <span class="color-swatch" style="background: #ff0800"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 18 - Linen Culottes -->
+            <div
+              class="product-card reveal"
+              data-id="bottom-005"
+              data-category="bottoms"
+              data-price="5827"
+              data-date="20260316"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Bottoms/dress4.jpeg"
+                  alt="Linen Culottes"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Daisy Laced Trim Denim Shorts</h3>
+                <div class="product-price">
+                  <span class="current-price">₹850</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #f5f5dc"></span>
+                  <span class="color-swatch" style="background: #9caf88"></span>
+                  <span class="color-swatch" style="background: #2c3e50"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 19 - Paperbag Waist Shorts -->
+            <div
+              class="product-card reveal"
+              data-id="bottom-006"
+              data-category="bottoms"
+              data-price="4140"
+              data-date="20260304"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Bottoms/dress5.jpeg"
+                  alt="Paperbag Waist Shorts"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-17%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Ornate Charm Denim Mini Skirt</h3>
+                <div class="product-price">
+                  <span class="current-price">₹900</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #c3b091"></span>
+                  <span class="color-swatch" style="background: #1a1a1a"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 20 - Zip-Up Hoodie -->
+            <div
+              class="product-card reveal"
+              data-id="sweatshirt-004"
+              data-category="sweatshirts"
+              data-price="7470"
+              data-date="20260303"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Hoodies and Sweatshirts/dress4.jpeg"
+                  alt="Zip-Up Hoodie"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Rainbow Heart Knit Sweater</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,400</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #b8b8b8"></span>
+                  <span class="color-swatch" style="background: #1a1a1a"></span>
+                  <span class="color-swatch" style="background: #2c3e50"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 21 - Cropped Sweatshirt -->
+            <div
+              class="product-card reveal"
+              data-id="sweatshirt-005"
+              data-category="sweatshirts"
+              data-price="5395"
+              data-date="20260318"
+            >
+              <div class="product-image">
+                <img
+                  src="images/cloths/Hoodies and Sweatshirts/dress5.jpeg"
+                  alt="Cropped Sweatshirt"
+                />
+                <div class="product-overlay">
+                  <button class="quick-view-btn">Quick View</button>
+                </div>
+                <button class="wishlist-btn" aria-label="Add to Wishlist">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                    />
+                  </svg>
+                </button>
+                <span class="product-badge sale">-13%</span>
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Denim Star Street-Style Hoodie</h3>
+                <div class="product-price">
+                  <span class="current-price">₹1,050</span>
+                </div>
+                <div class="product-colors">
+                  <span class="color-swatch" style="background: #f5e6e8"></span>
+                  <span class="color-swatch" style="background: #c8a2c8"></span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="load-more">
+            <button class="load-more-btn">Load More Products</button>
+          </div>
+
+          <div class="size-guide-link">
+            <button class="size-guide-trigger" id="sizeGuideOpen">
+              Size Guide
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SIZE GUIDE MODAL ═══ -->
+      <div class="modal-overlay" id="sizeGuideModal">
+        <div class="modal-content">
+          <button class="modal-close" id="sizeGuideClose" aria-label="Close">
+            &times;
           </button>
-          <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
+          <h2>Size Guide</h2>
 
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mobile-menu-header">
-      <a href="index.html" class="logo">Aurevia</a>
-      <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Close menu">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-    <ul class="mobile-menu-nav">
-      <li><a href="index.html">About</a></li>
-      <li><a href="clothing.html" class="active">Clothing</a></li>
-      <li><a href="bags.html">Bags</a></li>
-      <li><a href="fragrances.html">Fragrances</a></li>
-      <li><a href="customise.html">Customise</a></li>
-      <li><a href="trending.html">Trending</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="mobile-menu-footer">
-      <div class="mobile-menu-social">
-        <a href="#" aria-label="Instagram">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Pinterest">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-          </svg>
-        </a>
-      </div>
-      <p class="mobile-menu-copyright">&copy; 2025 Aurevia</p>
-    </div>
-  </div>
-
-  <main>
-
-    <!-- ═══ PAGE HERO ═══ -->
-    <section class="page-hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-line reveal"></div>
-          <h1 class="page-title reveal">Clothing Collection</h1>
-          <p class="page-subtitle reveal">Discover timeless pieces crafted for elegance</p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══ CATEGORY FILTERS ═══ -->
-    <section class="category-filters">
-      <div class="container">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-category="all">All</button>
-          <button class="filter-btn" data-category="dresses">Dresses</button>
-          <button class="filter-btn" data-category="tops">Tops &amp; T-shirts</button>
-          <button class="filter-btn" data-category="bottoms">Bottoms</button>
-          <button class="filter-btn" data-category="sweatshirts">Sweatshirts &amp; Hoodies</button>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══ PRODUCT GRID ═══ -->
-    <section class="products-section">
-      <div class="container">
-        <div class="products-header">
-          <p class="results-count">Showing 21 of 21 products</p>
-          <div class="sort-filter">
-            <select class="sort-select">
-              <option value="featured">Featured</option>
-              <option value="newest">Newest</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="product-grid grid-3" id="clothing-grid">
-
-          <!-- Product 1 -->
-          <div class="product-card reveal" data-id="dress-001" data-category="dresses" data-price="7387" data-date="20260301">
-            <div class="product-image">
-              <img src="images/cloths/Dresses/dress1.jpeg" alt="Elegant Summer Dress">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-20%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Denim Corset Asymmetrical Dress PRICE</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,250</span>
-                <span class="original-price">₹3,000</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#3B3030"></span>
-                <span class="color-swatch" style="background:#795757"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+          <h3>Women's Clothing</h3>
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Size</th>
+                  <th>US</th>
+                  <th>UK</th>
+                  <th>EU</th>
+                  <th>Bust (in)</th>
+                  <th>Waist (in)</th>
+                  <th>Hips (in)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XS</td>
+                  <td>0-2</td>
+                  <td>4-6</td>
+                  <td>32-34</td>
+                  <td>31-32</td>
+                  <td>24-25</td>
+                  <td>34-35</td>
+                </tr>
+                <tr>
+                  <td>S</td>
+                  <td>4-6</td>
+                  <td>8-10</td>
+                  <td>36-38</td>
+                  <td>33-34</td>
+                  <td>26-27</td>
+                  <td>36-37</td>
+                </tr>
+                <tr>
+                  <td>M</td>
+                  <td>8-10</td>
+                  <td>12-14</td>
+                  <td>40-42</td>
+                  <td>35-36</td>
+                  <td>28-29</td>
+                  <td>38-39</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>12-14</td>
+                  <td>16-18</td>
+                  <td>44-46</td>
+                  <td>37-39</td>
+                  <td>30-32</td>
+                  <td>40-42</td>
+                </tr>
+                <tr>
+                  <td>XL</td>
+                  <td>16-18</td>
+                  <td>20-22</td>
+                  <td>48-50</td>
+                  <td>40-42</td>
+                  <td>33-35</td>
+                  <td>43-45</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Product 2 -->
-          <div class="product-card reveal" data-id="dress-002" data-category="dresses" data-price="10707" data-date="20260228">
-            <div class="product-image">
-              <img src="images/cloths/Dresses/dress2.jpeg" alt="Silk Wrap Dress">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge new">New</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Midnight Stardust Embellished Dress</h3>
-              <div class="product-price">
-                <span class="current-price">₹2,500</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#664343"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="product-card reveal" data-id="top-001" data-category="tops" data-price="4897" data-date="20260305">
-            <div class="product-image">
-              <img src="images/cloths/Tops & T-shirts/dress1.jpeg" alt="Linen Blouse">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name"> Noir Back Butterfly Tee</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,100</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#FFF8E7"></span>
-                <span class="color-swatch" style="background:#795757"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 4 -->
-          <div class="product-card reveal" data-id="top-002" data-category="tops" data-price="3735" data-date="20260220">
-            <div class="product-image">
-              <img src="images/cloths/Tops & T-shirts/dress2.jpeg" alt="Relaxed Cotton Tee">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Eclipse Butterfly Embellished Top</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#3B3030"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-                <span class="color-swatch" style="background:#795757"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 5 -->
-          <div class="product-card reveal" data-id="trousers-001" data-category="bottoms" data-price="6557" data-date="20260310">
-            <div class="product-image">
-              <img src="images/cloths/Bottoms/derss1.jpeg" alt="Tailored Trousers">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge new">New</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Floral Vine Flare Denim Jeans</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#3B3030"></span>
-                <span class="color-swatch" style="background:#664343"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 6 -->
-          <div class="product-card reveal" data-id="bottom-002" data-category="bottoms" data-price="5727" data-date="20260215">
-            <div class="product-image">
-              <img src="images/cloths/Bottoms/dress2.jpeg" alt="Pleated Midi Skirt">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-15%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Vintage Garden Embroidered Denim Skirt</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,150</span>
-                <span class="original-price">₹2,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-                <span class="color-swatch" style="background:#795757"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 7 -->
-          <div class="product-card reveal" data-id="hoodie-001" data-category="sweatshirts" data-price="7885" data-date="20260308">
-            <div class="product-image">
-              <img src="images/cloths/Hoodies and Sweatshirts/dress1.jpeg" alt="Cashmere Hoodie">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Midnight Star Cut-Out Hoodie</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,250</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-                <span class="color-swatch" style="background:#3B3030"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 8 -->
-          <div class="product-card reveal" data-id="sweatshirt-002" data-category="sweatshirts" data-price="7055" data-date="20260225">
-            <div class="product-image">
-              <img src="images/cloths/Hoodies and Sweatshirts/dress2.jpeg" alt="Oversized Sweatshirt">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Indigo Bloom Quarter Zip Hoodie</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#795757"></span>
-                <span class="color-swatch" style="background:#FFF0D1"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 9 -->
-          <div class="product-card reveal" data-id="dress-003" data-category="dresses" data-price="12865" data-date="20260312">
-            <div class="product-image">
-              <img src="images/cloths/Dresses/dress3.jpeg" alt="Evening Gown">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge new">New</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Blue Porcelain Garden Dress</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#3B3030"></span>
-                <span class="color-swatch" style="background:#664343"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 10 -->
-          <div class="product-card reveal" data-id="top-003" data-category="tops" data-price="5395" data-date="20260302">
-            <div class="product-image">
-              <img src="images/cloths/Tops & T-shirts/dress3.jpeg" alt="Silk Camisole">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Indigo Star Embroidered Tee</h3>
-              <div class="product-price">
-                <span class="current-price">₹850</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#FFF8E7"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 11 -->
-          <div class="product-card reveal" data-id="bottom-003" data-category="bottoms" data-price="7387" data-date="20260306">
-            <div class="product-image">
-              <img src="images/cloths/Bottoms/dress3.jpeg" alt="Wide-Leg Pants">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Midnight Stardust Wide-Leg Jeans</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#3B3030"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 12 -->
-          <div class="product-card reveal" data-id="sweatshirt-003" data-category="sweatshirts" data-price="9130" data-date="20260311">
-            <div class="product-image">
-              <img src="images/cloths/Hoodies and Sweatshirts/dress3.jpeg" alt="Knit Jumpsuit">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-10%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Ocean Patchwork Hoodie</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-                <span class="original-price">₹2,500</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#795757"></span>
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 13 - Floral Maxi Dress -->
-          <div class="product-card reveal" data-id="dress-004" data-category="dresses" data-price="9954" data-date="20260315">
-            <div class="product-image">
-              <img src="images/cloths/Dresses/dress4.jpeg" alt="Floral Maxi Dress">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge new">New</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Aurora Drift Ruffle Gown</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,500</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#E8D9B8"></span>
-                <span class="color-swatch" style="background:#2c3e50"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 14 - Cocktail Party Dress -->
-          <div class="product-card reveal" data-id="dress-005" data-category="dresses" data-price="11620" data-date="20260314">
-            <div class="product-image">
-              <img src="images/cloths/Dresses/dress5.jpeg" alt="Cocktail Party Dress">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-18%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Azure Crochet Dress</h3>
-              <div class="product-price">
-                <span class="current-price">₹2200</span>
-                <span class="original-price">₹4,500</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#800020"></span>
-                <span class="color-swatch" style="background:#1a1a1a"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 15 - Ribbed Knit Tank -->
-          <div class="product-card reveal" data-id="top-004" data-category="tops" data-price="3315" data-date="20260309">
-            <div class="product-image">
-              <img src="images/cloths/Tops & T-shirts/dress4.jpeg" alt="Ribbed Knit Tank">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Denim Drape Asymmetrical Camisole</h3>
-              <div class="product-price">
-                <span class="current-price">₹900</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#FFFFFF"></span>
-                <span class="color-swatch" style="background:#1a1a1a"></span>
-                <span class="color-swatch" style="background:#8B7D6B"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 16 - Satin Blouse -->
-          <div class="product-card reveal" data-id="top-005" data-category="tops" data-price="6225" data-date="20260313">
-            <div class="product-image">
-              <img src="images/cloths/Tops & T-shirts/dress5.jpeg" alt="Satin Blouse">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-17%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name"> Obsidian Floret Halter Top price</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,200</span>
-                <span class="original-price">₹3,000</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#F7E7CE"></span>
-                <span class="color-swatch" style="background:#50C878"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-         
-          <!-- Product 18 - Linen Culottes -->
-          <div class="product-card reveal" data-id="bottom-005" data-category="bottoms" data-price="5827" data-date="20260316">
-            <div class="product-image">
-              <img src="images/cloths/Bottoms/dress4.jpeg" alt="Linen Culottes">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Daisy Laced Trim Denim Shorts</h3>
-              <div class="product-price">
-                <span class="current-price">₹850</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#F5F5DC"></span>
-                <span class="color-swatch" style="background:#9CAF88"></span>
-                <span class="color-swatch" style="background:#2c3e50"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 19 - Paperbag Waist Shorts -->
-          <div class="product-card reveal" data-id="bottom-006" data-category="bottoms" data-price="4140" data-date="20260304">
-            <div class="product-image">
-              <img src="images/cloths/Bottoms/dress5.jpeg" alt="Paperbag Waist Shorts">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-17%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Ornate Charm Denim Mini Skirt</h3>
-              <div class="product-price">
-                <span class="current-price">₹900</span>
-                <span class="original-price">₹1,020</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#C3B091"></span>
-                <span class="color-swatch" style="background:#1a1a1a"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 20 - Zip-Up Hoodie -->
-          <div class="product-card reveal" data-id="sweatshirt-004" data-category="sweatshirts" data-price="7470" data-date="20260303">
-            <div class="product-image">
-              <img src="images/cloths/Hoodies and Sweatshirts/dress4.jpeg" alt="Zip-Up Hoodie">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Rainbow Heart Knit Sweater</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,400</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#B8B8B8"></span>
-                <span class="color-swatch" style="background:#1a1a1a"></span>
-                <span class="color-swatch" style="background:#2c3e50"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 21 - Cropped Sweatshirt -->
-          <div class="product-card reveal" data-id="sweatshirt-005" data-category="sweatshirts" data-price="5395" data-date="20260318">
-            <div class="product-image">
-              <img src="images/cloths/Hoodies and Sweatshirts/dress5.jpeg" alt="Cropped Sweatshirt">
-              <div class="product-overlay">
-                <button class="quick-view-btn">Quick View</button>
-              </div>
-              <button class="wishlist-btn" aria-label="Add to Wishlist">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              </button>
-              <span class="product-badge sale">-13%</span>
-            </div>
-            <div class="product-info">
-              <h3 class="product-name">Denim Star Street-Style Hoodie</h3>
-              <div class="product-price">
-                <span class="current-price">₹1,050</span>
-                <span class="original-price">₹3,200</span>
-              </div>
-              <div class="product-colors">
-                <span class="color-swatch" style="background:#F5E6E8"></span>
-                <span class="color-swatch" style="background:#C8A2C8"></span>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="load-more">
-          <button class="load-more-btn">Load More Products</button>
-        </div>
-
-        <div class="size-guide-link">
-          <button class="size-guide-trigger" id="sizeGuideOpen">Size Guide</button>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ═══ SIZE GUIDE MODAL ═══ -->
-    <div class="modal-overlay" id="sizeGuideModal">
-      <div class="modal-content">
-        <button class="modal-close" id="sizeGuideClose" aria-label="Close">&times;</button>
-        <h2>Size Guide</h2>
-
-        <h3>Women's Clothing</h3>
-        <div class="size-table-wrap">
-          <table class="size-table">
-            <thead>
-              <tr><th>Size</th><th>US</th><th>UK</th><th>EU</th><th>Bust (in)</th><th>Waist (in)</th><th>Hips (in)</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>XS</td><td>0-2</td><td>4-6</td><td>32-34</td><td>31-32</td><td>24-25</td><td>34-35</td></tr>
-              <tr><td>S</td><td>4-6</td><td>8-10</td><td>36-38</td><td>33-34</td><td>26-27</td><td>36-37</td></tr>
-              <tr><td>M</td><td>8-10</td><td>12-14</td><td>40-42</td><td>35-36</td><td>28-29</td><td>38-39</td></tr>
-              <tr><td>L</td><td>12-14</td><td>16-18</td><td>44-46</td><td>37-39</td><td>30-32</td><td>40-42</td></tr>
-              <tr><td>XL</td><td>16-18</td><td>20-22</td><td>48-50</td><td>40-42</td><td>33-35</td><td>43-45</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>How to Measure</h3>
-        <ul class="measure-guide">
-          <li><strong>Bust:</strong> Measure around the fullest part of your bust.</li>
-          <li><strong>Waist:</strong> Measure around your natural waistline.</li>
-          <li><strong>Hips:</strong> Measure around the widest part of your hips.</li>
-        </ul>
-      </div>
-    </div>
-
-  </main>
-
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Aurevia</h3>
-          <p>Curated elegance for the intentional life. Clothing, leather goods, fragrances, and gifting — united by an unwavering commitment to quality and craft.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <ul class="footer-links">
-            <li><a href="clothing.html">Clothing</a></li>
-            <li><a href="bags.html">Bags</a></li>
-            <li><a href="fragrances.html">Fragrances</a></li>
-            <li><a href="customise.html">Customise</a></li>
-            <li><a href="trending.html">Trending</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Help</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html">FAQ</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Our Story</a></li>
-            <li><a href="#">Sustainability</a></li>
+          <h3>How to Measure</h3>
+          <ul class="measure-guide">
+            <li>
+              <strong>Bust:</strong> Measure around the fullest part of your
+              bust.
+            </li>
+            <li>
+              <strong>Waist:</strong> Measure around your natural waistline.
+            </li>
+            <li>
+              <strong>Hips:</strong> Measure around the widest part of your
+              hips.
+            </li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 Aurevia. All rights reserved. &middot; Crafted with intention.</p>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>Aurevia</h3>
+            <p>
+              Curated elegance for the intentional life. Clothing, leather
+              goods, fragrances, and gifting — united by an unwavering
+              commitment to quality and craft.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li><a href="clothing.html">Clothing</a></li>
+              <li><a href="bags.html">Bags</a></li>
+              <li><a href="fragrances.html">Fragrances</a></li>
+              <li><a href="customise.html">Customise</a></li>
+              <li><a href="trending.html">Trending</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Help</h4>
+            <ul class="footer-links">
+              <li><a href="contact.html">FAQ</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Our Story</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2025 Aurevia. All rights reserved. &middot; Crafted with
+            intention.
+          </p>
+        </div>
+      </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+      /* Size Guide Modal */
+      const sizeModal = document.getElementById("sizeGuideModal");
+      const sizeOpen = document.getElementById("sizeGuideOpen");
+      const sizeClose = document.getElementById("sizeGuideClose");
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/products.js"></script>
-  <script>
-    /* Size Guide Modal */
-    const sizeModal = document.getElementById('sizeGuideModal');
-    const sizeOpen  = document.getElementById('sizeGuideOpen');
-    const sizeClose = document.getElementById('sizeGuideClose');
-
-    if (sizeOpen) sizeOpen.addEventListener('click', () => sizeModal.classList.add('active'));
-    if (sizeClose) sizeClose.addEventListener('click', () => sizeModal.classList.remove('active'));
-    if (sizeModal) sizeModal.addEventListener('click', e => {
-      if (e.target === sizeModal) sizeModal.classList.remove('active');
-    });
-  </script>
-
-</body>
+      if (sizeOpen)
+        sizeOpen.addEventListener("click", () =>
+          sizeModal.classList.add("active"),
+        );
+      if (sizeClose)
+        sizeClose.addEventListener("click", () =>
+          sizeModal.classList.remove("active"),
+        );
+      if (sizeModal)
+        sizeModal.addEventListener("click", (e) => {
+          if (e.target === sizeModal) sizeModal.classList.remove("active");
+        });
+    </script>
+  </body>
 </html>

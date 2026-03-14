@@ -11,20 +11,19 @@ const AUREVIA_PRODUCTS = [
   /* ─── CLOTHING ─────────────────────────────── */
   {
     id: 'dress-001',
-    name: 'Elegant Summer Dress',
+    name: 'Denim Corset Asymmetrical Dress',
     category: 'clothing',
     subcategory: 'dresses',
     brand: 'Aurevia',
-    price: 7387.00,
-    originalPrice: 9130.00,
+    price: 1250.00,
+    originalPrice: 3000.00,
     discount: 20,
     rating: 4.2,
     reviewCount: 42,
     colors: [
       { name: 'Brown',  hex: '#3B3030' },
-      { name: 'Cream',  hex: '#E8D9B8' },
-      { name: 'Black',  hex: '#1a1a1a' },
-      { name: 'Navy',   hex: '#2c3e50' }
+      { name: 'Warm Brown',  hex: '#795757' },
+      { name: 'Cream',  hex: '#E8D9B8' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     stock: { XS: 5, S: 12, M: 8, L: 3, XL: 0 },
@@ -83,11 +82,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'dress-002',
-    name: 'Silk Wrap Dress',
+    name: 'Midnight Stardust Embellished Dress',
     category: 'clothing',
     subcategory: 'dresses',
     brand: 'Aurevia',
-    price: 129.00,
+    price: 2500.00,
     originalPrice: null,
     discount: 0,
     rating: 4.7,
@@ -147,11 +146,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'top-001',
-    name: 'Linen Blouse',
+    name: 'Noir Back Butterfly Tee',
     category: 'clothing',
     subcategory: 'tops',
     brand: 'Aurevia',
-    price: 4897.00,
+    price: 1100.00,
     originalPrice: null,
     discount: 0,
     rating: 4.5,
@@ -201,11 +200,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'trousers-001',
-    name: 'Tailored Trousers',
+    name: 'Floral Vine Flare Denim Jeans',
     category: 'clothing',
     subcategory: 'bottoms',
     brand: 'Aurevia',
-    price: 6557.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
@@ -249,11 +248,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'hoodie-001',
-    name: 'Cashmere Hoodie',
+    name: 'Midnight Star Cut-Out Hoodie',
     category: 'clothing',
     subcategory: 'sweatshirts',
     brand: 'Aurevia',
-    price: 7885.00,
+    price: 1250.00,
     originalPrice: null,
     discount: 0,
     rating: 4.8,
@@ -299,19 +298,17 @@ const AUREVIA_PRODUCTS = [
   /* ─── BAGS ──────────────────────────────────── */
   {
     id: 'bag-001',
-    name: 'Classic Leather Tote',
+    name: 'Regal Emerald Clutch',
     category: 'bags',
-    subcategory: 'tote',
+    subcategory: 'clutch',
     brand: 'Aurevia',
-    price: 10707.00,
+    price: 1800.00,
     originalPrice: null,
     discount: 0,
     rating: 4.8,
     reviewCount: 67,
     colors: [
-      { name: 'Tan',   hex: '#C4A77D' },
-      { name: 'Black', hex: '#1a1a1a' },
-      { name: 'Brown', hex: '#5D4037' }
+      { name: 'Emerald',   hex: '#3B3030' }
     ],
     sizes: null,
     stock: { Tan: 15, Black: 20, Brown: 8 },
@@ -353,18 +350,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-002',
-    name: 'Mini Crossbody Bag',
+    name: 'Button Heart Canvas Tote Bag',
     category: 'bags',
-    subcategory: 'crossbody',
+    subcategory: 'tote',
     brand: 'Aurevia',
-    price: 7387.00,
-    originalPrice: 8715.00,
-    discount: 15,
+    price: 500.00,
+    originalPrice: null,
+    discount: 0,
     rating: 4.5,
     reviewCount: 38,
     colors: [
-      { name: 'Cognac', hex: '#8B5E3C' },
-      { name: 'Black',  hex: '#1a1a1a' }
+      { name: 'Canvas', hex: '#8B5E3C' }
     ],
     sizes: null,
     stock: { Cognac: 10, Black: 18 },
@@ -403,19 +399,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-003',
-    name: 'Elegant Evening Clutch',
+    name: 'Pearl Cascade Clutch',
     category: 'bags',
     subcategory: 'clutch',
     brand: 'Aurevia',
-    price: 6566.00,
+    price: 1000.00,
     originalPrice: null,
     discount: 0,
     rating: 4.7,
     reviewCount: 29,
     colors: [
-      { name: 'Gold', hex: '#D4AF37' },
-      { name: 'Black', hex: '#1a1a1a' },
-      { name: 'Navy', hex: '#2c3e50' }
+      { name: 'Pearl', hex: '#D4AF37' }
     ],
     sizes: null,
     stock: { Gold: 8, Black: 15, Navy: 6 },
@@ -447,11 +441,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-004',
-    name: 'Quilted Mini Bag',
+    name: 'Antique Blossom Clutch',
     category: 'bags',
     subcategory: 'clutch',
     brand: 'Aurevia',
-    price: 8295.00,
+    price: 1000.00,
     originalPrice: 9954.00,
     discount: 20,
     rating: 4.6,
@@ -491,17 +485,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-005',
-    name: 'Beaded Statement Clutch',
+    name: 'Ivory Blossom Brocade Clutch',
     category: 'bags',
     subcategory: 'clutch',
     brand: 'Aurevia',
-    price: 12035.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.9,
     reviewCount: 18,
     colors: [
-      { name: 'Multi', hex: '#D4AF37' }
+      { name: 'Ivory', hex: '#FFFFF0' }
     ],
     sizes: null,
     stock: { Multi: 6 },
@@ -566,17 +560,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-007',
-    name: 'Premium Leather Laptop Briefcase',
+    name: 'Starry Night Laptop Bag',
     category: 'bags',
     subcategory: 'laptop',
     brand: 'Aurevia',
-    price: 15355.00,
-    originalPrice: 17430.00,
+    price: 700.00,
+    originalPrice: 2000.00,
     discount: 12,
     rating: 4.7,
     reviewCount: 42,
     colors: [
-      { name: 'Tan', hex: '#C4A77D' },
+      { name: 'Navy', hex: '#2c3e50' },
       { name: 'Black', hex: '#1a1a1a' }
     ],
     sizes: null,
@@ -611,11 +605,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-008',
-    name: 'Executive Rolling Laptop Bag',
+    name: 'Serene Floret Laptop Bag',
     category: 'bags',
     subcategory: 'laptop',
     brand: 'Aurevia',
-    price: 18765.00,
+    price: 1000.00,
     originalPrice: null,
     discount: 0,
     rating: 4.5,
@@ -650,17 +644,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-009',
-    name: 'Convertible Backpack Briefcase',
+    name: 'Ivory Quilted Laptop Bag',
     category: 'bags',
     subcategory: 'laptop',
     brand: 'Aurevia',
-    price: 14178.00,
-    originalPrice: 16185.00,
+    price: 950.00,
+    originalPrice: 3000.00,
     discount: 12,
     rating: 4.8,
     reviewCount: 53,
     colors: [
-      { name: 'Brown', hex: '#5D4037' },
+      { name: 'Ivory', hex: '#FFFFF0' },
       { name: 'Black', hex: '#1a1a1a' }
     ],
     sizes: null,
@@ -694,17 +688,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-010',
-    name: 'Woven Bucket Sling',
+    name: 'Heritage Patchwork Embroidered Sling Bag',
     category: 'bags',
     subcategory: 'sling',
     brand: 'Aurevia',
-    price: 9954.00,
+    price: 1500.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
     reviewCount: 37,
     colors: [
-      { name: 'Natural', hex: '#D4A77D' },
+      { name: 'Multi', hex: '#D4A77D' },
       { name: 'Black', hex: '#1a1a1a' }
     ],
     sizes: null,
@@ -733,11 +727,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-011',
-    name: 'Canvas Market Tote',
+    name: 'Shringaar Tote Bag',
     category: 'bags',
     subcategory: 'tote',
     brand: 'Aurevia',
-    price: 5395.00,
+    price: 950.00,
     originalPrice: 6225.00,
     discount: 15,
     rating: 4.4,
@@ -778,18 +772,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-012',
-    name: 'Leather Shopper Tote',
+    name: 'Daisy Crochet Shoulder Tote Bag',
     category: 'bags',
     subcategory: 'tote',
     brand: 'Aurevia',
-    price: 13269.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.9,
     reviewCount: 45,
     colors: [
-      { name: 'Cognac', hex: '#8B5E3C' },
-      { name: 'Chestnut', hex: '#654321' }
+      { name: 'Cream', hex: '#F5F5DC' }
     ],
     sizes: null,
     stock: { Cognac: 10, Chestnut: 8 },
@@ -822,17 +815,17 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bag-013',
-    name: 'Weekend Travel Tote',
+    name: 'Denim Stellar Patchwork Tote Bag',
     category: 'bags',
     subcategory: 'tote',
     brand: 'Aurevia',
-    price: 11620.00,
+    price: 1000.00,
     originalPrice: null,
     discount: 0,
     rating: 4.7,
     reviewCount: 33,
     colors: [
-      { name: 'Olive', hex: '#556B2F' },
+      { name: 'Denim', hex: '#556B2F' },
       { name: 'Black', hex: '#1a1a1a' }
     ],
     sizes: null,
@@ -868,11 +861,11 @@ const AUREVIA_PRODUCTS = [
   /* ─── FRAGRANCES ────────────────────────────── */
   {
     id: 'fragrance-001',
-    name: 'Vanilla Dream Eau de Parfum',
+    name: 'Vanilla Dream EDP',
     category: 'fragrances',
     subcategory: 'vanilla',
     brand: 'Aurevia',
-    price: 7387.00,
+    price: 1133.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
@@ -917,11 +910,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'fragrance-002',
-    name: 'Rose & Oud Eau de Parfum',
+    name: 'Aquatic Mist EDP',
     category: 'fragrances',
-    subcategory: 'floral',
+    subcategory: 'fresh',
     brand: 'Aurevia',
-    price: 8715.00,
+    price: 1020.00,
     originalPrice: null,
     discount: 0,
     rating: 4.9,
@@ -930,8 +923,8 @@ const AUREVIA_PRODUCTS = [
     sizes: ['30ml', '50ml', '100ml'],
     stock: { '30ml': 20, '50ml': 15, '100ml': 8 },
     images: [
-      'images/fragrances/rose-1.jpg',
-      'images/fragrances/rose-2.jpg'
+      'images/fragrances/fresh-1.jpg',
+      'images/fragrances/fresh-2.jpg'
     ],
     description: 'An opulent meeting of Bulgarian Rose and rare Agarwood Oud. This is a fragrance for those who appreciate depth, mystery, and the ancient art of Arabic perfumery translated into a contemporary context.',
     keyFeatures: [
@@ -965,11 +958,11 @@ const AUREVIA_PRODUCTS = [
   /* ─── ADDITIONAL CLOTHING PRODUCTS ──────────── */
   {
     id: 'top-002',
-    name: 'Relaxed Cotton Tee',
+    name: 'Eclipse Butterfly Embellished Top',
     category: 'clothing',
     subcategory: 'tops',
     brand: 'Aurevia',
-    price: 3735.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.3,
@@ -1010,12 +1003,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bottom-002',
-    name: 'Pleated Midi Skirt',
+    name: 'Vintage Garden Embroidered Denim Skirt',
     category: 'clothing',
     subcategory: 'bottoms',
     brand: 'Aurevia',
-    price: 5727.00,
-    originalPrice: 6806.00,
+    price: 1150.00,
+    originalPrice: 2200.00,
     discount: 15,
     rating: 4.5,
     reviewCount: 28,
@@ -1054,11 +1047,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'sweatshirt-002',
-    name: 'Oversized Sweatshirt',
+    name: 'Indigo Bloom Quarter Zip Hoodie',
     category: 'clothing',
     subcategory: 'sweatshirts',
     brand: 'Aurevia',
-    price: 7055.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
@@ -1098,11 +1091,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'dress-003',
-    name: 'Evening Gown',
+    name: 'Blue Porcelain Garden Dress',
     category: 'clothing',
     subcategory: 'dresses',
     brand: 'Aurevia',
-    price: 12865.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.8,
@@ -1142,11 +1135,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'top-003',
-    name: 'Silk Camisole',
+    name: 'Indigo Star Embroidered Tee',
     category: 'clothing',
     subcategory: 'tops',
     brand: 'Aurevia',
-    price: 5395.00,
+    price: 850.00,
     originalPrice: null,
     discount: 0,
     rating: 4.4,
@@ -1186,11 +1179,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bottom-003',
-    name: 'Wide-Leg Pants',
+    name: 'Midnight Stardust Wide-Leg Jeans',
     category: 'clothing',
     subcategory: 'bottoms',
     brand: 'Aurevia',
-    price: 7387.00,
+    price: 1200.00,
     originalPrice: null,
     discount: 0,
     rating: 4.7,
@@ -1230,12 +1223,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'sweatshirt-003',
-    name: 'Knit Jumpsuit',
+    name: 'Ocean Patchwork Hoodie',
     category: 'clothing',
     subcategory: 'sweatshirts',
     brand: 'Aurevia',
-    price: 9130.00,
-    originalPrice: 10126.00,
+    price: 1200.00,
+    originalPrice: 2500.00,
     discount: 10,
     rating: 4.5,
     reviewCount: 21,
@@ -1275,18 +1268,18 @@ const AUREVIA_PRODUCTS = [
   /* ─── ADDITIONAL DRESS PRODUCTS ──────────── */
   {
     id: 'dress-004',
-    name: 'Floral Maxi Dress',
+    name: 'Aurora Drift Ruffle Gown',
     category: 'clothing',
     subcategory: 'dresses',
     brand: 'Aurevia',
-    price: 9954.00,
+    price: 1500.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
     reviewCount: 34,
     colors: [
-      { name: 'Multi Floral', hex: '#E8D9B8' },
-      { name: 'Navy Floral', hex: '#2c3e50' }
+      { name: 'Cream', hex: '#E8D9B8' },
+      { name: 'Navy', hex: '#2c3e50' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     stock: { XS: 6, S: 12, M: 16, L: 10, XL: 5 },
@@ -1320,12 +1313,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'dress-005',
-    name: 'Cocktail Party Dress',
+    name: 'Azure Crochet Dress',
     category: 'clothing',
     subcategory: 'dresses',
     brand: 'Aurevia',
-    price: 11620.00,
-    originalPrice: 14178.00,
+    price: 2200.00,
+    originalPrice: 4500.00,
     discount: 18,
     rating: 4.8,
     reviewCount: 41,
@@ -1365,11 +1358,11 @@ const AUREVIA_PRODUCTS = [
   /* ─── ADDITIONAL TOP PRODUCTS ──────────── */
   {
     id: 'top-004',
-    name: 'Ribbed Knit Tank',
+    name: 'Denim Drape Asymmetrical Camisole',
     category: 'clothing',
     subcategory: 'tops',
     brand: 'Aurevia',
-    price: 3315.00,
+    price: 900.00,
     originalPrice: null,
     discount: 0,
     rating: 4.3,
@@ -1405,12 +1398,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'top-005',
-    name: 'Satin Blouse',
+    name: 'Obsidian Floret Halter Top',
     category: 'clothing',
     subcategory: 'tops',
     brand: 'Aurevia',
-    price: 6225.00,
-    originalPrice: 7470.00,
+    price: 1200.00,
+    originalPrice: 3000.00,
     discount: 17,
     rating: 4.7,
     reviewCount: 27,
@@ -1494,11 +1487,11 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bottom-005',
-    name: 'Linen Culottes',
+    name: 'Daisy Laced Trim Denim Shorts',
     category: 'clothing',
     subcategory: 'bottoms',
     brand: 'Aurevia',
-    price: 5827.00,
+    price: 850.00,
     originalPrice: null,
     discount: 0,
     rating: 4.6,
@@ -1534,12 +1527,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'bottom-006',
-    name: 'Paperbag Waist Shorts',
+    name: 'Ornate Charm Denim Mini Skirt',
     category: 'clothing',
     subcategory: 'bottoms',
     brand: 'Aurevia',
-    price: 4140.00,
-    originalPrice: 4988.00,
+    price: 900.00,
+    originalPrice: 1020.00,
     discount: 17,
     rating: 4.4,
     reviewCount: 16,
@@ -1579,11 +1572,11 @@ const AUREVIA_PRODUCTS = [
   /* ─── ADDITIONAL HOODIE/ SWEATSHIRT PRODUCTS ──────────── */
   {
     id: 'sweatshirt-004',
-    name: 'Zip-Up Hoodie',
+    name: 'Rainbow Heart Knit Sweater',
     category: 'clothing',
     subcategory: 'sweatshirts',
     brand: 'Aurevia',
-    price: 7470.00,
+    price: 1400.00,
     originalPrice: null,
     discount: 0,
     rating: 4.5,
@@ -1625,12 +1618,12 @@ const AUREVIA_PRODUCTS = [
 
   {
     id: 'sweatshirt-005',
-    name: 'Cropped Sweatshirt',
+    name: 'Denim Star Street-Style Hoodie',
     category: 'clothing',
     subcategory: 'sweatshirts',
     brand: 'Aurevia',
-    price: 5395.00,
-    originalPrice: 6225.00,
+    price: 1050.00,
+    originalPrice: 3200.00,
     discount: 13,
     rating: 4.7,
     reviewCount: 24,

@@ -7,45 +7,45 @@
 
 // ═══ Top 7 Data with Images ═══
 const top7Data = [
-  { rank: 1, name: "Elegant Summer Dress", category: "Clothing", price: 7387, views: 2340, badge: "hot", image: "images/cloths/Dresses/dress1.jpeg" },
-  { rank: 2, name: "Silk Wrap Dress", category: "Clothing", price: 129, views: 1890, badge: "bestseller", image: "images/cloths/Dresses/dress2.jpeg" },
-  { rank: 3, name: "Linen Blouse", category: "Clothing", price: 4897, views: 1560, badge: "rising", image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
-  { rank: 4, name: "Tailored Trousers", category: "Clothing", price: 6557, views: 1420, badge: "hot", image: "images/cloths/Bottoms/derss1.jpeg" },
-  { rank: 5, name: "Cashmere Hoodie", category: "Clothing", price: 7885, views: 1280, badge: "bestseller", image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
-  { rank: 6, name: "Classic Leather Tote", category: "Bags", price: 10707, views: 1150, badge: "rising", image: "images/bags/tote bags/tote1.jpeg" },
-  { rank: 7, name: "Mini Crossbody Bag", category: "Bags", price: 7387, views: 1080, badge: "bestseller", image: "images/bags/sling bags/sling1.jpeg" }
+  { rank: 1, name: "Denim Corset Asymmetrical Dress", category: "Clothing", price: 1250, views: 2340, badge: "hot", image: "images/cloths/Dresses/dress1.jpeg" },
+  { rank: 2, name: "Midnight Stardust Embellished Dress", category: "Clothing", price: 2500, views: 1890, badge: "bestseller", image: "images/cloths/Dresses/dress2.jpeg" },
+  { rank: 3, name: "Noir Back Butterfly Tee", category: "Clothing", price: 1100, views: 1560, badge: "rising", image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
+  { rank: 4, name: "Floral Vine Flare Denim Jeans", category: "Clothing", price: 1200, views: 1420, badge: "hot", image: "images/cloths/Bottoms/derss1.jpeg" },
+  { rank: 5, name: "Midnight Star Cut-Out Hoodie", category: "Clothing", price: 1250, views: 1280, badge: "bestseller", image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
+  { rank: 6, name: "Regal Emerald Clutch", category: "Bags", price: 1800, views: 1150, badge: "rising", image: "images/bags/tote bags/tote1.jpeg" },
+  { rank: 7, name: "Button Heart Canvas Tote Bag", category: "Bags", price: 500, views: 1080, badge: "bestseller", image: "images/bags/sling bags/sling1.jpeg" }
 ];
 
 const trendingByCategory = {
   clothing: [
-    { name: "Elegant Summer Dress", price: 7387, image: "images/cloths/Dresses/dress1.jpeg" },
-    { name: "Silk Wrap Dress", price: 129, image: "images/cloths/Dresses/dress2.jpeg" },
-    { name: "Linen Blouse", price: 4897, image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
-    { name: "Tailored Trousers", price: 6557, image: "images/cloths/Bottoms/derss1.jpeg" },
-    { name: "Cashmere Hoodie", price: 7885, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" }
+    { name: "Denim Corset Asymmetrical Dress", price: 1250, image: "images/cloths/Dresses/dress1.jpeg" },
+    { name: "Midnight Stardust Embellished Dress", price: 2500, image: "images/cloths/Dresses/dress2.jpeg" },
+    { name: "Noir Back Butterfly Tee", price: 1100, image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
+    { name: "Floral Vine Flare Denim Jeans", price: 1200, image: "images/cloths/Bottoms/derss1.jpeg" },
+    { name: "Midnight Star Cut-Out Hoodie", price: 1250, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" }
   ],
   bags: [
-    { name: "Classic Leather Tote", price: 10707, image: "images/bags/tote bags/tote1.jpeg" },
-    { name: "Mini Crossbody Bag", price: 7387, image: "images/bags/sling bags/sling1.jpeg" },
-    { name: "Evening Clutch", price: 6566, image: "images/bags/clutch bags/clutch3.jpeg" },
-    { name: "Quilted Mini Bag", price: 8200, image: "images/bags/clutch bags/clutch4.jpeg" },
-    { name: "Weekender Duffle", price: 12500, image: "images/bags/tote bags/tote3.jpeg" }
+    { name: "Regal Emerald Clutch", price: 1800, image: "images/bags/tote bags/tote1.jpeg" },
+    { name: "Button Heart Canvas Tote Bag", price: 500, image: "images/bags/sling bags/sling1.jpeg" },
+    { name: "Pearl Cascade Clutch", price: 1000, image: "images/bags/clutch bags/clutch3.jpeg" },
+    { name: "Antique Blossom Clutch", price: 1000, image: "images/bags/clutch bags/clutch4.jpeg" },
+    { name: "Ivory Blossom Brocade Clutch", price: 1200, image: "images/bags/clutch bags/clutch5.jpeg" }
   ],
   fragrances: [
-    { name: "Vanilla Dream", price: 4599, image: "images/fragrances/sweet/vanilla.jpg" },
-    { name: "Oud Collection", price: 5999, image: "images/fragrances/woddy/Oud.jpeg" },
-    { name: "Floral Essence", price: 3899, image: "images/fragrances/fresh/floral.jpeg" },
-    { name: "Citrus Blend", price: 3299, image: "images/fragrances/sweet/citrus.jpg" },
-    { name: "Amber Nights", price: 5299, image: "images/fragrances/woddy/leather.jpeg" }
+    { name: "Vanilla Dream EDP", price: 1133, image: "images/fragrances/sweet/vanilla.jpg" },
+    { name: "Tropical Breeze EDP", price: 1070, image: "images/fragrances/woddy/Oud.jpeg" },
+    { name: "Citrus Spark EDP", price: 1110, image: "images/fragrances/fresh/floral.jpeg" },
+    { name: "Aquatic Mist EDP", price: 1020, image: "images/fragrances/sweet/citrus.jpg" },
+    { name: "Floral Rain EDP", price: 1095, image: "images/fragrances/woddy/leather.jpeg" }
   ]
 };
 
 const mostLovedData = [
-  { name: "Elegant Summer Dress", viewers: 23, sold: 156, popularity: 95, image: "images/cloths/Dresses/dress1.jpeg" },
-  { name: "Silk Wrap Dress", viewers: 18, sold: 134, popularity: 88, image: "images/cloths/Dresses/dress2.jpeg" },
-  { name: "Classic Leather Tote", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/tote1.jpeg" },
-  { name: "Cashmere Hoodie", viewers: 15, sold: 98, popularity: 82, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
-  { name: "Oud Collection", viewers: 19, sold: 76, popularity: 85, image: "images/fragrances/woddy/Oud.jpeg" }
+  { name: "Denim Corset Asymmetrical Dress", viewers: 23, sold: 156, popularity: 95, image: "images/cloths/Dresses/dress1.jpeg" },
+  { name: "Midnight Stardust Embellished Dress", viewers: 18, sold: 134, popularity: 88, image: "images/cloths/Dresses/dress2.jpeg" },
+  { name: "Regal Emerald Clutch", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/tote1.jpeg" },
+  { name: "Midnight Star Cut-Out Hoodie", viewers: 15, sold: 98, popularity: 82, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
+  { name: "Vanilla Dream EDP", viewers: 19, sold: 76, popularity: 85, image: "images/fragrances/woddy/Oud.jpeg" }
 ];
 
 // ═══ Get Image HTML ═══
