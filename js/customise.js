@@ -19,8 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
 
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Fallback: immediately show elements if IntersectionObserver not supported or on reduced motion
+  if (!window.IntersectionObserver || prefersReducedMotion) {
+    revealElements.forEach(function(el) {
+      el.classList.add('visible');
+      el.style.transitionDuration = '0s';
+    });
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // Add stagger delay for grid items
         const parent = entry.target.closest('.options-grid, .process-steps');

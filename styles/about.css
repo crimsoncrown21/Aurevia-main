@@ -19,11 +19,19 @@
               backdrop-filter 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
+/* Solid fallback for browsers without backdrop-filter */
 .navbar.scrolled {
-  background: rgba(255, 240, 209, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 240, 209, 0.97);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   box-shadow: 0 2px 24px rgba(59, 48, 48, 0.10);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .navbar.scrolled {
+    background: rgba(255, 240, 209, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
 }
 
 .nav-inner {
@@ -171,25 +179,36 @@
   height: 100vh;
   z-index: 1002;
   background: var(--cream-bg);
+  -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: -webkit-transform 0.38s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
   box-shadow: -6px 0 40px rgba(59, 48, 48, 0.18);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
   z-index: 1001;
-  background: rgba(59, 48, 48, 0.5);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: rgba(59, 48, 48, 0.65);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.32s cubic-bezier(0.4,0,0.2,1),
               visibility 0.32s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity;
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .mobile-menu-overlay {
+    background: rgba(59, 48, 48, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
 }
 
 .mobile-menu-overlay.visible {
@@ -197,8 +216,9 @@
   visibility: visible;
 }
 
-.mobile-menu.open { 
-  transform: translateX(0); 
+.mobile-menu.open {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 
 .mobile-menu-header {
@@ -240,24 +260,28 @@
   transition: background 0.22s cubic-bezier(0.4,0,0.2,1),
               color 0.22s cubic-bezier(0.4,0,0.2,1),
               opacity 0.22s cubic-bezier(0.4,0,0.2,1),
+              -webkit-transform 0.22s cubic-bezier(0.4,0,0.2,1),
               transform 0.22s cubic-bezier(0.4,0,0.2,1);
   opacity: 0;
+  -webkit-transform: translateX(20px);
   transform: translateX(20px);
 }
 
 .mobile-menu.open a {
   opacity: 1;
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
-.mobile-menu.open a:nth-child(1) { transition-delay: 0.05s; }
-.mobile-menu.open a:nth-child(2) { transition-delay: 0.10s; }
-.mobile-menu.open a:nth-child(3) { transition-delay: 0.15s; }
-.mobile-menu.open a:nth-child(4) { transition-delay: 0.20s; }
-.mobile-menu.open a:nth-child(5) { transition-delay: 0.25s; }
-.mobile-menu.open a:nth-child(6) { transition-delay: 0.30s; }
-.mobile-menu.open a:nth-child(7) { transition-delay: 0.35s; }
-.mobile-menu.open a:nth-child(8) { transition-delay: 0.40s; }
+/* Stagger: target li:nth-child since <a> are inside <li> wrappers */
+.mobile-menu.open li:nth-child(1) a { transition-delay: 0.05s; }
+.mobile-menu.open li:nth-child(2) a { transition-delay: 0.10s; }
+.mobile-menu.open li:nth-child(3) a { transition-delay: 0.15s; }
+.mobile-menu.open li:nth-child(4) a { transition-delay: 0.20s; }
+.mobile-menu.open li:nth-child(5) a { transition-delay: 0.25s; }
+.mobile-menu.open li:nth-child(6) a { transition-delay: 0.30s; }
+.mobile-menu.open li:nth-child(7) a { transition-delay: 0.35s; }
+.mobile-menu.open li:nth-child(8) a { transition-delay: 0.40s; }
 
 .mobile-menu a:hover {
   background: var(--cream-light);
@@ -380,8 +404,12 @@
   position: absolute;
   border-radius: 50%;
   opacity: 0.13;
+  -webkit-animation: floatBlob 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   animation: floatBlob 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   pointer-events: none;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .hero-shape-1 {
@@ -419,7 +447,8 @@
   height: 2px;
   background: var(--deep-brown);
   margin: 0 auto 2.5rem;
-  animation: expandLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  -webkit-animation: expandLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  animation: expandLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 .hero-brand {
@@ -431,9 +460,12 @@
   text-transform: uppercase;
   line-height: 1.05;
   opacity: 0;
+  -webkit-transform: translateY(32px);
   transform: translateY(32px);
-  animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+  -webkit-animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+  animation: fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
   margin-bottom: 1.2rem;
+  will-change: opacity, transform;
 }
 
 .hero-tagline {
@@ -443,8 +475,10 @@
   color: var(--warm-brown);
   opacity: 0;
   letter-spacing: 1px;
-  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.75s forwards;
+  -webkit-animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.75s both;
+  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.75s both;
   margin-bottom: 2.8rem;
+  will-change: opacity;
 }
 
 .hero-buttons {
@@ -453,7 +487,9 @@
   justify-content: center;
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.05s forwards;
+  -webkit-animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.05s both;
+  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.05s both;
+  will-change: opacity;
 }
 
 /* Scroll indicator */
@@ -461,6 +497,7 @@
   position: absolute;
   bottom: 2.2rem;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -468,8 +505,10 @@
   gap: 0.45rem;
   color: var(--warm-brown);
   opacity: 0;
-  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.6s forwards;
+  -webkit-animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.6s both;
+  animation: fadeIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.6s both;
   z-index: 10;
+  will-change: opacity;
 }
 
 .hero-scroll span {

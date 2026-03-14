@@ -20,11 +20,18 @@
               backdrop-filter 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
+/* Solid fallback for browsers without backdrop-filter (Firefox, older Android) */
 .navbar.scrolled {
-  background: rgba(255, 240, 209, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 240, 209, 0.97);
   box-shadow: 0 2px 24px rgba(59, 48, 48, 0.10);
+}
+/* Frosted glass enhancement for supporting browsers */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .navbar.scrolled {
+    background: rgba(255, 240, 209, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
 }
 
 .nav-inner {
@@ -208,26 +215,36 @@
   height: 100vh;
   z-index: 1002;
   background: var(--cream-bg);
+  -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: -webkit-transform 0.38s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
   box-shadow: -6px 0 40px rgba(59, 48, 48, 0.18);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
   z-index: 1001;
-  background: rgba(59, 48, 48, 0.5);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: rgba(59, 48, 48, 0.65);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-              backdrop-filter 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+              visibility 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .mobile-menu-overlay {
+    background: rgba(59, 48, 48, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
 }
 
 .mobile-menu-overlay.visible {
@@ -236,6 +253,7 @@
 }
 
 .mobile-menu.open {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -277,16 +295,21 @@
   text-decoration: none;
   transition: background 0.22s cubic-bezier(0.4,0,0.2,1),
               color 0.22s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.22s cubic-bezier(0.4,0,0.2,1),
+              -webkit-transform 0.22s cubic-bezier(0.4,0,0.2,1),
               transform 0.22s cubic-bezier(0.4,0,0.2,1);
   opacity: 0;
+  -webkit-transform: translateX(20px);
   transform: translateX(20px);
 }
 
 .mobile-menu.open a {
   opacity: 1;
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
+/* Stagger: must target li:nth-child because <a> are inside <li> wrappers */
 .mobile-menu.open li:nth-child(1) a { transition-delay: 0.05s; }
 .mobile-menu.open li:nth-child(2) a { transition-delay: 0.10s; }
 .mobile-menu.open li:nth-child(3) a { transition-delay: 0.15s; }
@@ -912,27 +935,48 @@ body.menu-open {
    §7  KEYFRAME ANIMATIONS
    ───────────────────────────────────────────── */
 
+@-webkit-keyframes fadeInUp {
+  from { opacity: 0; -webkit-transform: translateY(32px); transform: translateY(32px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
+@-webkit-keyframes fadeSlide {
+  from { opacity: 0; -webkit-transform: translateX(20px); transform: translateX(20px); }
+  to   { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
+}
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateX(20px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
+@-webkit-keyframes popIn {
+  0%   { -webkit-transform: scale(0.5); transform: scale(0.5); opacity: 0; }
+  70%  { -webkit-transform: scale(1.15); transform: scale(1.15); }
+  100% { -webkit-transform: scale(1);   transform: scale(1);   opacity: 1; }
+}
 @keyframes popIn {
   0%   { transform: scale(0.5); opacity: 0; }
   70%  { transform: scale(1.15); }
   100% { transform: scale(1);   opacity: 1; }
 }
 
+@-webkit-keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.4; }
