@@ -101,10 +101,8 @@ window.addEventListener('resize', () => {
 /* ─── 4. Scroll-reveal via Intersection Observer ─── */
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-// Fallback: show immediately if IntersectionObserver isn't supported or if user prefers reduced motion
-var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (!window.IntersectionObserver || prefersReducedMotion) {
+// Fallback: show immediately only if IntersectionObserver isn't supported
+if (!window.IntersectionObserver) {
   revealEls.forEach(function(el) {
     el.classList.add('visible');
     el.style.transitionDuration = '0s';
