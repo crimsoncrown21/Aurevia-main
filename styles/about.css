@@ -748,13 +748,13 @@
 }
 
 .sol-img-1 {
-  background: url('../images/home\ page/explore\ section/Curated\ Collections.jpeg') center/cover no-repeat;
+  background: url('../images/home-page/explore-section/Curated%20Collections.jpeg') center/cover no-repeat;
 }
 .sol-img-2 {
-  background: url('../images/home\ page/explore\ section/Custom\ Fragrances.jpeg') center/cover no-repeat;
+  background: url('../images/home-page/explore-section/Custom%20Fragrances.jpeg') center/cover no-repeat;
 }
 .sol-img-3 {
-  background: url('../images/home\ page/explore\ section/Sustainable\ Practices.jpeg') center/cover no-repeat;
+  background: url('../images/home-page/explore-section/Sustainable%20Practices.jpeg') center/cover no-repeat;
 }
 
 /* Text block */
@@ -917,10 +917,10 @@
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.cat-img-clothing  { background: url('../images/home\ page/explore\ section/clothing.jpeg') center/cover no-repeat; }
-.cat-img-bags      { background: url('../images/home\ page/explore\ section/bags.jpeg') center/cover no-repeat; }
-.cat-img-fragrances{ background: url('../images/home\ page/explore\ section/fragrances.jpeg') center/cover no-repeat; }
-.cat-img-gifting   { background: url('../images/home\ page/explore\ section/custom.jpeg') center/cover no-repeat; }
+.cat-img-clothing  { background: url('../images/home-page/explore-section/clothing.jpeg') center/cover no-repeat; }
+.cat-img-bags      { background: url('../images/home-page/explore-section/bags.jpeg') center/cover no-repeat; }
+.cat-img-fragrances{ background: url('../images/home-page/explore-section/fragrances.jpeg') center/cover no-repeat; }
+.cat-img-gifting   { background: url('../images/home-page/explore-section/custom.jpeg') center/cover no-repeat; }
 
 .cat-card:hover .cat-img {
   transform: scale(1.08);
@@ -1362,6 +1362,42 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+@-webkit-keyframes expandLine {
+  0% { width: 0; opacity: 0; }
+  100% { width: 60px; opacity: 1; }
+}
+
+@-webkit-keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@-webkit-keyframes floatBlob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@-webkit-keyframes heroPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.05); }
+}
+
+@-webkit-keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(36px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@-webkit-keyframes popIn {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@-webkit-keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes expandLine {
