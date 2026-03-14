@@ -1192,19 +1192,6 @@
         });
       });
 
-      /* ─── 7. Subtle hero parallax on background ─── */
-      const heroBg = document.querySelector(".hero-bg");
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (window.scrollY < window.innerHeight) {
-            heroBg.style.transform =
-              "translateY(" + window.scrollY * 0.18 + "px)";
-          }
-        },
-        { passive: true },
-      );
     </script>
   </body>
 </html>

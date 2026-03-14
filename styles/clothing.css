@@ -200,9 +200,57 @@
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .img-placeholder { height: 260px; }
-  .modal-content { padding: 2rem 1.5rem; }
+  
+  /* Improved modal for mobile */
+  .modal-content {
+    padding: 2rem 1.5rem;
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-close {
+    top: 0.5rem;
+    right: 1rem;
+  }
+  
+  /* Better size table scrolling */
+  .size-table-wrap {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .size-table {
+    font-size: 0.75rem;
+  }
+  
+  .size-table th,
+  .size-table td {
+    padding: 8px 10px;
+  }
+  
+  /* Size guide button mobile */
+  .size-guide-trigger {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 576px) {
   .img-placeholder { height: 300px; }
+  
+  .modal-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .modal-content h3 {
+    font-size: 1rem;
+  }
 }

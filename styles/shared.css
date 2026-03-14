@@ -215,16 +215,13 @@
   height: 100vh;
   z-index: 1002;
   background: var(--cream-bg);
-  -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  transition: -webkit-transform 0.38s cubic-bezier(0.32, 0.72, 0, 1),
-              transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
   box-shadow: -6px 0 40px rgba(59, 48, 48, 0.18);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   will-change: transform;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -253,7 +250,6 @@
 }
 
 .mobile-menu.open {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -296,16 +292,13 @@
   transition: background 0.22s cubic-bezier(0.4,0,0.2,1),
               color 0.22s cubic-bezier(0.4,0,0.2,1),
               opacity 0.22s cubic-bezier(0.4,0,0.2,1),
-              -webkit-transform 0.22s cubic-bezier(0.4,0,0.2,1),
               transform 0.22s cubic-bezier(0.4,0,0.2,1);
   opacity: 0;
-  -webkit-transform: translateX(20px);
   transform: translateX(20px);
 }
 
 .mobile-menu.open a {
   opacity: 1;
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -935,48 +928,27 @@ body.menu-open {
    §7  KEYFRAME ANIMATIONS
    ───────────────────────────────────────────── */
 
-@-webkit-keyframes fadeInUp {
-  from { opacity: 0; -webkit-transform: translateY(32px); transform: translateY(32px); }
-  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
-}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-@-webkit-keyframes fadeSlide {
-  from { opacity: 0; -webkit-transform: translateX(20px); transform: translateX(20px); }
-  to   { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
-}
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateX(20px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
-@-webkit-keyframes popIn {
-  0%   { -webkit-transform: scale(0.5); transform: scale(0.5); opacity: 0; }
-  70%  { -webkit-transform: scale(1.15); transform: scale(1.15); }
-  100% { -webkit-transform: scale(1);   transform: scale(1);   opacity: 1; }
-}
 @keyframes popIn {
   0%   { transform: scale(0.5); opacity: 0; }
   70%  { transform: scale(1.15); }
   100% { transform: scale(1);   opacity: 1; }
 }
 
-@-webkit-keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.4; }
-}
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.4; }
