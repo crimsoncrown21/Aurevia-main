@@ -32,18 +32,11 @@ const trendingByCategory = {
     { name: "Weekender Duffle", price: 12500, image: "images/bags/tote bags/tote3.jpeg" }
   ],
   fragrances: [
-    { name: "Vanilla Dream", price: 4599 },
-    { name: "Oud Collection", price: 5999 },
-    { name: "Floral Essence", price: 3899 },
-    { name: "Citrus Blend", price: 3299 },
-    { name: "Amber Nights", price: 5299 }
-  ],
-  gifts: [
-    { name: "Luxury Gift Set", price: 7999 },
-    { name: "Premium Hamper", price: 9999 },
-    { name: "Self Care Box", price: 4599 },
-    { name: "Accessory Bundle", price: 3299 },
-    { name: "Mini Surprise Box", price: 1999 }
+    { name: "Vanilla Dream", price: 4599, image: "images/fragrances/sweet/vanilla.jpg" },
+    { name: "Oud Collection", price: 5999, image: "images/fragrances/woddy/Oud.jpeg" },
+    { name: "Floral Essence", price: 3899, image: "images/fragrances/fresh/floral.jpeg" },
+    { name: "Citrus Blend", price: 3299, image: "images/fragrances/sweet/citrus.jpg" },
+    { name: "Amber Nights", price: 5299, image: "images/fragrances/woddy/leather.jpeg" }
   ]
 };
 
@@ -52,8 +45,7 @@ const mostLovedData = [
   { name: "Silk Wrap Dress", viewers: 18, sold: 134, popularity: 88, image: "images/cloths/Dresses/dress2.jpeg" },
   { name: "Classic Leather Tote", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/tote1.jpeg" },
   { name: "Cashmere Hoodie", viewers: 15, sold: 98, popularity: 82, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
-  { name: "Luxury Gift Set", viewers: 12, sold: 87, popularity: 78 },
-  { name: "Oud Collection", viewers: 19, sold: 76, popularity: 85 }
+  { name: "Oud Collection", viewers: 19, sold: 76, popularity: 85, image: "images/fragrances/woddy/Oud.jpeg" }
 ];
 
 // ═══ Get Image HTML ═══
