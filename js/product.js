@@ -68,11 +68,11 @@ function buildPage(p) {
   if (rcEl) rcEl.textContent = `(${p.reviewCount} reviews)`;
 
   /* Price */
-  document.getElementById('currentPrice').textContent = `$${p.price.toFixed(2)}`;
+  document.getElementById('currentPrice').textContent = `₹${p.price.toLocaleString('en-IN')}`;
   const origEl = document.getElementById('originalPrice');
   const discEl = document.getElementById('discountBadge');
   if (p.originalPrice) {
-    if (origEl) { origEl.textContent = `$${p.originalPrice.toFixed(2)}`; origEl.style.display = ''; }
+    if (origEl) { origEl.textContent = `₹${p.originalPrice.toLocaleString('en-IN')}`; origEl.style.display = ''; }
     if (discEl) { discEl.textContent = `-${p.discount}%`; discEl.style.display = ''; }
   } else {
     if (origEl) origEl.style.display = 'none';
@@ -212,7 +212,7 @@ function buildPage(p) {
               <h3 class="customization-option-name">${opt.name}</h3>
               <p class="customization-option-desc">${opt.description}</p>
             </div>
-            <div class="customization-option-price">${opt.price === 0 ? 'Free' : '+$' + opt.price.toFixed(2)}</div>
+            <div class="customization-option-price">${opt.price === 0 ? 'Free' : '+₹' + opt.price.toLocaleString('en-IN')}</div>
           </div>
           <label class="customization-checkbox">
             <input type="checkbox" name="customization" value="${opt.type}" data-price="${opt.price}">
@@ -259,12 +259,17 @@ function buildGalleryHTML(p) {
   /* Use actual product images */
   const images = p.images || [];
   
-  /* Main image */
+  /* Main image - with better fallback */
+  const firstImage = images[0] || '';
+  const productNameShort = p.name.split(' ').slice(0,2).join(' ');
+  
   wrap.innerHTML = `
     <div id="badgeOverlay" class="product-badge-overlay"></div>
     <div class="gallery-main-image" id="mainPlaceholder">
-      <img id="mainProductImg" class="main-product-img" src="${images[0] || ''}" alt="${p.name}" style="display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="gallery-fallback" style="display:none;">${p.name.split(' ').slice(0,2).join(' ')}</div>
+      <img id="mainProductImg" class="main-product-img" src="${firstImage}" alt="${p.name}" style="display:block;" onerror="this.style.display='none'; document.getElementById('galleryFallback').style.display='flex';">
+      <div id="galleryFallback" class="gallery-fallback" style="display:${firstImage ? 'none' : 'flex'}; background: linear-gradient(135deg, #f5f5dc 0%, #e8d9b8 100%);">
+        <span style="font-family: 'Lora', serif; font-size: 1.2rem; color: #3b3030; text-align: center; padding: 20px;">${productNameShort}</span>
+      </div>
     </div>`;
 
   /* Thumbnails */
@@ -272,7 +277,9 @@ function buildGalleryHTML(p) {
     thumbGallery.innerHTML = images.map((src, i) =>
       `<button class="thumb-btn${i === 0 ? ' active' : ''}" data-index="${i}" data-src="${src}" aria-label="View image ${i+1}">
         <img src="${src}" alt="Thumbnail ${i+1}" class="thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="thumb-fallback" style="display:none;">${i+1}</div>
+        <div class="thumb-fallback" style="display:none; background: linear-gradient(135deg, #f5f5dc 0%, #e8d9b8 100%);">
+          <span style="font-family: 'Lora', serif; font-size: 0.8rem; color: #3b3030;">${i+1}</span>
+        </div>
       </button>`
     ).join('');
   } else if (thumbGallery) {
@@ -454,26 +461,9 @@ function initTabs() {
 
 /* ─── Related Products ───────────────────────── */
 function renderRelated() {
-  const grid = document.getElementById('relatedGrid');
-  if (!grid || !currentProduct) return;
-
-  const related = getRelatedProducts(currentProduct, 4);
-  if (!related.length) {
-    document.querySelector('.related-section')?.style && (document.querySelector('.related-section').style.display = 'none');
-    return;
-  }
-
-  const gradients = ['gallery-gradient-1','gallery-gradient-2','gallery-gradient-3','gallery-gradient-4'];
-  grid.innerHTML = related.map((p, i) => `
-    <a class="related-card" href="product.html?id=${p.id}&category=${p.category}">
-      <div class="related-img-wrap">
-        <div class="related-img-ph ${gradients[i % gradients.length]}">${p.name.split(' ').slice(0,2).join(' ')}</div>
-      </div>
-      <div class="related-info">
-        <p class="related-name">${p.name}</p>
-        <p class="related-price">$${p.price.toFixed(2)}${p.originalPrice ? ` <span style="font-size:0.8em;color:#999;text-decoration:line-through;">$${p.originalPrice.toFixed(2)}</span>` : ''}</p>
-      </div>
-    </a>`).join('');
+  // Related products section has been removed from the page
+  // This function is kept for compatibility but does nothing
+  return;
 }
 
 /* ─── Breadcrumb ─────────────────────────────── */

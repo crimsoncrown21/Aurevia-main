@@ -38,12 +38,40 @@ const promoMsgEl         = document.getElementById('promoMsg');
 
 /* ─── Main Load ─────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+  refreshCartPrices(); // Ensure prices are current before rendering
   renderCart();
 
   document.getElementById('promoApplyBtn')?.addEventListener('click', applyPromo);
   promoInput?.addEventListener('keydown', e => { if (e.key === 'Enter') applyPromo(); });
   checkoutBtn?.addEventListener('click', handleCheckout);
 });
+
+/* ─── Price Refresh ─────────────────────────── */
+/** Refresh cart item prices from products-data.js to ensure accuracy */
+function refreshCartPrices() {
+  // Only run if getProductById is available (products-data.js loaded)
+  if (typeof getProductById !== 'function') {
+    console.log('products-data.js not loaded, skipping price refresh');
+    return;
+  }
+  
+  const cart = getCart();
+  let updated = false;
+  
+  const refreshedCart = cart.map(item => {
+    const product = getProductById(item.id);
+    if (product && product.price !== item.price) {
+      updated = true;
+      return { ...item, price: product.price };
+    }
+    return item;
+  });
+  
+  if (updated) {
+    // Use saveCart from cart.js
+    localStorage.setItem('aurevia_cart', JSON.stringify(refreshedCart));
+  }
+}
 
 /* ─── Render ────────────────────────────────── */
 function renderCart() {
@@ -91,7 +119,7 @@ function buildCardHTML(item, index) {
       <div class="cart-item-info">
         <a class="cart-item-name" href="product.html?id=${item.id}">${item.name}</a>
         ${variantParts.length ? `<p class="cart-item-variants">${variantParts.join(' · ')}</p>` : ''}
-        <p class="cart-item-unit-price">₹${item.price.toFixed(2)} each</p>
+        <p class="cart-item-unit-price">₹${item.price.toLocaleString('en-IN')} each</p>
         <div class="cart-item-actions-row">
           <div class="cart-qty-control">
             <button class="cart-qty-btn cqb-minus" onclick="changeQty(${index}, -1)" aria-label="Decrease" ${item.quantity <= 1 ? 'disabled' : ''}>−</button>
@@ -99,7 +127,7 @@ function buildCardHTML(item, index) {
             <button class="cart-qty-btn cqb-plus"  onclick="changeQty(${index},  1)" aria-label="Increase" ${item.quantity >= 10 ? 'disabled' : ''}>+</button>
           </div>
           <div class="cart-item-total-remove">
-            <span class="cart-item-total">₹${lineTotal}</span>
+            <span class="cart-item-total">₹${parseFloat(lineTotal).toLocaleString('en-IN')}</span>
             <button class="cart-remove-btn" onclick="removeItem(${index})" aria-label="Remove ${item.name}">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
               Remove
@@ -170,19 +198,19 @@ function updateSummary(cart) {
   const tax     = taxable * TAX_RATE;
   const total   = taxable + shipping + tax;
 
-  if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toFixed(2)}`;
+  if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
   if (shippingEl) {
-    shippingEl.textContent = shipping === 0 && subtotal > 0 ? 'FREE' : `₹${shipping.toFixed(2)}`;
+    shippingEl.textContent = shipping === 0 && subtotal > 0 ? 'FREE' : `₹${shipping.toLocaleString('en-IN')}`;
     shippingEl.closest('.summary-row')?.classList.toggle('free-ship', shipping === 0 && subtotal > 0);
   }
-  if (taxEl) taxEl.textContent = `₹${tax.toFixed(2)}`;
+  if (taxEl) taxEl.textContent = `₹${tax.toLocaleString('en-IN')}`;
 
   if (discountRowEl) {
     discountRowEl.style.display = discountAmt > 0 ? 'flex' : 'none';
-    if (discountEl) discountEl.textContent = `-₹${discountAmt.toFixed(2)}`;
+    if (discountEl) discountEl.textContent = `-₹${discountAmt.toLocaleString('en-IN')}`;
   }
 
-  if (totalEl) totalEl.textContent = `₹${total.toFixed(2)}`;
+  if (totalEl) totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
 
   if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
 }

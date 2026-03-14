@@ -37,7 +37,9 @@ function getCartTotal() {
  * @param {object} itemData - { id, name, price, image, quantity, color, size, category }
  */
 function addToCart(itemData) {
+  console.log('addToCart called with:', itemData);
   const cart = getCart();
+  console.log('Current cart:', cart);
   const qty = itemData.quantity || 1;
 
   const existingIdx = cart.findIndex(item =>
@@ -48,6 +50,7 @@ function addToCart(itemData) {
 
   if (existingIdx > -1) {
     cart[existingIdx].quantity = Math.min(10, cart[existingIdx].quantity + qty);
+    console.log('Updated existing item quantity:', cart[existingIdx]);
   } else {
     cart.push({
       id:       itemData.id,
@@ -60,9 +63,11 @@ function addToCart(itemData) {
       category: itemData.category || '',
       addedAt:  new Date().toISOString()
     });
+    console.log('Added new item to cart');
   }
 
   saveCart(cart);
+  console.log('Cart saved to localStorage');
   updateCartCountUI();
   return cart;
 }
@@ -120,14 +125,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Legacy add-to-cart buttons on category pages (no variant selection) */
   document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
       const card = this.closest('[data-id], .product-card, .gift-card, .mystery-card');
-      if (!card) return;
+      if (!card) {
+        console.warn('No product card found for add-to-cart button');
+        return;
+      }
 
-      const id    = card.dataset.id || card.querySelector('.product-name, h3')?.textContent.trim().replace(/\s+/g, '-').toLowerCase() || 'product';
-      const name  = card.querySelector('.product-name, h3')?.textContent.trim() || 'Product';
-      const price = parseFloat(card.dataset.price || card.querySelector('.current-price')?.textContent.replace(/[^0-9.]/g, '') || 0);
+      const id = card.dataset.id || card.querySelector('.product-name, h3')?.textContent.trim().replace(/\s+/g, '-').toLowerCase() || 'product';
+      const name = card.querySelector('.product-name, h3')?.textContent.trim() || 'Product';
+      const priceText = card.dataset.price || card.querySelector('.current-price')?.textContent.replace(/[^0-9.]/g, '') || '0';
+      const price = parseFloat(priceText);
       const image = card.querySelector('img')?.src || '';
+
+      if (!id || !name || price === 0) {
+        console.warn('Invalid product data:', { id, name, price });
+        return;
+      }
 
       addToCart({ id, name, price, image, quantity: 1 });
       animateCartBadge();
