@@ -10,12 +10,14 @@
 
 .scent-card {
   position: relative; height: 250px; border-radius: 8px; border: 2px solid var(--cream-dark);
-  overflow: hidden; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; cursor: pointer;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.scent-card:hover { transform: scale(1.02); box-shadow: 0 8px 25px rgba(59,48,48,0.15); }
+.scent-card:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(59,48,48,0.18); }
 
-.scent-bg { position: absolute; inset: 0; transition: transform 0.5s ease; }
-.scent-card:hover .scent-bg { transform: scale(1.08); }
+.scent-bg { position: absolute; inset: 0; transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+.scent-card:hover .scent-bg { transform: scale(1.09); }
 
 .scent-content {
   position: relative; z-index: 2; height: 100%;
@@ -28,7 +30,7 @@
 .scent-overlay {
   position: absolute; inset: 0; z-index: 3; background: rgba(59,48,48,0.6);
   display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.3s ease;
+  opacity: 0; transition: opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .scent-card:hover .scent-overlay { opacity: 1; }
 
@@ -74,10 +76,11 @@
   padding: 10px 20px; border-radius: 30px;
   background: var(--cream-bg); color: var(--dark-brown);
   border: 2px solid transparent;
-  transition: all var(--t-base);
+  transition: border-color var(--t-base), background var(--t-base),
+              color var(--t-base), transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.option-btn:hover { border-color: var(--warm-brown); }
-.option-btn.active { border-color: var(--warm-brown); background: var(--warm-brown); color: var(--white); }
+.option-btn:hover { border-color: var(--warm-brown); transform: translateY(-2px); }
+.option-btn.active { border-color: var(--warm-brown); background: var(--warm-brown); color: var(--white); transform: none; }
 
 /* Intensity Slider */
 .intensity-slider { max-width: 300px; }
@@ -131,21 +134,28 @@
 .featured-fragrances .section-title { font-size: 2rem; margin-bottom: 1.5rem; }
 
 /* Fragrance Placeholders */
-.frag-ph { width: 100%; height: 280px; }
-.frag-ph::after {
-  display: flex; align-items: center; justify-content: center; height: 100%;
-  font-family: var(--font-primary); font-size: 0.8rem; color: rgba(255,255,255,0.4);
-  letter-spacing: 3px; text-transform: uppercase; content: '✦ Fragrance';
-}
+.frag-ph { width: 100%; height: 280px; background-size: cover; background-position: center; }
+.frag-ph::after { display: none; }
+
+/* Sweet Fragrances */
+.frag-s1 { background-image: url('../images/fragrances/sweet/vanilla.jpg'); }
+.frag-s2 { background-image: url('../images/fragrances/sweet/tropical .png'); }
+.frag-s3 { background-image: url('../images/fragrances/sweet/citrus.jpg'); }
+
+/* Fresh Fragrances */
+.frag-f1 { background-image: url('../images/fragrances/fresh/aquatic.jpg'); }
+.frag-f2 { background-image: url('../images/fragrances/fresh/floral.jpeg'); }
+.frag-f3 { background-image: url('../images/fragrances/fresh/Jojoba.jpeg'); }
+
+/* Woody Fragrances */
+.frag-w1 { background-image: url('../images/fragrances/woddy/spicy.jpg'); }
+.frag-w2 { background-image: url('../images/fragrances/woddy/Oud.jpeg'); }
+.frag-w3 { background-image: url('../images/fragrances/woddy/leather.jpeg'); }
+
+/* Legacy gradient fallbacks (kept for reference but unused) */
 .frag-v1 { background: linear-gradient(145deg, #F5E6D3 0%, #E8D4B8 50%, #c9a8a8 100%); }
 .frag-v2 { background: linear-gradient(145deg, #E8D4B8 0%, #c9a8a8 50%, #795757 100%); }
 .frag-v3 { background: linear-gradient(145deg, #3B3030 0%, #664343 50%, #c9a8a8 100%); }
-.frag-f1 { background: linear-gradient(145deg, #F2D5E0 0%, #D4A0B9 60%, #a06090 100%); }
-.frag-f2 { background: linear-gradient(145deg, #D4A0B9 0%, #a06090 60%, #703060 100%); }
-.frag-f3 { background: linear-gradient(145deg, #FFE0F0 0%, #F2D5E0 50%, #D4A0B9 100%); }
-.frag-w1 { background: linear-gradient(145deg, #8B7355 0%, #5C4033 60%, #3B2820 100%); }
-.frag-w2 { background: linear-gradient(145deg, #A08060 0%, #705030 60%, #402818 100%); }
-.frag-w3 { background: linear-gradient(145deg, #6B8F5E 0%, #5C4033 60%, #3B2820 100%); }
 .frag-o1 { background: linear-gradient(145deg, #4A2D6B 0%, #2A1540 60%, #150A20 100%); }
 .frag-o2 { background: linear-gradient(145deg, #D4A040 0%, #4A2D6B 50%, #2A1540 100%); }
 .frag-o3 { background: linear-gradient(145deg, #2A1540 0%, #4A2D6B 50%, #3B3030 100%); }

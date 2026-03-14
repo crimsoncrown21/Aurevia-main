@@ -316,11 +316,11 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Tan: 15, Black: 20, Brown: 8 },
     images: [
-      'images/bags/tote bags/bag1.jpeg',
-      'images/bags/tote bags/bag2.jpeg',
-      'images/bags/tote bags/bag3.jpeg',
-      'images/bags/tote bags/bag4.jpeg',
-      'images/bags/tote bags/bag5.jpeg'
+      'images/bags/tote bags/tote1.jpeg',
+      'images/bags/tote bags/tote2.jpeg',
+      'images/bags/tote bags/tote3.jpeg',
+      'images/bags/tote bags/tote4.jpeg',
+      'images/bags/tote bags/tote5.jpeg'
     ],
     description: 'A spacious and elegant full-grain leather tote designed for the modern woman. Handcrafted with meticulous attention to detail, this bag will only improve in beauty with age — developing a rich patina that makes each piece uniquely yours.',
     keyFeatures: [
@@ -369,58 +369,10 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Cognac: 10, Black: 18 },
     images: [
-      'images/bags/sling bags/bag1.jpeg',
-      'images/bags/sling bags/bag2.jpeg',
-      'images/bags/sling bags/bag3.jpeg'
-    ],
-    description: 'A refined mini crossbody bag in supple pebbled leather. Compact yet remarkably functional, with an adjustable strap that takes you effortlessly from day to evening.',
-    keyFeatures: [
-      'Supple pebbled leather exterior',
-      'Adjustable and detachable shoulder strap',
-      'Interior card slots and zip compartment',
-      'Turn-lock closure in brushed gold'
-    ],
-    stylingTips: 'The perfect companion for evenings out — holds your essentials without compromise.',
-    details: { 'Material': 'Pebbled Italian Leather', 'Dimensions': '8″ × 6″ × 2.5″', 'Closure': 'Turn-Lock', 'Strap Drop': 'Adjustable 20″–24″', 'Lining': 'Suede', 'Hardware': 'Brushed Gold' },
-    measurements: {},
-    shipping: { standard: { days: '5–7 business days', price: 'Free on orders over ₹50' }, express: { days: '2–3 business days', price: '₹12.99' }, nextDay: { days: '1 business day', price: '₹24.99' } },
-    reviews: [
-      { author: 'Fatima H.', verified: true, rating: 5, date: '5 days ago', text: 'Perfect size, beautiful leather. The cognac colour is stunning in person.', color: 'Cognac', helpful: 14 }
-    ],
-    badge: 'sale',
-    isNew: false,
-    isBestseller: false,
-    customization: {
-      available: true,
-      options: [
-        { type: 'embossing', name: 'Leather Embossing', description: 'Add initials or name (up to 5 characters)', price: 20 },
-        { type: 'strap', name: 'Custom Strap Length', description: 'Adjust strap to your preference', price: 10 },
-        { type: 'charm', name: 'Bag Charm', description: 'Add a matching leather charm', price: 18 }
-      ]
-    }
-  },
-
-  {
-    id: 'bag-002',
-    name: 'Mini Crossbody Bag',
-    category: 'bags',
-    subcategory: 'crossbody',
-    brand: 'Aurevia',
-    price: 7387.00,
-    originalPrice: 8715.00,
-    discount: 15,
-    rating: 4.5,
-    reviewCount: 38,
-    colors: [
-      { name: 'Cognac', hex: '#8B5E3C' },
-      { name: 'Black',  hex: '#1a1a1a' }
-    ],
-    sizes: null,
-    stock: { Cognac: 10, Black: 18 },
-    images: [
-      'images/bags/sling bags/bag1.jpeg',
-      'images/bags/sling bags/bag2.jpeg',
-      'images/bags/sling bags/bag3.jpeg'
+      'images/bags/sling bags/sling1.jpeg',
+      'images/bags/sling bags/sling2.jpeg',
+      'images/bags/sling bags/sling3.jpeg',
+      'images/bags/sling bags/sling4.jpeg'
     ],
     description: 'A refined mini crossbody bag in supple pebbled leather. Compact yet remarkably functional, with an adjustable strap that takes you effortlessly from day to evening.',
     keyFeatures: [
@@ -468,7 +420,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Gold: 8, Black: 15, Navy: 6 },
     images: [
-      'images/bags/clutch bags/bag3.jpeg'
+      'images/bags/clutch bags/clutch3.jpeg'
     ],
     description: 'A sophisticated evening clutch with metallic accents. The perfect accessory for formal occasions, featuring a sleek silhouette and secure magnetic closure.',
     keyFeatures: [
@@ -511,7 +463,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Blush: 12, Black: 18 },
     images: [
-      'images/bags/clutch bags/bag4.jpeg'
+      'images/bags/clutch bags/clutch4.jpeg'
     ],
     description: 'A chic quilted mini bag with gold-tone hardware. The diamond-quilted pattern adds timeless elegance to this versatile piece.',
     keyFeatures: [
@@ -554,7 +506,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Multi: 6 },
     images: [
-      'images/bags/clutch bags/bag5.jpeg'
+      'images/bags/clutch bags/clutch5.jpeg'
     ],
     description: 'An artisanal beaded clutch featuring intricate hand-stitched patterns. A statement piece that elevates any evening ensemble.',
     keyFeatures: [
@@ -592,7 +544,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Ivory: 9, Sage: 7 },
     images: [
-      'images/bags/clutch bags/bag6.jpeg'
+      'images/bags/clutch bags/clutch2.jpeg'
     ],
     description: 'A romantic clutch with an elegant pearl handle. The structured design and lustrous finish make it perfect for weddings and special occasions.',
     keyFeatures: [
@@ -630,7 +582,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Tan: 10, Black: 14 },
     images: [
-      'images/bags/laptop bags/bag3.jpeg'
+      'images/bags/laptop bags/laptop1.jpeg'
     ],
     description: 'A professional leather briefcase designed for the modern executive. Fits up to 15" laptops with dedicated padding and organization compartments.',
     keyFeatures: [
@@ -675,7 +627,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Charcoal: 8, Navy: 10 },
     images: [
-      'images/bags/laptop bags/bag4.jpeg'
+      'images/bags/laptop bags/laptop2.jpeg'
     ],
     description: 'A rolling laptop bag with premium features for the frequent traveler. Smooth-rolling wheels and a telescopic handle make airport navigation effortless.',
     keyFeatures: [
@@ -714,7 +666,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Brown: 15, Black: 20 },
     images: [
-      'images/bags/laptop bags/bag5.jpeg'
+      'images/bags/laptop bags/laptop3.jpeg'
     ],
     description: 'A versatile bag that converts from briefcase to backpack in seconds. Perfect for commuters who need flexibility throughout their day.',
     keyFeatures: [
@@ -758,7 +710,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Natural: 18, Black: 22 },
     images: [
-      'images/bags/sling bags/bag3.jpeg'
+      'images/bags/sling bags/sling3.jpeg'
     ],
     description: 'A stylish woven bucket bag with a drawstring closure. The bohemian-inspired design features artisanal weaving and premium leather accents.',
     keyFeatures: [
@@ -797,7 +749,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Natural: 25, Navy: 20 },
     images: [
-      'images/bags/tote bags/bag3.jpeg'
+      'images/bags/tote bags/tote3.jpeg'
     ],
     description: 'A durable canvas tote perfect for weekend markets and daily errands. The reinforced handles and spacious interior make it an everyday essential.',
     keyFeatures: [
@@ -842,7 +794,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Cognac: 10, Chestnut: 8 },
     images: [
-      'images/bags/tote bags/bag4.jpeg'
+      'images/bags/tote bags/tote4.jpeg'
     ],
     description: 'A spacious leather shopper tote with a relaxed silhouette. The supple leather drapes beautifully while maintaining structure and durability.',
     keyFeatures: [
@@ -886,7 +838,7 @@ const AUREVIA_PRODUCTS = [
     sizes: null,
     stock: { Olive: 12, Black: 16 },
     images: [
-      'images/bags/tote bags/bag5.jpeg'
+      'images/bags/tote bags/tote5.jpeg'
     ],
     description: 'A generously sized weekend tote designed for short getaways. Features a luggage sleeve to slide over suitcase handles for easy travel.',
     keyFeatures: [

@@ -53,7 +53,6 @@
 }
 
 /* ─── 3. CART ITEMS COLUMN ────────────────── */
-.cart-items-col {}
 
 /* Empty Cart */
 .empty-cart-box {
@@ -114,7 +113,10 @@
   margin-bottom: 14px;
   display: flex;
   gap: 20px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  animation: fadeInUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: box-shadow 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cart-item-card:hover {
@@ -122,8 +124,19 @@
 }
 
 .cart-item-card.removing {
-  transform: translateX(-40px);
+  transform: translateX(-50px);
   opacity: 0;
+  max-height: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Cart Item Image */
@@ -290,7 +303,6 @@
 }
 
 /* ─── 4. ORDER SUMMARY ────────────────────── */
-.order-summary-col {}
 
 .order-summary-card {
   background: var(--white);
@@ -440,8 +452,8 @@
 
 .checkout-btn:hover:not(:disabled) {
   background: var(--deep-brown);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(121, 87, 87, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(121, 87, 87, 0.35);
 }
 
 .checkout-btn:disabled {

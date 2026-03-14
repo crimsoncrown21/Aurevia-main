@@ -12,8 +12,8 @@ const top7Data = [
   { rank: 3, name: "Linen Blouse", category: "Clothing", price: 4897, views: 1560, badge: "rising", image: "images/cloths/Tops & T-shirts/dress1.jpeg" },
   { rank: 4, name: "Tailored Trousers", category: "Clothing", price: 6557, views: 1420, badge: "hot", image: "images/cloths/Bottoms/derss1.jpeg" },
   { rank: 5, name: "Cashmere Hoodie", category: "Clothing", price: 7885, views: 1280, badge: "bestseller", image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
-  { rank: 6, name: "Classic Leather Tote", category: "Bags", price: 10707, views: 1150, badge: "rising", image: "images/bags/tote bags/bag1.jpeg" },
-  { rank: 7, name: "Mini Crossbody Bag", category: "Bags", price: 7387, views: 1080, badge: "bestseller", image: "images/bags/sling bags/bag1.jpeg" }
+  { rank: 6, name: "Classic Leather Tote", category: "Bags", price: 10707, views: 1150, badge: "rising", image: "images/bags/tote bags/tote1.jpeg" },
+  { rank: 7, name: "Mini Crossbody Bag", category: "Bags", price: 7387, views: 1080, badge: "bestseller", image: "images/bags/sling bags/sling1.jpeg" }
 ];
 
 const trendingByCategory = {
@@ -25,11 +25,11 @@ const trendingByCategory = {
     { name: "Cashmere Hoodie", price: 7885, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" }
   ],
   bags: [
-    { name: "Classic Leather Tote", price: 10707, image: "images/bags/tote bags/bag1.jpeg" },
-    { name: "Mini Crossbody Bag", price: 7387, image: "images/bags/sling bags/bag1.jpeg" },
-    { name: "Evening Clutch", price: 6566, image: "images/bags/clutch bags/bag3.jpeg" },
-    { name: "Quilted Mini Bag", price: 8200, image: "images/bags/tote bags/bag2.jpeg" },
-    { name: "Weekender Duffle", price: 12500, image: "images/bags/tote bags/bag3.jpeg" }
+    { name: "Classic Leather Tote", price: 10707, image: "images/bags/tote bags/tote1.jpeg" },
+    { name: "Mini Crossbody Bag", price: 7387, image: "images/bags/sling bags/sling1.jpeg" },
+    { name: "Evening Clutch", price: 6566, image: "images/bags/clutch bags/clutch3.jpeg" },
+    { name: "Quilted Mini Bag", price: 8200, image: "images/bags/clutch bags/clutch4.jpeg" },
+    { name: "Weekender Duffle", price: 12500, image: "images/bags/tote bags/tote3.jpeg" }
   ],
   fragrances: [
     { name: "Vanilla Dream", price: 4599 },
@@ -50,7 +50,7 @@ const trendingByCategory = {
 const mostLovedData = [
   { name: "Elegant Summer Dress", viewers: 23, sold: 156, popularity: 95, image: "images/cloths/Dresses/dress1.jpeg" },
   { name: "Silk Wrap Dress", viewers: 18, sold: 134, popularity: 88, image: "images/cloths/Dresses/dress2.jpeg" },
-  { name: "Classic Leather Tote", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/bag1.jpeg" },
+  { name: "Classic Leather Tote", viewers: 31, sold: 128, popularity: 92, image: "images/bags/tote bags/tote1.jpeg" },
   { name: "Cashmere Hoodie", viewers: 15, sold: 98, popularity: 82, image: "images/cloths/Hoodies and Sweatshirts/dress1.jpeg" },
   { name: "Luxury Gift Set", viewers: 12, sold: 87, popularity: 78 },
   { name: "Oud Collection", viewers: 19, sold: 76, popularity: 85 }
